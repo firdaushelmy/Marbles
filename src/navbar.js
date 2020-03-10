@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Button, Modal, NavLink } from "react-bootstrap"
 import { Link } from "react-router-dom"
+import "./navbar.css"
 function Navbar() {
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);

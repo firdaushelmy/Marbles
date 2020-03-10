@@ -1,4 +1,5 @@
 import React from "react";
+import "./panic.css"
 
 function Panic() {
   return (
