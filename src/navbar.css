@@ -8,8 +8,16 @@
 
 #modalLinkDiv #Link {
   text-decoration: none;
-  font-size: 5vw;
+  text-align: center;
+  font-size: 70px;
   font-family: 'ProximaNovaCond-Black',sans-serif;
+}
+
+@media screen and (max-width: 740px) {
+  #modalLinkDiv #Link {
+    font-size: 36px;
+    margin: 0.1em 0;
+  }
 }
 
 .modal-content {
@@ -36,8 +44,8 @@
   position: fixed;
   top: 0;
   right: 0;
-  width: 3vw;
-  height: 3vw;
+  width: 30px;
+  height: 30px;
   background-color:#007bff;
   border-radius:50%;
   border:none;
@@ -63,13 +71,13 @@
 }
 
 .barsModalButton i {
-  font-size: 1vw;
+  font-size: 15px;
 }
 
 .barsModalButton2 {
   float: right;
-  width: 3vw;
-  height: 3vw;
+  width: 30px;
+  height: 30px;
   background-color: #007bff;
   border-radius:50%;
   border:none;
@@ -80,9 +88,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 1vw;
-  min-width: 20px;
-  min-height: 20px;
+  font-size: 15px;
 }
 
 .barsModalButton2:hover {

@@ -45,12 +45,11 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  margin-top: -5vh;
+  margin-top: 5vh;
   /* margin-left:-300vw; */
   /* transform: translateX(-100%); */
   opacity:0;
   animation: 1s ease-in-out 2s 1 normal forwards FadeIn;
-
 }
 
 .Emotion {
@@ -62,6 +61,7 @@
   height: 200px;
   border-radius: 50%;
   position: relative;
+  margin-top: 5vh;
   margin: 5vw auto;
   font-family: 'Raleway', sans-serif;
   font-size: 25px;
