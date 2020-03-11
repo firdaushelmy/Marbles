@@ -5,7 +5,8 @@ function Panic() {
   return (
     <div className="Panic">
       <a href="#">
-        PANIC</a>
+        PANIC
+      </a>
     </div>
   )
 }

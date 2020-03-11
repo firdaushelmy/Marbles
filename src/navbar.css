@@ -33,16 +33,17 @@
 }
 
 .barsModalButton {
-  position: relative;
-  float: right;
+  position: fixed;
+  top: 0;
+  right: 0;
   width: 3vw;
   height: 3vw;
   background-color:#007bff;
   border-radius:50%;
   border:none;
   color:white;
-  margin-top: 1vh;
-  margin-right:1vw;
+  margin-top: 2vh;
+  margin-right:2vw;
   transition: 1s;
   display: flex;
   justify-content: center;
@@ -55,8 +56,14 @@
   background-color: white;
 }
 
+.barsModalButton:active {
+  transform: rotate(360deg);
+  color:darkslategrey;
+  background-color: white;
+}
+
 .barsModalButton i {
-  font-size: 1.3vw;
+  font-size: 1vw;
 }
 
 .barsModalButton2 {
@@ -73,9 +80,17 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: 1vw;
+  min-width: 20px;
+  min-height: 20px;
 }
 
 .barsModalButton2:hover {
+  transform: rotate(360deg);
+  background-color: darkslategrey;
+}
+
+.barsModalButton2:active {
   transform: rotate(360deg);
   background-color: darkslategrey;
 }

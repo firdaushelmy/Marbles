@@ -9,10 +9,10 @@ function App() {
   return (
     <>
       <Navbar />
-      <Route exact path="/mood">
+      <Route path="/mood">
         <Feelings />
       </Route>
-      <Route exact path="/panic">
+      <Route path="/panic">
         <Panic />
       </Route>
     </>

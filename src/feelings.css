@@ -15,10 +15,14 @@
 .HowYouDoin {
   display: flex;
   justify-content: center;
-  color: black;
-  font-family: "Martel Sans", sans-serif;
+  color: rgb(4, 63, 100);
+  font-family: 'Courgette', cursive;;
   font-size: 5vw;
   animation: 3s ease-out 0s 1 slideFromTop;
+}
+
+.HowYouDoin p {
+  margin-top: 5vh;
 }
 
 @keyframes FadeIn {
@@ -41,6 +45,7 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  margin-top: -5vh;
   /* margin-left:-300vw; */
   /* transform: translateX(-100%); */
   opacity:0;
@@ -58,7 +63,7 @@
   border-radius: 50%;
   position: relative;
   margin: 5vw auto;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Raleway', sans-serif;
   font-size: 25px;
   font-weight: bold;
   box-shadow: 0 5px 35px 0px rgba(0,0,0,.1);
@@ -86,12 +91,17 @@
 
 .EmotionBar a  {
   position: relative;
-  color: #262626;
+  color: rgb(2, 103, 165);
   transition: 1s;
   z-index: 3;
 }
 
 .EmotionBar a:hover {
+  color: #fff;
+  transform: rotateY(360deg);
+}
+
+.EmotionBar a:active {
   color: #fff;
   transform: rotateY(360deg);
 }
