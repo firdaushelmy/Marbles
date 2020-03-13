@@ -2,11 +2,17 @@ import React, { useState, useEffect } from "react";
 import { Card, CardImg, CardGroup } from "reactstrap";
 import axios from "axios";
 import LoadingIndicator from '../components/LoadingIndicator';
-
+import Image from "react-graceful-image";
+import "./UserImages.css"
+import { Modal, Button } from "react-bootstrap"
 
 function UserImages({ userId }) {
   const [userImages, setUserImages] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [showModal, setShowModal] = useState(false);
+  const handleCloseModal = () => setShowModal(false);
+  const handleShowModal = () => setShowModal(true);
+  const images = document.querySelectorAll('.UserImages');
 
   useEffect(() => {
     axios
@@ -17,6 +23,7 @@ function UserImages({ userId }) {
       });
   }, [userId]);
 
+
   if (isLoading) {
     return (
       <LoadingIndicator size="150px" />
@@ -25,20 +32,21 @@ function UserImages({ userId }) {
 
   else {
     return (
-      <CardGroup>
-        <Card>
-          <CardImg
-            top width="100%"
-            src={userImages[0]}
-            alt="Card image cap"
-            borderColor="red"
-            borderRadius="0"
-            color="red"
-            textAlign="center"
-
-          />
-        </Card>
-      </CardGroup>
+      <div onClick={handleShowModal}>
+        <Image className="UserImages" src={userImages[0]} />
+        <Modal show={showModal}>
+          <Modal.Header>
+            <Button onClick={handleCloseModal}>
+              Return To Home
+          </Button>
+          </Modal.Header>
+          <Modal.Body>
+            <Modal.Title>
+              <Image src={userImages[0]} className="UserImages"></Image>
+            </Modal.Title>
+          </Modal.Body>
+        </Modal>
+      </div>
     )
   }
 }

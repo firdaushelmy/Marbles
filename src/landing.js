@@ -1,7 +1,6 @@
 import React from "react";
 import "./landing.css"
 import { Link } from "react-router-dom"
-import { Modal } from "react-bootstrap"
 
 function Landing() {
   return (

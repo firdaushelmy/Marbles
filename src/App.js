@@ -1,4 +1,4 @@
-import React { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import Feelings from "./feelings"
 import { Route } from "react-router-dom"
@@ -9,7 +9,7 @@ import Navbar from "./navbar"
 import Login from "./login"
 import SignUp from "./signup"
 import Landing from "./landing.js"
-import LandingPage from "./pages/LandingPage"
+import Home from "./pages/Home"
 
 function App() {
   const [users, setUsers] = useState([]);
@@ -32,7 +32,7 @@ function App() {
           <Landing />
         </Route>
         <Route path="/home">
-          <LandingPage users={users} isLoading={isLoading} />
+          <Home users={users} isLoading={isLoading} />
         </Route>
         <Route path="/signup">
           <SignUp />
@@ -50,3 +50,5 @@ function App() {
     )
   }
 }
+
+export default App;

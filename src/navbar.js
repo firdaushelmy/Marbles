@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button, Modal, NavLink } from "react-bootstrap"
+import { Button, Modal } from "react-bootstrap"
 import { Link } from "react-router-dom"
 import "./navbar.css"
 
