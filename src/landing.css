@@ -15,7 +15,7 @@ body{
   right: 0; 
   background-image: url(/frontface.JPG); 
   background-repeat: no-repeat; 
-  background-size: fill; 
+  background-size: contain; 
   z-index: -99999;
 }
 
@@ -85,6 +85,7 @@ body{
   color: transparent;
   font-weight: bold;
   font-family: 'Kalam', cursive;
+  z-index: -1;
 }
 
 #ChangeToday {
@@ -95,6 +96,7 @@ body{
   color: transparent;
   font-weight: bold;
   font-family: 'Kalam', cursive;
+  z-index: -1;
 }
 
 #DontWorry {
@@ -105,6 +107,7 @@ body{
   color: transparent;
   font-weight: bold;
   font-family: 'Kalam', cursive;
+  z-index: -1;
 }
 
 #JamesBlunt {
@@ -115,6 +118,7 @@ body{
   color: transparent;
   font-weight: bold;
   font-family: 'Kalam', cursive;
+  z-index: -1;
 }
 
 #AreLoved {
@@ -125,171 +129,16 @@ body{
   color: transparent;
   font-weight: bold;
   font-family: 'Kalam', cursive;
+  z-index: -1;
 }
 
-.SignUpButton {
-  border: none;
-  background-color: transparent;
-  color: white;
+#GoSlowly {
+  position: absolute;
+  bottom: 17vh;
+  right: 17vw;
+  animation: 5s ease-in-out 3s infinite normal forwards FadeIn2;
+  color: transparent;
   font-weight: bold;
-  font-size: 60px;
-  font-family: 'ProximaNovaCond-Black',sans-serif;
-  position: relative;
-  border: 3px solid transparent;
-  padding: 20px;
-
+  font-family: 'Kalam', cursive;
+  z-index: -1;
 }
-
-.SignUpButton:hover {
-  text-decoration: none;
-}
-
-#SignUpButtonContainer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height:100vh;
-  display: flex;
-  justify-content:center;
-  align-items: center;
-}
-
-@media screen and (max-width: 740px) {
-  .SignUpButton {
-    font-size: 30px;
-  }
-}
-
-/* .SignUpButton {
-  position: relative;
-  border: 3px solid transparent;
-  display: block;
-  justify-content: center;
-  color: white;
-  background-color: lavenderblush;
-  margin: 0 auto;
-} */
-
-.SignUpButton:before{
-  /* cursor:pointer;
-	position:relative;
-	padding:10px 20px;
-	background:pink;
-	font-size:28px;
-  border-top-right-radius:10px;
-  border-bottom-left-radius:10px;
-  border-bottom:5px solid black;
-  border-right:5px solid black;
-  transition:all 0.5s; */
-  content: '';
-  position:absolute;
-  top: -3px;
-  left: -3px;
-  width: 0%;
-  height: 0%;
-  background: transparent;
-  border: 3px solid transparent;
-  box-sizing: content-box !important;
-
-}
-
-	.SignUpButton:hover:before{
-    /* border-top-left-radius:10px;
-    border-bottom-right-radius:10px;
-    border-bottom: 5px solid black;
-    border-top: 5px solid black; */
-    animation: animate 1s linear forwards;
-    /* border: 5px solid rgb(245, 106, 147); */
-  }
-
-  	.SignUpButton:active:before{
-    /* border-top-left-radius:10px;
-    border-bottom-right-radius:10px;
-    border-bottom: 5px solid black;
-    border-top: 5px solid black; */
-    animation: animate 1s linear forwards;
-    /* border: 5px solid rgb(245, 106, 147); */
-  }
-
-  @keyframes animate {
-  0%
-  {
-    width: 0%;
-    height:0%;
-    border-top-color:white;
-    border-right-color:transparent;
-    border-bottom-color:transparent;
-    border-left-color:transparent;
-  }
-  50%
-  {
-    width: 0%;
-    height:100%;
-    border-top-color:white;
-    border-right-color:white;
-    border-bottom-color:transparent;
-    border-left-color:transparent;
-  }
-  100%
-  {
-    width: 100%;
-    height:100%;
-    border-top-color:white;
-    border-right-color:white;
-    border-bottom-color:transparent;
-    border-left-color:transparent;
-  }
-}
-
-.SignUpButton:after {
-  content: '';
-  position:absolute;
-  top: -2px;
-  left: -3px;
-  width: 100%;
-  height: 100%;
-  background:transparent;
-  border: 3px solid transparent;
-  box-sizing: content-box !important;
-}
-
-.SignUpButton:hover:after {
-  animation: animate2 1s linear forwards;
-  /* animation-delay: 1s; */
-}
-
-.SignUpButton:active:after {
-  animation: animate2 1s linear forwards;
-  /* animation-delay: 1s; */
-}
-
-@keyframes animate2 {
-  0%
-  {
-    width: 0%;
-    height:0%;
-    border-top-color:transparent;
-    border-right-color:transparent;
-    border-bottom-color:white;
-    border-left-color:transparent;
-  }
-  50%
-  {
-    width: 100%;
-    height:0%;
-    border-top-color:transparent;
-    border-right-color:transparent;
-    border-bottom-color:white;
-    border-left-color:white;
-  }
-  100%
-  {
-    width: 100%;
-    height:100%;
-    border-top-color:transparent;
-    border-right-color:transparent;
-    border-bottom-color:white;
-    border-left-color:white;
-  }
-}
-

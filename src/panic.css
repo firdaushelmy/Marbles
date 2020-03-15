@@ -1,119 +1,28 @@
+#PanicSurrounding {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+}
+
 .Panic {
-  position: relative;
-  width: 10vw;
-  height: 10vw;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 5vw auto;
+  margin-top: 5vw;
   background: red;
   border-radius: 50%;
   font-family: 'Montserrat', sans-serif;
-  font-size: 1.5vw;
   font-weight: bold;
   letter-spacing: 2px;
   flex-wrap: wrap;
-  box-shadow: 0 5px 35px 0px rgba(0,0,0,.1);
+  height: 500px;
+  width: 500px;
   transition: 2s box-shadow;
+  position: relative;
 }
 
 .Panic a {
   color: white;
   text-decoration: none;
-  margin: 0.5vw;
-  padding: 0.3vw;
-}
-
-.Panic:after {
-  display: block;
-  content: '';
-  position: absolute;
-  width: 10vw;
-  height: 10vw;
-  border-radius: 50%;
-  z-index: -1;
-  animation: 1s clockwise infinite;
-}
-
-.Panic:hover:after {
-  background: white;
-  animation: 1s counterclockwise infinite;
-}
-
-@keyframes clockwise {
-  0% {
-    top: -5px;
-    left: 0;
-  }
-  12% {
-    top: -2px;
-    left: 2px;
-  }
-  25% {
-    top: 0;
-    left: 5px;    
-  }
-  37% {
-    top: 2px;
-    left: 2px;
-  }
-  50% {
-    top: 5px;
-    left: 0;    
-  }
-  62% {
-    top: 2px;
-    left: -2px;
-  }
-  75% {
-    top: 0;
-    left: -5px;
-  }
-  87% {
-    top: -2px;
-    left: -2px;
-  }
-  100% {
-    top: -5px;
-    left: 0;    
-  }
-}
-
-@keyframes counterclockwise {
-  0% {
-    top: -5px;
-    right: 0;
-  }
-  12% {
-    top: -2px;
-    right: 2px;
-  }
-  25% {
-    top: 0;
-    right: 5px;    
-  }
-  37% {
-    top: 2px;
-    right: 2px;
-  }
-  50% {
-    top: 5px;
-    right: 0;    
-  }
-  62% {
-    top: 2px;
-    right: -2px;
-  }
-  75% {
-    top: 0;
-    right: -5px;
-  }
-  87% {
-    top: -2px;
-    right: -2px;
-  }
-  100% {
-    top: -5px;
-    right: 0;    
-  }
 }

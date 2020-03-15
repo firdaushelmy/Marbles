@@ -1,0 +1,182 @@
+#SignUpButtonContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height:100vh;
+  flex-direction: column;
+}
+
+.Logo {
+  padding-bottom: 40px;
+}
+
+.AboutButton {
+  border: none;
+  background-color: transparent;
+  color: white;
+  font-weight: bold;
+  font-size: 60px;
+  font-family: 'ProximaNovaCond-Black',sans-serif;
+  position: relative;
+  padding: 20px;
+  box-shadow: 0 5px 35px 0px rgba(0,0,0,.1);
+  border-radius: 75px;
+  background: linear-gradient(105deg, rgb(76, 125, 231), rgb(207, 18, 207), rgb(243, 112, 151));
+  margin-top: 40px;
+}
+
+.AboutButton:hover {
+  text-decoration: none;
+}
+
+
+@media screen and (max-width: 740px) {
+  .AboutButton {
+    font-size: 30px;
+  }
+}
+
+/* .AboutButton:before{
+  content: '';
+  position:absolute;
+  top: -3px;
+  left: -3px;
+  width: 0%;
+  height: 0%;
+  background: transparent;
+  border: 3px solid transparent;
+  box-sizing: content-box !important;
+}
+
+	.AboutButton:hover:before{
+    animation: animate 1s linear forwards;
+  }
+
+  	.AboutButton:active:before{
+    animation: animate 1s linear forwards;
+  }
+
+
+  @keyframes animate {
+  0%
+  {
+    width: 0%;
+    height:0%;
+    border-top-color:transparent;
+    border-right-color:transparent;
+    border-bottom-color:white;
+    border-left-color:transparent;
+  }
+  50%
+  {
+    width: 100%;
+    height:0%;
+    border-top-color:transparent;
+    border-right-color:transparent;
+    border-bottom-color:white;
+    border-left-color:white;
+  }
+  100%
+  {
+    width: 100%;
+    height:100%;
+    border-top-color:transparent;
+    border-right-color:transparent;
+    border-bottom-color:white;
+    border-left-color:white;
+  }
+}
+
+.AboutButton:after {
+  content: '';
+  position:absolute;
+  top: -2px;
+  left: -3px;
+  width: 100%;
+  height: 100%;
+  background:transparent;
+  border: 3px solid transparent;
+  box-sizing: content-box !important;
+}
+
+.AboutButton:hover:after {
+  animation: animate2 1s linear forwards;
+  animation-delay: 1s;
+}
+
+.AboutButton:active:after {
+  animation: animate2 1s linear forwards;
+  animation-delay: 1s;
+}
+
+@keyframes animate2 {
+  0%
+  {
+    width: 0%;
+    height:0%;
+    border-top-color:white;
+    border-right-color:transparent;
+    border-bottom-color:transparent;
+    border-left-color:transparent;
+  }
+  50%
+  {
+    width: 0%;
+    height:100%;
+    border-top-color:white;
+    border-right-color:white;
+    border-bottom-color:transparent;
+    border-left-color:transparent;
+  }
+  100%
+  {
+    width: 100%;
+    height:100%;
+    border-top-color:white;
+    border-right-color:white;
+    border-bottom-color:transparent;
+    border-left-color:transparent;
+  }
+} */
+
+.SignUpDivider {
+  color: white;
+  font-weight: bold;
+  font-size: 70px;
+  font-family: 'ProximaNovaCond-Black',sans-serif;
+  margin-top: 30px;
+}
+
+.SignUpButton {
+  border: none;
+  background-color: transparent;
+  color: white;
+  font-weight: bold;
+  font-size: 60px;
+  font-family: 'ProximaNovaCond-Black',sans-serif;
+  position: relative;
+  border: 3px solid transparent;
+  padding: 20px;
+}
+
+@media screen and (max-width: 740px) {
+  .SignUpButton {
+    font-size: 30px;
+  }
+
+  .SignUpDivider {
+    font-size: 30px;
+  }
+}
+
+.SignUpButton:hover {
+  text-decoration: none;
+}
+
+.SignUpLogIn {
+  display: flex;
+  flex-direction: row;
+  box-shadow: 0 5px 35px 0px rgba(0,0,0,.1);
+  border-radius: 75px;
+  background: linear-gradient(105deg, rgb(76, 125, 231), rgb(207, 18, 207), rgb(243, 112, 151));
+}

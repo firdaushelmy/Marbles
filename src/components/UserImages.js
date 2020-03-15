@@ -12,7 +12,7 @@ function UserImages({ userId }) {
   const [showModal, setShowModal] = useState(false);
   const handleCloseModal = () => setShowModal(false);
   const handleShowModal = () => setShowModal(true);
-  const images = document.querySelectorAll('.UserImages');
+  // const images = document.querySelectorAll('.UserImages');
 
   useEffect(() => {
     axios
@@ -23,7 +23,6 @@ function UserImages({ userId }) {
       });
   }, [userId]);
 
-
   if (isLoading) {
     return (
       <LoadingIndicator size="150px" />
@@ -32,8 +31,10 @@ function UserImages({ userId }) {
 
   else {
     return (
-      <div onClick={handleShowModal}>
-        <Image className="UserImages" src={userImages[0]} />
+      <>
+        <div onClick={handleShowModal}>
+          <Image height="100%" width="100%" src={userImages[0]} className="UserImages" />
+        </div>
         <Modal show={showModal}>
           <Modal.Header>
             <Button onClick={handleCloseModal}>
@@ -42,11 +43,14 @@ function UserImages({ userId }) {
           </Modal.Header>
           <Modal.Body>
             <Modal.Title>
-              <Image src={userImages[0]} className="UserImages"></Image>
+              <Image src={userImages[0]} className="EnlargedImage"></Image>
             </Modal.Title>
           </Modal.Body>
+          <Modal.Footer>
+            <div>Hi</div>
+          </Modal.Footer>
         </Modal>
-      </div>
+      </>
     )
   }
 }

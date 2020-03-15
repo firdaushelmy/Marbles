@@ -27,15 +27,13 @@ function Home({ users, isLoading }) {
                 x.map(x => {
                   const userId = x.id;
                   return (
-                    <Col className="IndividCol">
-                      <div className="ImageDiv">
-                        <UserImages className="UserImages" userId={userId} />
-                      </div>
-                      {/* <button onClick={handleShowModal} className="ImageButton"></button> */}
-                      <div className="HalfDiv">
-                        <div className="Caption">
-                          <Link className="UsernameLink">username</Link>
+                    <Col xs={12} md={4}>
+                      <div className="IndividCol">
+                        <div className="ImageDiv">
+                          <UserImages className="UserImages" userId={userId} />
                         </div>
+                      </div>
+                      {/* <div className="HalfDiv">
                         <div className="CommentIconDiv">
                           <i id="CommentIcon" className="far fa-comments"></i><span></span>
                         </div>
@@ -47,7 +45,7 @@ function Home({ users, isLoading }) {
                             <Button className="CommentPostButton" type="submit">post</Button>
                           </Form>
                         </Container>
-                      </div>
+                      </div> */}
                     </Col>
                   )
                 })

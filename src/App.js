@@ -10,6 +10,9 @@ import Login from "./login"
 import SignUp from "./signup"
 import Landing from "./landing.js"
 import Home from "./pages/Home"
+import Emergency from "./Emergency"
+import AccountInfo from "./AccountInfo"
+import SignUpPage from "./signuppage"
 
 function App() {
   const [users, setUsers] = useState([]);
@@ -29,7 +32,7 @@ function App() {
       <>
         <Navbar />
         <Route exact path="/">
-          <Landing />
+          <SignUpPage />
         </Route>
         <Route path="/home">
           <Home users={users} isLoading={isLoading} />
@@ -42,6 +45,12 @@ function App() {
         </Route>
         <Route path="/panic">
           <Panic />
+        </Route>
+        <Route path="/emergency">
+          <Emergency />
+        </Route>
+        <Route path="/accountinfo">
+          <AccountInfo />
         </Route>
         <Route path="/login">
           <Login />

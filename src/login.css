@@ -1,3 +1,32 @@
-.new-signup {
+#LogInContainer {
+  width: 100vw;
+  font-family: 'Raleway';
+  margin-top: 10vh;
+}
+
+.LogInBtn {
+  margin-top: 20px;
+  background: linear-gradient(105deg, rgb(76, 125, 231), rgb(207, 18, 207), rgb(243, 112, 151));
+  border: none;
+  border-radius: 25px;
+  width: 100%;
+  color: white;
+  font-weight: bold;
+}
+
+#loginStuff {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.LogInField {
+  width: 100%;
   margin-top: 10px;
+  font-weight: bold;
+}
+
+.LogIn {
+  font-weight: bold;
 }

@@ -1,12 +1,14 @@
 import React from "react";
-import "./panic.css"
+import "./panic.css";
 
 function Panic() {
   return (
-    <div className="Panic">
-      <a href="#">
-        PANIC
+    <div className="container" id="PanicSurrounding">
+      <div className="Panic">
+        <a href="#">
+          PANIC
       </a>
+      </div>
     </div>
   )
 }

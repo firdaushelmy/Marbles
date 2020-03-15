@@ -1,22 +1,20 @@
 import React from "react";
-import "./login.css"
+import "./login.css";
+import Landing from "./landing";
 
 function Login() {
   return (
     <>
-      <div className="container d-flex flex-column align-items-center">
-        <h1>User Log In</h1>
-        <div>
-          <form>
-            <div className="col-6 form-group" id="loginStuff">
-              <h6>Username</h6>
-              <input type="text" />
-              <h6>Password</h6>
-              <input type="password" />
-              <button type="submit" className="new-signup">Submit</button>
-            </div>
-          </form>
-        </div>
+      <Landing />
+      <div className="container d-flex flex-column align-items-center" id="LogInContainer">
+        <h1 className="LogIn">Log In</h1>
+        <form id="loginStuff">
+          <h6 className="LogInField">Username:</h6>
+          <input type="text" />
+          <h6 className="LogInField">Password:</h6>
+          <input type="password" />
+          <button type="submit" className="LogInBtn">Log In</button>
+        </form>
       </div>
     </>
   )

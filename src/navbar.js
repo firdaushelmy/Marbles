@@ -17,7 +17,7 @@ function Navbar() {
     return (
         <>
             <Button onClick={handleShow} className="barsModalButton">
-                <i class="fa fa-bars"></i><span></span>
+                <i className="fa fa-bars"></i><span></span>
             </Button>
             <Modal show={show}>
                 <Modal.Header className="closebarsModalButton2">
@@ -30,6 +30,7 @@ function Navbar() {
                         <Link id="Link" tag={Link} to="/home" onClick={handleClose}>Home</Link>
                         <Link id="Link" tag={Link} to="/mood" onClick={handleClose}>Change Emotion</Link>
                         <Link id="Link" tag={Link} to="/panic" onClick={handleClose}> Panic button</Link>
+                        <Link id="Link" tag={Link} to="/emergency" onClick={handleClose}>Emergency</Link>
                         {!loggedIn ? (<Link id="Link" tag={Link} to="/login" onClick={handleClose}>Log In</Link>) : (<Link id="Link" onClick={() => setLoggedIn(loggedOut, handleClose)}>Log Out</Link>)}
                     </Modal.Title>
                 </Modal.Body>
