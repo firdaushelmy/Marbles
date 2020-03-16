@@ -21,12 +21,12 @@
 
 .LogInBtn:hover {
   text-decoration: none;
-  color: white;
+  color: coral;
 }
 
 .LogInBtn:active {
   text-decoration: none;
-  color: white;
+  color: coral;
 }
 
 #loginStuff {

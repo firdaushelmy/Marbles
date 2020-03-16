@@ -13,6 +13,8 @@ import Home from "./pages/Home"
 import Emergency from "./Emergency"
 import SignUpPage from "./signuppage"
 import Profile from "./profile"
+import Anonymous from "./anonymous"
+import Volunteer from "./volunteer"
 
 function App() {
   const [users, setUsers] = useState([]);
@@ -34,6 +36,9 @@ function App() {
         <Route exact path="/">
           <SignUpPage />
         </Route>
+        <Route path="/anonymous">
+          <Anonymous />
+        </Route>
         <Route path="/home">
           <Home users={users} isLoading={isLoading} />
         </Route>
@@ -51,6 +56,9 @@ function App() {
         </Route>
         <Route path="/profile">
           <Profile />
+        </Route>
+        <Route path="/volunteer">
+          <Volunteer />
         </Route>
         <Route path="/login">
           <Login />

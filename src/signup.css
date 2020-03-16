@@ -21,12 +21,12 @@
 
 .SignUpBtn:hover {
   text-decoration: none;
-  color: white;
+  color: coral;
 }
 
 .SignUpBtn:active {
   text-decoration: none;
-  color: white;
+  color: coral;
 }
 
 .SignUpForm {

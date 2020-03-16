@@ -48,10 +48,7 @@ function Nav() {
                 </Modal.Header>
                 <Modal.Body>
                     <Modal.Title id="modalLinkDiv">
-                        {/* <Link className="AccountInfoLink" tag={Link} to="/home" onClick={handleClose}>Home</Link> */}
                         <Link className="AccountInfoLink" tag={Link} to="/mood" onClick={handleClose}>change emotion</Link>
-                        <Link className="AccountInfoLink" tag={Link} to="/panic" onClick={handleClose}>panic button</Link>
-                        <Link className="AccountInfoLink" tag={Link} to="/emergency" onClick={handleClose}>emergency</Link>
                     </Modal.Title>
                 </Modal.Body>
             </Modal>
@@ -68,7 +65,8 @@ function Nav() {
                         <Link className="AccountInfoLink" tag={Link} to="/mood" onClick={handleClose}>change emotion</Link>
                         <Link className="AccountInfoLink" tag={Link} to="/panic" onClick={handleClose}>panic button</Link>
                         <Link className="AccountInfoLink" tag={Link} to="/emergency" onClick={handleClose}>emergency</Link>
-                        <Link className="AccountInfoLink">volunteer</Link>
+                        <Link className="AccountInfoLink" tag={Link} to="/profile" onClick={handleClose}>profile</Link>
+                        <Link className="AccountInfoLink" tag={Link} to="/volunteer" onClick={handleClose}>volunteer</Link>
                         <Link className="AccountInfoLink">seek help: how</Link>
                         <Link className="AccountInfoLink">f.a.q.</Link>
                         <Link className="AccountInfoLink">privacy policy</Link>
