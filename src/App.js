@@ -1,18 +1,19 @@
-import React, { useState, useEffect } from 'react';
-import './App.css';
-import Feelings from "./feelings"
-import { Route } from "react-router-dom"
+import React, { useState, useEffect } from "react";
+import "./App.css";
+import Feelings from "./feelings";
+import { Route } from "react-router-dom";
 import LoadingIndicator from "./components/LoadingIndicator";
-import axios from "axios"
-import Panic from "./panic"
-import Nav from "./navbar"
-import Login from "./login"
-import SignUp from "./signup"
-import Landing from "./landing.js"
-import Home from "./pages/Home"
-import Emergency from "./Emergency"
-import SignUpPage from "./signuppage"
-import Profile from "./profile"
+import axios from "axios";
+import Panic from "./panic";
+import Nav from "./navbar";
+import Login from "./login";
+import SignUp from "./signup";
+import Landing from "./landing.js";
+import Home from "./pages/Home";
+import Emergency from "./Emergency";
+import SignUpPage from "./signuppage";
+import Profile from "./profile";
+import MarbleBtn from "./components/marbleBtn";
 
 function App() {
   const [users, setUsers] = useState([]);
@@ -26,8 +27,7 @@ function App() {
   }, []);
   if (isLoading) {
     return <LoadingIndicator />;
-  }
-  else {
+  } else {
     return (
       <>
         <Nav />
@@ -55,8 +55,11 @@ function App() {
         <Route path="/login">
           <Login />
         </Route>
+        <Route path="/clicker">
+          <MarbleBtn />
+        </Route>
       </>
-    )
+    );
   }
 }
 
