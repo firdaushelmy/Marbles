@@ -1,0 +1,28 @@
+#PanicSurrounding {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+}
+
+.Panic {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5vw;
+  background: red;
+  border-radius: 50%;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  letter-spacing: 2px;
+  flex-wrap: wrap;
+  height: 500px;
+  width: 500px;
+  transition: 2s box-shadow;
+  position: relative;
+}
+
+.Panic a {
+  color: white;
+  text-decoration: none;
+}

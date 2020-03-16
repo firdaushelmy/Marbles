@@ -1,11 +1,18 @@
 import React, { useState, useEffect } from 'react';
-import { Route } from 'react-router-dom'
 import './App.css';
-// import logo from './logo.svg';
-import './App.css';
-import axios from "axios";
+import Feelings from "./feelings"
+import { Route } from "react-router-dom"
 import LoadingIndicator from "./components/LoadingIndicator";
-import LandingPage from "./pages/LandingPage"
+import axios from "axios"
+import Panic from "./panic"
+import Nav from "./navbar"
+import Login from "./login"
+import SignUp from "./signup"
+import Landing from "./landing.js"
+import Home from "./pages/Home"
+import Emergency from "./Emergency"
+import SignUpPage from "./signuppage"
+import Profile from "./profile"
 
 function App() {
   const [users, setUsers] = useState([]);
@@ -17,20 +24,40 @@ function App() {
       setIsLoading(false);
     });
   }, []);
-
   if (isLoading) {
     return <LoadingIndicator />;
-  } else {
+  }
+  else {
     return (
       <>
-        <div className="App">
-          <Route exact path="/">
-            <LandingPage users={users} isLoading={isLoading} />
-          </Route>
-        </div>
+        <Nav />
+        <Route exact path="/">
+          <SignUpPage />
+        </Route>
+        <Route path="/home">
+          <Home users={users} isLoading={isLoading} />
+        </Route>
+        <Route path="/signup">
+          <SignUp />
+        </Route>
+        <Route path="/mood">
+          <Feelings />
+        </Route>
+        <Route path="/panic">
+          <Panic />
+        </Route>
+        <Route path="/emergency">
+          <Emergency />
+        </Route>
+        <Route path="/profile">
+          <Profile />
+        </Route>
+        <Route path="/login">
+          <Login />
+        </Route>
       </>
     )
   }
-};
+}
 
 export default App;

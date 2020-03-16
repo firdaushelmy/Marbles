@@ -1,0 +1,35 @@
+.UserImages {
+  width: 340px;
+  height: 100%;
+  padding-left: 0;
+  padding-right: 0;
+  object-fit: cover;
+  box-shadow: 0 5px 35px 0px rgba(0,0,0,.1);
+  transition: 2s box-shadow;
+}
+
+@media screen and (max-width: 1200px) {
+  .UserImages {
+    width: 200px;
+  }
+}
+
+@media screen and (max-width:740px) {
+  .UserImages{
+    width: 340px;
+  }
+}
+
+.UserImages:hover {
+  opacity: 0.8;
+}
+
+.UserImages:active {
+  opacity: 0.5;
+}
+
+
+.EnlargedImage {
+  width: 100%;
+  height: 80vh;
+}
