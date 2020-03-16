@@ -1,25 +1,23 @@
-import React, { useState } from "react";
+import React from "react";
 import Landing from "./landing";
 import { Link } from "react-router-dom";
 import "./signuppage.css";
 
 function SignUpPage() {
-  const [loggedIn, setLoggedIn] = useState(localStorage.getItem("jwt") !== null)
-  function loggedOut() {
-    localStorage.removeItem("jwt")
-    setLoggedIn(false)
-  }
+
   return (
     <>
       <Landing />
       <div className="row" id="SignUpButtonContainer">
         <img className="Logo" src="./logo.png"></img>
-        <div className="SignUpLogIn">
-          <Link className="SignUpButton" tag={Link} to="/signup">Sign Up</Link>
-          <h6 className="SignUpDivider">|</h6>
-          {!loggedIn ? (<Link className="SignUpButton" tag={Link} to="/login">Log In</Link>) : (<Link className="SignUpButton" tag={Link} to="/edit">Edit Profile</Link>)}
+        <h6 className="AnythingOnYourMind">anything on your mind</h6>
+        <div className="StartAnonDiv">
+          <Link className="StartAnon" tag={Link} to="/mood">start anonymously</Link>
         </div>
-        <Link className="AboutButton" tag={Link} to="/accountinfo">About Us</Link>
+        <div className="SignUpLogIn">
+          <Link className="SignUpButton" tag={Link} to="/signup">sign up</Link>
+          <Link className="SignUpButton" tag={Link} to="/login">log in</Link>
+        </div>
       </div>
     </>
   )

@@ -5,14 +5,14 @@ import { Route } from "react-router-dom"
 import LoadingIndicator from "./components/LoadingIndicator";
 import axios from "axios"
 import Panic from "./panic"
-import Navbar from "./navbar"
+import Nav from "./navbar"
 import Login from "./login"
 import SignUp from "./signup"
 import Landing from "./landing.js"
 import Home from "./pages/Home"
 import Emergency from "./Emergency"
-import AccountInfo from "./AccountInfo"
 import SignUpPage from "./signuppage"
+import Profile from "./profile"
 
 function App() {
   const [users, setUsers] = useState([]);
@@ -30,7 +30,7 @@ function App() {
   else {
     return (
       <>
-        <Navbar />
+        <Nav />
         <Route exact path="/">
           <SignUpPage />
         </Route>
@@ -49,8 +49,8 @@ function App() {
         <Route path="/emergency">
           <Emergency />
         </Route>
-        <Route path="/accountinfo">
-          <AccountInfo />
+        <Route path="/profile">
+          <Profile />
         </Route>
         <Route path="/login">
           <Login />

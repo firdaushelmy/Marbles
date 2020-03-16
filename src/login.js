@@ -1,19 +1,19 @@
 import React from "react";
 import "./login.css";
 import Landing from "./landing";
+import { Link } from "react-router-dom"
 
 function Login() {
   return (
     <>
       <Landing />
       <div className="container d-flex flex-column align-items-center" id="LogInContainer">
-        <h1 className="LogIn">Log In</h1>
+        <img className="Logo" src="./logo.png"></img>
         <form id="loginStuff">
-          <h6 className="LogInField">Username:</h6>
-          <input type="text" />
-          <h6 className="LogInField">Password:</h6>
-          <input type="password" />
-          <button type="submit" className="LogInBtn">Log In</button>
+          <input type="text" className="form-control" placeholder="email address" id="LogInInput" />
+          <input type="password" className="form-control" placeholder="password" id="LogInInput" />
+          <Link tag={Link} to="/mood" className="LogInBtn">log in</Link>
+          <Link tag={Link} to="/" className="ChangedMeMind">changed my mind</Link>
         </form>
       </div>
     </>

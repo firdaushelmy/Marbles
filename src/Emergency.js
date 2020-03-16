@@ -6,12 +6,10 @@ function Emergency() {
     <div className="container d-flex flex-column align-items-center" id="EmergencyContainer">
       <h1>Emergency</h1>
       <form className="EmergencyForm">
-        <h6 className="EmergencyField">Number:</h6>
-        <input type="text" placeholder="Emergency phone number"></input>
-        <h6 className="EmergencyField">Name:</h6>
-        <input type="text" placeholder="Emergency contact name"></input>
+        <input type="text" placeholder="Emergency phone number" className="form-control" id="EmergencyInput"></input>
+        <input type="text" placeholder="Emergency contact name" className="form-control" id="EmergencyInput"></input>
         <h6 className="EmergencyField">Relation:</h6>
-        <select>
+        <select className="form-control" id="EmergencyInput">
           <option>Mother</option>
           <option>Father</option>
           <option>Sibling</option>

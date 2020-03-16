@@ -6,7 +6,6 @@ function Landing() {
   return (
     <>
       <div className="FrontFacePicture"></div>
-      <h1 className="logo">Marbles</h1>
       <a className="Quotes" id="CanDoThis">You can do this</a>
       <a className="Quotes" id="ChangeToday">Change your life today</a>
       <a className="Quotes" id="DontWorry">Don't worry, be happy</a>

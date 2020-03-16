@@ -3,9 +3,9 @@ body{
   /* background-image: url(/beach_background.JPG);
   background-repeat: no-repeat;
   background-size: cover; */
-  background-color: lightskyblue;
+  background-color: white;
 }
-
+/* 
 .FrontFacePicture {
   opacity: 0.8;
   position: fixed; 
@@ -17,16 +17,7 @@ body{
   background-repeat: no-repeat; 
   background-size: contain; 
   z-index: -99999;
-}
-
-.logo {
-  font-family: 'Alex Brush', cursive;
-  color: white;
-  position: absolute;
-  left: 1vw;
-  top: 1vh;
-  font-size: 60px;
-}
+} */
 
 .Quotes {
   font-size: 20px;

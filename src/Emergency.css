@@ -11,16 +11,27 @@
   justify-content: center;
 }
 
-.EmergencyField {
-  padding-top: 10px;
-  font-weight: bold;
-}
-
 .AddEmergency {
   margin-top: 20px;
   border-radius: 25px;
-  color: white;
-  font-weight: bold;
+  color: black;
   border: none;
-  background: linear-gradient(105deg, rgb(76, 125, 231), rgb(207, 18, 207), rgb(243, 112, 151));
+  padding: 10px;
+  width: 100%;
+  background-color: #FBD6C8;
+  /* background: linear-gradient(105deg, rgb(76, 125, 231), rgb(207, 18, 207), rgb(243, 112, 151)); */
+}
+
+#EmergencyInput {
+  border-radius: 10px;
+  border: none;
+  /* box-shadow: 0 5px 35px 0px rgba(0,0,0,.1); */
+  border: 1px solid #D2D0D0;
+  height: 64px;
+  margin-top: 10px;
+}
+
+.EmergencyField {
+  margin-top: 20px;
+  margin-bottom: -6px;
 }

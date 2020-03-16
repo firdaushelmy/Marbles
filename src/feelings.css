@@ -15,7 +15,8 @@
 .HowYouDoin {
   display: flex;
   justify-content: center;
-  color: rgb(4, 63, 100);
+  /* color: rgb(4, 63, 100); */
+  color: rgb(241, 93, 38);
   font-family: 'Courgette', cursive;;
   font-size: 5vw;
   animation: 3s ease-out 0s 1 slideFromTop;
@@ -70,7 +71,8 @@
   transition: 2s box-shadow;
   border-style: double;
   border-width: 10px;
-  border-color: lightskyblue;
+  /* border-color: lightskyblue; */
+  border-color: rgb(247, 154, 120);
 }
 
 .EmotionBar a {
@@ -91,7 +93,8 @@
 
 .EmotionBar a  {
   position: relative;
-  color: rgb(2, 103, 165);
+  /* color: rgb(2, 103, 165); */
+  color: coral;
   transition: 1s;
   z-index: 3;
 }

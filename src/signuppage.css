@@ -1,40 +1,88 @@
 #SignUpButtonContainer {
   display: flex;
-  justify-content: center;
   align-items: center;
+  width: 100%;
   min-height:100vh;
+  margin-top: 140px;
   flex-direction: column;
 }
 
 .Logo {
-  padding-bottom: 40px;
+  margin-bottom: 10px;
 }
 
-.AboutButton {
+.AnythingOnYourMind {
+  font-style: italic;
+  font-size: 25px;
+  margin-bottom: 20px;
+}
+
+.StartAnonDiv {
+  background-color: #FBD6C8;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  width: 350px;
+  padding:10px;
+  box-shadow: 0 5px 35px 0px rgba(0,0,0,.1);
+}
+
+.StartAnon {
   border: none;
   background-color: transparent;
-  color: white;
-  font-weight: bold;
-  font-size: 60px;
-  font-family: 'ProximaNovaCond-Black',sans-serif;
+  color: black;
+  font-size: 30px;
+  font-family: 'Open Sans', sans-serif;  
   position: relative;
-  padding: 20px;
-  box-shadow: 0 5px 35px 0px rgba(0,0,0,.1);
-  border-radius: 75px;
-  background: linear-gradient(105deg, rgb(76, 125, 231), rgb(207, 18, 207), rgb(243, 112, 151));
-  margin-top: 40px;
+    /* border-radius: 75px; */
+  /* background: linear-gradient(105deg, rgb(76, 125, 231), rgb(207, 18, 207), rgb(243, 112, 151)); */
+  /* margin-top: 40px; */
 }
 
-.AboutButton:hover {
+.StartAnon:hover {
   text-decoration: none;
 }
 
+.SignUpLogIn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.SignUpButton {
+  color: black;
+  font-size: 25px;
+}
+
+.SignUpButton:hover {
+  text-decoration: none;
+
+}
 
 @media screen and (max-width: 740px) {
-  .AboutButton {
-    font-size: 30px;
+  .StartAnon {
+    font-size: 20px;
+  }
+
+  .Logo {
+    width: 140px;
+  }
+
+  .SignUpButton {
+    font-size: 15px;
+  }
+
+  .AnythingOnYourMind {
+    font-size: 12px;
+  }
+
+  .StartAnonDiv {
+    width: 200px;
   }
 }
+
 
 /* .AboutButton:before{
   content: '';
@@ -138,45 +186,3 @@
     border-left-color:transparent;
   }
 } */
-
-.SignUpDivider {
-  color: white;
-  font-weight: bold;
-  font-size: 70px;
-  font-family: 'ProximaNovaCond-Black',sans-serif;
-  margin-top: 30px;
-}
-
-.SignUpButton {
-  border: none;
-  background-color: transparent;
-  color: white;
-  font-weight: bold;
-  font-size: 60px;
-  font-family: 'ProximaNovaCond-Black',sans-serif;
-  position: relative;
-  border: 3px solid transparent;
-  padding: 20px;
-}
-
-@media screen and (max-width: 740px) {
-  .SignUpButton {
-    font-size: 30px;
-  }
-
-  .SignUpDivider {
-    font-size: 30px;
-  }
-}
-
-.SignUpButton:hover {
-  text-decoration: none;
-}
-
-.SignUpLogIn {
-  display: flex;
-  flex-direction: row;
-  box-shadow: 0 5px 35px 0px rgba(0,0,0,.1);
-  border-radius: 75px;
-  background: linear-gradient(105deg, rgb(76, 125, 231), rgb(207, 18, 207), rgb(243, 112, 151));
-}

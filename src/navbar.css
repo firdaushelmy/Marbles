@@ -1,3 +1,15 @@
+.Navbar {
+  background-color: rgb(250, 229, 223);
+  display: flex;
+  justify-content: center;
+  height: 60px;
+}
+
+.LogoNoMarbles {
+  width: 80px;
+  margin-top: -21px;
+}
+
 #modalLinkDiv {
   display: flex;
   flex-direction: column;
@@ -11,6 +23,15 @@
   text-align: center;
   font-size: 70px;
   font-family: 'ProximaNovaCond-Black',sans-serif;
+  color: coral;
+  margin-top: 20px;
+  background-color: #FBD6C8;
+  box-shadow: 0 0 1px 0px coral;
+  /* background: linear-gradient(105deg, rgb(76, 125, 231), rgb(207, 18, 207), rgb(243, 112, 151)); */
+}
+
+#modalLinkDiv #Link:hover {
+  color: rgb(250, 117, 68);
 }
 
 @media screen and (max-width: 740px) {
@@ -18,6 +39,26 @@
     font-size: 36px;
     margin: 0.1em 0;
   }
+}
+
+.AddButton {
+  border-radius: 50%;
+  background-color: transparent;
+  border: none;
+  color: darkslategrey;
+  font-size: 25px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.AddButton:hover {
+  background-color: transparent;
+  transform: scale(1.5);
+  margin-top: -5px;
+}
+
+.AddButton:active {
+  background-color: transparent;
 }
 
 .modal-content {
@@ -46,10 +87,10 @@
   right: 0;
   width: 30px;
   height: 30px;
-  background-color:#007bff;
+  background-color:transparent;
   border-radius:50%;
   border:none;
-  color:white;
+  color: darkslategrey;
   margin-top: 2vh;
   margin-right:2vw;
   transition: 1s;
@@ -61,13 +102,13 @@
 .barsModalButton:hover {
   transform: rotate(360deg);
   color:darkslategrey;
-  background-color: white;
+  background-color: transparent;
 }
 
 .barsModalButton:active {
   transform: rotate(360deg);
   color:darkslategrey;
-  background-color: white;
+  background-color: transparent;
 }
 
 .barsModalButton i {
@@ -78,10 +119,10 @@
   float: right;
   width: 30px;
   height: 30px;
-  background-color: #007bff;
+  background-color: transparent;
   border-radius:50%;
   border:none;
-  color:white;
+  color:darkslategrey;
   margin-top: 1vh;
   margin-right:1vw;
   transition: 1s;
@@ -93,12 +134,13 @@
 
 .barsModalButton2:hover {
   transform: rotate(360deg);
-  background-color: darkslategrey;
+  background-color: transparent;
+  color: darkslategrey;
 }
 
 .barsModalButton2:active {
   transform: rotate(360deg);
-  background-color: darkslategrey;
+  background-color: transparent;
 }
 
 .closebarsModalButton2 {
@@ -106,4 +148,36 @@
   justify-content: flex-end;
   margin-top: -1vh;
   margin-right: -1vw;
+}
+
+#AccountInfoContainer {
+  width: 100vw; 
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: coral;
+  font-family: 'ProximaNovaCond-Black',sans-serif;
+}
+
+.AccountInfoLink {
+  text-decoration: none;
+  font-size: 40px;
+  font-family: 'Raleway';
+  color: black;
+}
+
+@media screen and (max-width: 740px) {
+  .AccountInfoH1 {
+    font-size: 50px;
+  }
+  
+  .AccountInfoLink {
+    font-size: 20px;
+  }
+}
+
+.AccountInfoLink:hover {
+  text-decoration: none;
+  color: coral;
 }
