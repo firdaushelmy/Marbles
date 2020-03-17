@@ -1,5 +1,6 @@
 import React from "react";
-import "./profile.css"
+import "./profile.css";
+import { Link } from "react-router-dom"
 
 function Profile() {
   return (
@@ -8,7 +9,7 @@ function Profile() {
         <div className="ProfilePicDisplay">
           <h6>+profile</h6>
         </div>
-        <h1>user.username</h1>
+        <h2>user.username</h2>
         <div className="EncouragementStarred">
           <div className="Encouragements">
             <h6>{Math.floor(Math.random() * 1000)}</h6>
@@ -19,6 +20,12 @@ function Profile() {
             <h6>stars</h6>
           </div>
         </div>
+        <Link tag={Link} to="/mood" className="ProfileLink">edit profile</Link>
+        <Link tag={Link} to="/emergency" className="ProfileLink">emergency contact</Link>
+        <Link tag={Link} to="/mood" className="ProfileLink">volunteer</Link>
+        <Link tag={Link} to="/mood" className="ProfileLink">how to seek help</Link>
+        <Link tag={Link} to="/mood" className="ProfileLink">f.a.q.</Link>
+        <Link tag={Link} to="/mood" className="ProfileLink">support group</Link>
       </div>
     </>
   )

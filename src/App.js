@@ -34,6 +34,9 @@ function App() {
         <Route exact path="/">
           <SignUpPage />
         </Route>
+        <Route path="/anonymous">
+          <Anonymous />
+        </Route>
         <Route path="/home">
           <Home users={users} isLoading={isLoading} />
         </Route>
@@ -51,6 +54,9 @@ function App() {
         </Route>
         <Route path="/profile">
           <Profile />
+        </Route>
+        <Route path="/volunteer">
+          <Volunteer />
         </Route>
         <Route path="/login">
           <Login />
