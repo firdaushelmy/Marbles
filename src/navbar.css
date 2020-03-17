@@ -97,6 +97,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 
 .barsModalButton:hover {
@@ -122,7 +123,7 @@
   background-color: transparent;
   border-radius:50%;
   border:none;
-  color:darkslategrey;
+  color:coral;
   margin-top: 1vh;
   margin-right:1vw;
   transition: 1s;
@@ -140,7 +141,7 @@
 
 .barsModalButton2:active {
   transform: rotate(360deg);
-  background-color: transparent;
+  background-color: coral;
 }
 
 .closebarsModalButton2 {
@@ -164,7 +165,7 @@
   text-decoration: none;
   font-size: 40px;
   font-family: 'Raleway';
-  color: black;
+  color: coral;
 }
 
 @media screen and (max-width: 740px) {
@@ -179,5 +180,5 @@
 
 .AccountInfoLink:hover {
   text-decoration: none;
-  color: coral;
+  color: black;
 }

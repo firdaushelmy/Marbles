@@ -1,0 +1,73 @@
+#VolunteerDiv {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: 'Open Sans', sans-serif;
+  color: #584646;
+}
+
+.OrgLogoImage {
+  background-color: #FBD6C8;
+  margin-top: 10px;
+  border-radius: 10px;
+  height: 260px;
+}
+
+.VolunteerSocialMediaDiv {
+  display: flex;
+  flex-direction: row;
+  width: 240px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.FacebookIcon {
+  color: #FBA589;
+}
+
+.TwitterIcon {
+  color: #FBA589;
+}
+
+.InstagramIcon {
+  color: #FBA589;
+}
+
+.SocialName {
+  font-weight: bold;
+}
+
+.BrandName {
+  font-weight: bold;
+  margin-top: 20px;
+  font-size: 30px;
+}
+
+.VolunteerTitle {
+  font-weight: bold;
+  font-size: 20px;
+  margin-top: 20px;
+}
+
+.VolunteerButton {
+  background-color: #FBD6C8;
+  width: 200px;
+  height: 50px;
+  font-size: 20px;
+  border: none;
+  border-radius: 5px;
+  width: 100px;
+  display: flex;
+  justify-content: center;
+}
+
+.VolunteerLink {
+  color: #584646;
+}
+
+.VolunteerLink:hover {
+  text-decoration: none;
+  color: coral;
+}
