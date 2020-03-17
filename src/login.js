@@ -49,7 +49,7 @@ function Login() {
         localStorage.setItem('jwt', access_token)
         localStorage.setItem('user', user)
         // toast.success(`Welcome back ${user.email} and ${user.name}`)
-        toast.success(`${message}`)
+        // toast.success(`${message}`)
         // setLoggedIn(true)
         history.push('/home') //redirects user to profile page after login
       })
