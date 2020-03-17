@@ -68,7 +68,7 @@ function Nav() {
                         <Link className="AccountInfoLink" tag={Link} to="/profile" onClick={handleClose}>profile</Link>
                         <Link className="AccountInfoLink" tag={Link} to="/volunteer" onClick={handleClose}>volunteer</Link>
                         <Link className="AccountInfoLink">seek help: how</Link>
-                        <Link className="AccountInfoLink">f.a.q.</Link>
+                        <Link className="AccountInfoLink" tag={Link} to="/faq" onClick={handleClose}>f.a.q.</Link>
                         <Link className="AccountInfoLink">privacy policy</Link>
                         {/* {!loggedIn ? (<Link className="AccountInfoLink" tag={Link} to="/login" onClick={handleClose}>Log In</Link>) : (<Link className="AccountInfoLink" onClick={() => setLoggedIn(loggedOut, handleClose)}>Log Out</Link>)} */}
                     </Modal.Title>

@@ -15,6 +15,7 @@ import SignUpPage from "./signuppage"
 import Profile from "./profile"
 import Anonymous from "./anonymous"
 import Volunteer from "./volunteer"
+import FAQ from "./FAQ"
 
 function App() {
   const [users, setUsers] = useState([]);
@@ -59,6 +60,9 @@ function App() {
         </Route>
         <Route path="/volunteer">
           <Volunteer />
+        </Route>
+        <Route path="/faq">
+          <FAQ />
         </Route>
         <Route path="/login">
           <Login />
