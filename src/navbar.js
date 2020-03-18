@@ -44,44 +44,25 @@ function Nav() {
         </Navbar.Collapse>
       </Navbar>
 
-      <Navbar className="Navbar">
-        <Navbar.Brand>
-          <div onClick={handleShow2} className="AddButton">+</div>
-        </Navbar.Brand>
-        <Navbar.Collapse className="justify-content-end">
-          <Navbar.Text>
-            <Link tag={Link} to="/home">
-              <img className="LogoNoMarbles" src="./logo_no_marbles.png" />
-            </Link>
-          </Navbar.Text>
-        </Navbar.Collapse>
-        <Navbar.Collapse className="justify-content-end">
-          <Navbar.Text>
-            <div onClick={handleShow} className="barsModalButton">
-              <i className="fa fa-bars"></i><span></span>
-            </div>
-          </Navbar.Text>
-        </Navbar.Collapse>
-      </Navbar>
-
-      <Modal show={show2}>
+      <Modal className="NavModal" show={show2}>
         <Modal.Header className="closebarsModalButton2">
-          <Button onClick={handleClose2} className="barsModalButton2">
+          <button onClick={handleClose2} className="barsModalButton2">
             X
-                    </Button>
+          </button>
         </Modal.Header>
         <Modal.Body>
           <Modal.Title id="modalLinkDiv">
+            {/* <Link className="AccountInfoLink" tag={Link} to="/" onClick={handleClose}>Home</Link> */}
             <Link className="AccountInfoLink" tag={Link} to="/mood" onClick={handleClose}>change emotion</Link>
           </Modal.Title>
         </Modal.Body>
       </Modal>
 
-      <Modal show={show}>
+      <Modal className="NavModal" show={show}>
         <Modal.Header className="closebarsModalButton2">
-          <Button onClick={handleClose} className="barsModalButton2">
+          <button onClick={handleClose} className="ModalButtonX">
             X
-                    </Button>
+          </button>
         </Modal.Header>
         <Modal.Body>
           <Modal.Title id="modalLinkDiv">
@@ -89,20 +70,12 @@ function Nav() {
             <Link className="AccountInfoLink" tag={Link} to="/mood" onClick={handleClose}>change emotion</Link>
             <Link className="AccountInfoLink" tag={Link} to="/panic" onClick={handleClose}>panic button</Link>
             <Link className="AccountInfoLink" tag={Link} to="/emergency" onClick={handleClose}>emergency</Link>
-            <Link
-              className="AccountInfoLink"
-              tag={Link}
-              to="/clicker"
-              onClick={handleClose}
-            >
-              Marble Clicker
-            </Link>
+            <Link className="AccountInfoLink" tag={Link} to="/clicker" onClick={handleClose}>Marble Clicker</Link>
             <Link className="AccountInfoLink" tag={Link} to="/profile" onClick={handleClose}>profile</Link>
             <Link className="AccountInfoLink" tag={Link} to="/volunteer" onClick={handleClose}>volunteer</Link>
             <Link className="AccountInfoLink">seek help: how</Link>
             <Link className="AccountInfoLink" tag={Link} to="/faq" onClick={handleClose}>f.a.q.</Link>
             <Link className="AccountInfoLink">privacy policy</Link>
-            {/* {!loggedIn ? (<Link className="AccountInfoLink" tag={Link} to="/login" onClick={handleClose}>Log In</Link>) : (<Link className="AccountInfoLink" onClick={() => setLoggedIn(loggedOut, handleClose)}>Log Out</Link>)} */}
           </Modal.Title>
         </Modal.Body>
       </Modal>
