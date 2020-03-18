@@ -3,6 +3,7 @@ import { Button, Modal } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "./navbar.css";
 import { Navbar } from "react-bootstrap";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function Nav() {
   const [show, setShow] = useState(false);
@@ -46,9 +47,14 @@ function Nav() {
 
       <Modal show={show2}>
         <Modal.Header className="closebarsModalButton2">
-          <Button onClick={handleClose2} className="barsModalButton2">
+          <div
+            onClick={handleClose2}
+            className="d-flex justify-content-center btn btn-outline-secondary border-0 barsModalButton2"
+            outline
+            color="warning"
+          >
             X
-          </Button>
+          </div>
         </Modal.Header>
         <Modal.Body>
           <Modal.Title id="modalLinkDiv">
@@ -83,9 +89,12 @@ function Nav() {
 
       <Modal show={show}>
         <Modal.Header className="closebarsModalButton2">
-          <Button onClick={handleClose} className="barsModalButton2">
+          <div
+            onClick={handleClose}
+            className="d-flex justify-content-center btn btn-outline-secondary border-0 barsModalButton2"
+          >
             X
-          </Button>
+          </div>
         </Modal.Header>
         <Modal.Body>
           <Modal.Title id="modalLinkDiv">
