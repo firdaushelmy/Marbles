@@ -146,27 +146,16 @@
   background-color: coral;
 }
 
-/* .closebarsModalButton2 {
-  margin-top: -1vh;
-  margin-right: -1vw;
-} */
-
 .ModalButtonX {
-  position: fixed;
-  top: 0;
-  right: 0;
+  margin-left: 97%;
   width: 30px;
   height: 30px;
   background-color: transparent;
   border-radius:50%;
   border:none;
   color:coral;
-  margin-top: 2vh;
   margin-right:2vw;
   transition: 1s;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   font-size: 15px;
 }
 

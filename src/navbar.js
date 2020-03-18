@@ -70,7 +70,7 @@ function Nav() {
             <Link className="AccountInfoLink" tag={Link} to="/mood" onClick={handleClose}>change emotion</Link>
             <Link className="AccountInfoLink" tag={Link} to="/panic" onClick={handleClose}>panic button</Link>
             <Link className="AccountInfoLink" tag={Link} to="/emergency" onClick={handleClose}>emergency</Link>
-            <Link className="AccountInfoLink" tag={Link} to="/clicker" onClick={handleClose}>Marble Clicker</Link>
+            <Link className="AccountInfoLink" tag={Link} to="/clicker" onClick={handleClose}>marble clicker</Link>
             <Link className="AccountInfoLink" tag={Link} to="/profile" onClick={handleClose}>profile</Link>
             <Link className="AccountInfoLink" tag={Link} to="/volunteer" onClick={handleClose}>volunteer</Link>
             <Link className="AccountInfoLink">seek help: how</Link>

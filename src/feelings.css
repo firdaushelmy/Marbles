@@ -75,10 +75,6 @@
   border-color: rgb(247, 154, 120);
 }
 
-.EmotionBar a {
-  text-decoration: none;
-}
-
 .EmotionBar div div div {
   background-color: #fff;
   display: flex;
@@ -91,7 +87,7 @@
   z-index: 1;
 }
 
-.EmotionBar a  {
+.FeelingType  {
   position: relative;
   /* color: rgb(2, 103, 165); */
   color: coral;
@@ -99,14 +95,16 @@
   z-index: 3;
 }
 
-.EmotionBar a:hover {
+.FeelingType:hover {
   color: #fff;
   transform: rotateY(360deg);
+  text-decoration: none;
 }
 
-.EmotionBar a:active {
+.FeelingType:active {
   color: #fff;
   transform: rotateY(360deg);
+  text-decoration: none;
 }
 
 .EmotionBar div div div:before {

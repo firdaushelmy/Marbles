@@ -10,13 +10,14 @@ import Login from "./login"
 import SignUp from "./signup"
 import Landing from "./landing.js"
 import Home from "./pages/Home"
-import Emergency from "./Emergency"
+import AddEmergency from "./AddEmergency"
 import SignUpPage from "./signuppage"
 import Profile from "./profile"
 import Anonymous from "./anonymous"
 import Volunteer from "./volunteer"
 import FAQ from "./FAQ"
 import MarbleBtn from "./components/marbleBtn";
+import Emergency from "./Emergency"
 
 function App() {
   const [users, setUsers] = useState([]);
@@ -52,8 +53,8 @@ function App() {
         <Route path="/panic">
           <Panic />
         </Route>
-        <Route path="/emergency">
-          <Emergency />
+        <Route path="/addemergency">
+          <AddEmergency />
         </Route>
         <Route path="/profile">
           <Profile />
@@ -66,6 +67,9 @@ function App() {
         </Route>
         <Route path="/login">
           <Login />
+        </Route>
+        <Route path="/emergency">
+          <Emergency />
         </Route>
         <Route path="/clicker">
           <MarbleBtn />
