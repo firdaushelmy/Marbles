@@ -5,7 +5,7 @@ import "./comments.css"
 
 function Comments( threadId, userID ) {
     const [text, setText] = useState("")
-    const [userId, setUserID] = useState("")
+    
 
     const handleTextChange = (e) => {
         let text = e.target.value
