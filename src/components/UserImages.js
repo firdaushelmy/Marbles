@@ -5,8 +5,9 @@ import LoadingIndicator from '../components/LoadingIndicator';
 import Image from "react-graceful-image";
 import "./UserImages.css"
 import { Modal, Button } from "react-bootstrap"
+import Comments from "./comments"
 
-function UserImages({ userId }) {
+function UserImages({ threadId, userID }) {
   const [userImages, setUserImages] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [showModal, setShowModal] = useState(false);
@@ -16,12 +17,13 @@ function UserImages({ userId }) {
 
   useEffect(() => {
     axios
-      .get(`https://insta.nextacademy.com/api/v1/images?userId=${userId}`)
+      .get(`https://marbles-backend.herokuapp.com/api/v1/threads/${threadId}`)
       .then(result => {
+        console.log(result);
         setUserImages(result.data);
         setIsLoading(false);
       });
-  }, [userId]);
+  }, [threadId]);
 
   if (isLoading) {
     return (
@@ -47,7 +49,11 @@ function UserImages({ userId }) {
             </Modal.Title>
           </Modal.Body>
           <Modal.Footer>
-            <div>Hi</div>
+            
+            <div>
+              <Comments threadId={threadId} userID={userID}/>
+            </div>
+
           </Modal.Footer>
         </Modal>
       </>

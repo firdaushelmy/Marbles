@@ -16,9 +16,13 @@ import Profile from "./profile";
 import MarbleBtn from "./components/marbleBtn";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Anonymous from "./anonymous"
+import Volunteer from "./volunteer"
+import FAQ from "./FAQ"
 
 function App() {
-  const [users, setUsers] = useState([]);
+  const [threads, setThreads] = useState([]);
+  const [userID, setUserID] = useState("")
   const [isLoading, setIsLoading] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(true);
 
@@ -32,8 +36,10 @@ function App() {
   };
 
   useEffect(() => {
-    axios.get("https://insta.nextacademy.com/api/v1/users/").then(result => {
-      setUsers(result.data);
+    axios.get("https://marbles-backend.herokuapp.com/api/v1/threads/").then(result => {
+    console.log(result.data)  
+    setThreads(result.data);
+    setUserID(result.data.user)
       setIsLoading(false);
     });
   }, []);
@@ -55,7 +61,7 @@ function App() {
           <Anonymous />
         </Route>
         <Route path="/home">
-          <Home users={users} isLoading={isLoading} />
+          <Home threads={threads} userID={userID} isLoading={isLoading} />
         </Route>
         <Route path="/signup">
           <SignUp />
