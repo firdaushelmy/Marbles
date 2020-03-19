@@ -8,7 +8,7 @@ function Comments( threadId, userID ) {
     
 
     const handleTextChange = (e) => {
-        let text = e.target.value
+        let txt = e.target.value
         setText(text)
     }
 

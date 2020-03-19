@@ -51,6 +51,7 @@ function UserImages({ threadId, userID }) {
           <Modal.Footer>
             
             <div>
+              
               <Comments threadId={threadId} userID={userID}/>
             </div>
 

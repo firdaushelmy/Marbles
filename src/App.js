@@ -19,6 +19,8 @@ import "react-toastify/dist/ReactToastify.css";
 import Anonymous from "./anonymous"
 import Volunteer from "./volunteer"
 import FAQ from "./FAQ"
+import Comments from "./components/comments.js"
+import Threads from "./components/threads.js"
 
 function App() {
   const [threads, setThreads] = useState([]);
@@ -89,6 +91,12 @@ function App() {
         </Route>
         <Route path="/clicker">
           <MarbleBtn />
+        </Route>
+        <Route path="/comments">
+          <Comments />
+        </Route>
+        <Route path="/threads">
+          <Threads userID={userID}/>
         </Route>
       </>
     );

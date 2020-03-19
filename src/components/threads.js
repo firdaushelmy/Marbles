@@ -3,13 +3,14 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import axios from "axios";
 import "./threads.css"
 
-function Threads() {
+function Threads(userID) {
     const [content, setContent] = useState("")
     const [template, setTemplate] = useState("")
 
     const handleContentChange = (e) => {
         let text = e.target.value
-        setContent(text)
+        let txt = document.getElementById("commentText").append(text)
+        setContent(txt)
     }
 
     const handleTemplateChange = (e) => {
@@ -32,7 +33,7 @@ function Threads() {
         <div className="container-fluid">
             <form onSubmit={handleContentSubmit} >
                 <div>
-                    <input id="commentText" value={content} onChange={handleContentChange()} type="text" placeholder="Write your post here">
+                    <input id="commentText" value={content} onChange={handleContentChange} type="text" placeholder="Write your post here">
 
                     </input>
                 
