@@ -1,15 +1,26 @@
 import React, { useState } from 'react'
 import "bootstrap/dist/css/bootstrap.min.css";
+import axios from "axios";
+import "./comments.css"
 
-function comments() {
+function Comments( threadId, userID ) {
     const [text, setText] = useState("")
+    const [userId, setUserID] = useState("")
 
     const handleTextChange = (e) => {
         let text = e.target.value
         setText(text)
     }
 
-
+    const handleTextSubmit = () => {
+        axios.post(`https://marbles-backend.herokuapp.com/api/v1/comments/new/${threadId}`, {
+            text: text,
+            user: userID,
+            thread: threadId
+        }).then(response => {
+            console.log(response.data)
+        }) 
+    }
 
 
 
@@ -35,4 +46,4 @@ function comments() {
     )
 }
 
-export default comments
+export default Comments

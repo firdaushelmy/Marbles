@@ -5,9 +5,9 @@ import LoadingIndicator from '../components/LoadingIndicator';
 import Image from "react-graceful-image";
 import "./UserImages.css"
 import { Modal, Button } from "react-bootstrap"
-import comments from "./comments"
+import Comments from "./comments"
 
-function UserImages({ userId }) {
+function UserImages({ threadId, userID }) {
   const [userImages, setUserImages] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [showModal, setShowModal] = useState(false);
@@ -17,12 +17,13 @@ function UserImages({ userId }) {
 
   useEffect(() => {
     axios
-      .get(`https://marbles-backend.herokuapp.com/api/v1/threads/${threadID}`)
+      .get(`https://marbles-backend.herokuapp.com/api/v1/threads/${threadId}`)
       .then(result => {
+        console.log(result);
         setUserImages(result.data);
         setIsLoading(false);
       });
-  }, [threadID]);
+  }, [threadId]);
 
   if (isLoading) {
     return (
@@ -34,7 +35,7 @@ function UserImages({ userId }) {
     return (
       <>
         <div onClick={handleShowModal}>
-          <Image height="100%" width="100%" src={userImages} className="UserImages" />
+          <Image height="100%" width="100%" src={userImages[0]} className="UserImages" />
         </div>
         <Modal show={showModal}>
           <Modal.Header>
@@ -44,13 +45,13 @@ function UserImages({ userId }) {
           </Modal.Header>
           <Modal.Body>
             <Modal.Title>
-              <Image src={userImages} className="EnlargedImage"></Image>
+              <Image src={userImages[0]} className="EnlargedImage"></Image>
             </Modal.Title>
           </Modal.Body>
           <Modal.Footer>
             
             <div>
-              <comments userId={userId} />
+              <Comments threadId={threadId} userID={userID}/>
             </div>
 
           </Modal.Footer>
