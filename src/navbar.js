@@ -62,6 +62,15 @@ function Nav() {
             <Link
               className="AccountInfoLink"
               tag={Link}
+              to="/threads"
+              onClick={handleClose}
+            >
+              Post a thread
+            </Link>
+            
+            <Link
+              className="AccountInfoLink"
+              tag={Link}
               to="/mood"
               onClick={handleClose}
             >
