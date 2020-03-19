@@ -16,6 +16,9 @@ import Profile from "./profile";
 import MarbleBtn from "./components/marbleBtn";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Anonymous from "./anonymous"
+import Volunteer from "./volunteer"
+import FAQ from "./FAQ"
 
 function App() {
   const [users, setUsers] = useState([]);
