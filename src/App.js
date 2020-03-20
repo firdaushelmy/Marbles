@@ -37,11 +37,13 @@ function App() {
     }
   };
 
+  // ---Issue: App currently loads all threads when first loading up. Might slow down app --
+
   useEffect(() => {
     axios.get("https://marbles-backend.herokuapp.com/api/v1/threads/").then(result => {
-    console.log(result.data)  
-    setThreads(result.data);
-    setUserID(result.data.user)
+      // console.log(result.data)  
+      setThreads(result.data);
+      setUserID(result.data.user)
       setIsLoading(false);
     });
   }, []);
@@ -96,7 +98,7 @@ function App() {
           <Comments />
         </Route>
         <Route path="/threads">
-          <Threads userID={userID}/>
+          <Threads userID={userID} />
         </Route>
       </>
     );
