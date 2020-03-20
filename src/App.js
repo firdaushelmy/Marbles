@@ -3,22 +3,24 @@ import "./App.css";
 import Feelings from "./feelings";
 import { Route } from "react-router-dom";
 import LoadingIndicator from "./components/LoadingIndicator";
-import axios from "axios";
-import Panic from "./panic";
-import Nav from "./navbar";
-import Login from "./login";
-import SignUp from "./signup";
-import Landing from "./landing.js";
-import Home from "./pages/Home";
-import Emergency from "./Emergency";
-import SignUpPage from "./signuppage";
-import Profile from "./profile";
-import MarbleBtn from "./components/marbleBtn";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import axios from "axios"
+import Panic from "./panic"
+import Nav from "./navbar"
+import Login from "./login"
+import SignUp from "./signup"
+import Landing from "./landing.js"
+import Home from "./pages/Home"
+import AddEmergency from "./AddEmergency"
+import SignUpPage from "./signuppage"
+import Profile from "./profile"
 import Anonymous from "./anonymous"
 import Volunteer from "./volunteer"
 import FAQ from "./FAQ"
+import MarbleBtn from "./components/marbleBtn";
+import Emergency from "./Emergency";
+import AddPost from "./AddPost.js"
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import Comments from "./components/comments.js"
 import Threads from "./components/threads.js"
 
@@ -64,6 +66,9 @@ function App() {
         <Route path="/anonymous">
           <Anonymous />
         </Route>
+        <Route path="/anonymous">
+          <Anonymous />
+        </Route>
         <Route path="/home">
           <Home threads={threads} userID={userID} isLoading={isLoading} />
         </Route>
@@ -73,11 +78,14 @@ function App() {
         <Route path="/mood">
           <Feelings />
         </Route>
+        <Route path="/addpost">
+          <AddPost />
+        </Route>
         <Route path="/panic">
           <Panic />
         </Route>
-        <Route path="/emergency">
-          <Emergency />
+        <Route path="/addemergency">
+          <AddEmergency />
         </Route>
         <Route path="/profile">
           <Profile />
@@ -90,6 +98,9 @@ function App() {
         </Route>
         <Route path="/login">
           <Login />
+        </Route>
+        <Route path="/emergency">
+          <Emergency />
         </Route>
         <Route path="/clicker">
           <MarbleBtn />

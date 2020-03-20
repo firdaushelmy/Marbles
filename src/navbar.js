@@ -45,20 +45,24 @@ function Nav() {
         </Navbar.Collapse>
       </Navbar>
 
-      <Modal show={show2}>
+      <Modal className="NavModal" show={show2}>
         <Modal.Header className="closebarsModalButton2">
-          <div
+          <button onClick={handleClose2} className="barsModalButton2">
+            X
+          </button>
+          {/* <div
             onClick={handleClose2}
             className="d-flex justify-content-center btn btn-outline-secondary border-0 barsModalButton2"
             outline
             color="warning"
           >
             X
-          </div>
+          </div> */}
         </Modal.Header>
         <Modal.Body>
           <Modal.Title id="modalLinkDiv">
             {/* <Link className="AccountInfoLink" tag={Link} to="/" onClick={handleClose}>Home</Link> */}
+            {/* <Link className="AccountInfoLink" tag={Link} to="/addpost" onClick={handleClose2}>add post</Link> */}
             <Link
               className="AccountInfoLink"
               tag={Link}
@@ -67,7 +71,7 @@ function Nav() {
             >
               Post a thread
             </Link>
-            
+
             <Link
               className="AccountInfoLink"
               tag={Link}
@@ -96,55 +100,30 @@ function Nav() {
         </Modal.Body>
       </Modal>
 
-      <Modal show={show}>
+      <Modal className="NavModal" show={show}>
         <Modal.Header className="closebarsModalButton2">
-          <div
+          <button onClick={handleClose} className="ModalButtonX">
+            X
+          </button>
+          {/* <div
             onClick={handleClose}
             className="d-flex justify-content-center btn btn-outline-secondary border-0 barsModalButton2"
           >
             X
-          </div>
+          </div> */}
         </Modal.Header>
         <Modal.Body>
           <Modal.Title id="modalLinkDiv">
             {/* <Link className="AccountInfoLink" tag={Link} to="/home" onClick={handleClose}>Home</Link> */}
-            <Link
-              className="AccountInfoLink"
-              tag={Link}
-              to="/mood"
-              onClick={handleClose}
-            >
-              change emotion
-            </Link>
-            <Link
-              className="AccountInfoLink"
-              tag={Link}
-              to="/panic"
-              onClick={handleClose}
-            >
-              panic button
-            </Link>
-            <Link
-              className="AccountInfoLink"
-              tag={Link}
-              to="/emergency"
-              onClick={handleClose}
-            >
-              emergency
-            </Link>
-            <Link
-              className="AccountInfoLink"
-              tag={Link}
-              to="/clicker"
-              onClick={handleClose}
-            >
-              Marble Clicker
-            </Link>
-            <Link className="AccountInfoLink">volunteer</Link>
+            <Link className="AccountInfoLink" tag={Link} to="/mood" onClick={handleClose}>change emotion</Link>
+            <Link className="AccountInfoLink" tag={Link} to="/panic" onClick={handleClose}>panic button</Link>
+            <Link className="AccountInfoLink" tag={Link} to="/emergency" onClick={handleClose}>emergency</Link>
+            <Link className="AccountInfoLink" tag={Link} to="/clicker" onClick={handleClose}>marble clicker</Link>
+            <Link className="AccountInfoLink" tag={Link} to="/profile" onClick={handleClose}>profile</Link>
+            <Link className="AccountInfoLink" tag={Link} to="/volunteer" onClick={handleClose}>volunteer</Link>
             <Link className="AccountInfoLink">seek help: how</Link>
-            <Link className="AccountInfoLink">f.a.q.</Link>
+            <Link className="AccountInfoLink" tag={Link} to="/faq" onClick={handleClose}>f.a.q.</Link>
             <Link className="AccountInfoLink">privacy policy</Link>
-            {/* {!loggedIn ? (<Link className="AccountInfoLink" tag={Link} to="/login" onClick={handleClose}>Log In</Link>) : (<Link className="AccountInfoLink" onClick={() => setLoggedIn(loggedOut, handleClose)}>Log Out</Link>)} */}
           </Modal.Title>
         </Modal.Body>
       </Modal>
