@@ -81,8 +81,7 @@ function Home({ threads, userID, isLoading, threadId }) {
           <Modal.Footer>
 
             <div>
-              {/* <Comments threadId={threadId} userID={userID} /> */}
-              <h6>hi</h6>
+              <Comments threadId={threadId} userID={userID} />
             </div>
 
           </Modal.Footer>
