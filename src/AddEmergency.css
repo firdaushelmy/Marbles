@@ -24,11 +24,15 @@
 
 #EmergencyInput {
   border-radius: 10px;
-  border: none;
-  /* box-shadow: 0 5px 35px 0px rgba(0,0,0,.1); */
   border: 1px solid #D2D0D0;
   height: 64px;
   margin-top: 10px;
+  background-color: white;
+  width: 100%;
+}
+
+#EmergencyInput option {
+  width: 200px;
 }
 
 .EmergencyField {

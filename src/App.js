@@ -17,7 +17,8 @@ import Anonymous from "./anonymous"
 import Volunteer from "./volunteer"
 import FAQ from "./FAQ"
 import MarbleBtn from "./components/marbleBtn";
-import Emergency from "./Emergency"
+import Emergency from "./Emergency";
+import AddPost from "./AddPost.js"
 
 function App() {
   const [users, setUsers] = useState([]);
@@ -49,6 +50,9 @@ function App() {
         </Route>
         <Route path="/mood">
           <Feelings />
+        </Route>
+        <Route path="/addpost">
+          <AddPost />
         </Route>
         <Route path="/panic">
           <Panic />

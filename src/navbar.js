@@ -53,7 +53,7 @@ function Nav() {
         <Modal.Body>
           <Modal.Title id="modalLinkDiv">
             {/* <Link className="AccountInfoLink" tag={Link} to="/" onClick={handleClose}>Home</Link> */}
-            <Link className="AccountInfoLink" tag={Link} to="/mood" onClick={handleClose}>change emotion</Link>
+            <Link className="AccountInfoLink" tag={Link} to="/addpost" onClick={handleClose2}>add post</Link>
           </Modal.Title>
         </Modal.Body>
       </Modal>
