@@ -14,26 +14,44 @@ function Home({ threads, userID, isLoading }) {
       <LoadingIndicator size="250px" />
     );
   }
-  let columnUser = [];
-  let userCopy = [...threads]
-  while (userCopy.length) columnUser.push(userCopy.splice(0, 3));
-  return (
-    <Container className="UserContainer">
-      {
-        columnUser.map(x => {
-          return (
-            <Row>
-              {
-                x.map(x => {
-                  const threadId = x.id;
-                  return (
-                    <Col xs={12} md={4}>
-                      <div className="IndividCol">
-                        <div className="ImageDiv">
-                          <UserImages className="UserImages" threadId={threadId} userID={userID} />
-                        </div>
-                      </div>
-                      {/* <div className="HalfDiv">
+  // let columnUser = [];
+  // let userCopy = [...threads]
+  // while (userCopy.length) columnUser.push(userCopy.splice(0, 3));
+
+
+  return (threads.map(thread => {
+    return (
+      <Container className="UserContainer">
+        <div class="wrapper" >
+          <img class="divimage" src={`https://marblesbackend.s3-ap-southeast-1.amazonaws.com/${thread.template}`} />
+          <h2 class="divtext"><span>{thread.content}</span></h2>
+        </div>
+      </Container>
+    )
+  })
+  )
+}
+
+
+
+
+
+// <Container className="UserContainer">
+//   {
+//     columnUser.map(x => {
+//       return (
+//         <Row>
+//           {
+//             x.map(x => {
+//               const threadId = x.id;
+//               return (
+//                 <Col xs={12} md={4}>
+//                   <div className="IndividCol">
+//                     <div className="ImageDiv">
+//                       <UserImages className="UserImages" threadId={threadId} userID={userID} />
+//                     </div>
+//                   </div>
+{/* <div className="HalfDiv">
                         <div className="CommentIconDiv">
                           <i id="CommentIcon" className="far fa-comments"></i><span></span>
                         </div>
@@ -46,7 +64,7 @@ function Home({ threads, userID, isLoading }) {
                           </Form>
                         </Container>
                       </div> */}
-                    </Col>
+{/* </Col>
                   )
                 })
               }
@@ -55,9 +73,8 @@ function Home({ threads, userID, isLoading }) {
         }
         )
       }
-    </Container>
-  )
-}
+    </Container> */}
+
 
 export default Home;
 
