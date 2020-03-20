@@ -15,12 +15,19 @@ function UserImages({ threadId, userID }) {
   const handleShowModal = () => setShowModal(true);
   // const images = document.querySelectorAll('.UserImages');
 
+
+
+
+
+
+
+
   useEffect(() => {
     axios
-      .get(`https://marbles-backend.herokuapp.com/api/v1/threads/${threadId}`)
+      .get("https://marbles-backend.herokuapp.com/api/v1/threads/")
       .then(result => {
         console.log(result);
-        setUserImages(result.data);
+        setUserImages(result.data.template);
         setIsLoading(false);
       });
   }, [threadId]);
@@ -35,7 +42,7 @@ function UserImages({ threadId, userID }) {
     return (
       <>
         <div onClick={handleShowModal}>
-          <Image height="100%" width="100%" src={userImages[0]} className="UserImages" />
+          <Image height="100%" width="100%" src={userImages} className="UserImages" />
         </div>
         <Modal show={showModal}>
           <Modal.Header>
@@ -45,8 +52,9 @@ function UserImages({ threadId, userID }) {
           </Modal.Header>
           <Modal.Body>
             <Modal.Title>
-              <Image src={userImages[0]} className="EnlargedImage"></Image>
+              <Image src={userImages} className="EnlargedImage"></Image>
             </Modal.Title>
+            
           </Modal.Body>
           <Modal.Footer>
             

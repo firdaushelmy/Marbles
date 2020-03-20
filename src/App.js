@@ -106,7 +106,7 @@ function App() {
           <MarbleBtn />
         </Route>
         <Route path="/comments">
-          <Comments />
+          <Comments threads={threads}  />
         </Route>
         <Route path="/threads">
           <Threads userID={userID} />
