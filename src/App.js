@@ -19,14 +19,33 @@ import FAQ from "./FAQ"
 import MarbleBtn from "./components/marbleBtn";
 import Emergency from "./Emergency";
 import AddPost from "./AddPost.js"
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import Comments from "./components/comments.js"
+import Threads from "./components/threads.js"
 
 function App() {
-  const [users, setUsers] = useState([]);
+  const [threads, setThreads] = useState([]);
+  const [userID, setUserID] = useState("")
   const [isLoading, setIsLoading] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(true);
+
+  const setLogInStateToTrue = () => {
+    if (localStorage.getItem("jwt")) {
+      setIsLoggedIn(true);
+    } else {
+      setIsLoggedIn(false);
+      toast.error("You have NOT successfully logged in");
+    }
+  };
+
+  // ---Issue: App currently loads all threads when first loading up. Might slow down app --
 
   useEffect(() => {
-    axios.get("https://insta.nextacademy.com/api/v1/users/").then(result => {
-      setUsers(result.data);
+    axios.get("https://marbles-backend.herokuapp.com/api/v1/threads/").then(result => {
+      // console.log(result.data)  
+      setThreads(result.data);
+      setUserID(result.data.user)
       setIsLoading(false);
     });
   }, []);
@@ -36,14 +55,22 @@ function App() {
     return (
       <>
         <Nav />
+        <ToastContainer />
         <Route exact path="/">
-          <SignUpPage />
+          <SignUpPage
+            isLoggedIn={isLoggedIn}
+            setIsLoggedIn={setIsLoggedIn}
+            setLogInStateToTrue={setLogInStateToTrue}
+          />
+        </Route>
+        <Route path="/anonymous">
+          <Anonymous />
         </Route>
         <Route path="/anonymous">
           <Anonymous />
         </Route>
         <Route path="/home">
-          <Home users={users} isLoading={isLoading} />
+          <Home threads={threads} userID={userID} isLoading={isLoading} />
         </Route>
         <Route path="/signup">
           <SignUp />
@@ -77,6 +104,12 @@ function App() {
         </Route>
         <Route path="/clicker">
           <MarbleBtn />
+        </Route>
+        <Route path="/comments">
+          <Comments />
+        </Route>
+        <Route path="/threads">
+          <Threads userID={userID} />
         </Route>
       </>
     );

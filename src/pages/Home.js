@@ -8,14 +8,14 @@ import { Link } from "react-router-dom"
 import Image from "react-graceful-image"
 import ImgSrc from "react-graceful-image"
 
-function Home({ users, isLoading }) {
+function Home({ threads, userID, isLoading }) {
   if (isLoading) {
     return (
       <LoadingIndicator size="250px" />
     );
   }
   let columnUser = [];
-  let userCopy = [...users]
+  let userCopy = [...threads]
   while (userCopy.length) columnUser.push(userCopy.splice(0, 3));
   return (
     <Container className="UserContainer">
@@ -25,12 +25,12 @@ function Home({ users, isLoading }) {
             <Row>
               {
                 x.map(x => {
-                  const userId = x.id;
+                  const threadId = x.id;
                   return (
                     <Col xs={12} md={4}>
                       <div className="IndividCol">
                         <div className="ImageDiv">
-                          <UserImages className="UserImages" userId={userId} />
+                          <UserImages className="UserImages" threadId={threadId} userID={userID} />
                         </div>
                       </div>
                       {/* <div className="HalfDiv">

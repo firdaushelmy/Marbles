@@ -3,6 +3,7 @@ import { Button, Modal } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "./navbar.css";
 import { Navbar } from "react-bootstrap";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function Nav() {
   const [show, setShow] = useState(false);
@@ -49,11 +50,52 @@ function Nav() {
           <button onClick={handleClose2} className="barsModalButton2">
             X
           </button>
+          {/* <div
+            onClick={handleClose2}
+            className="d-flex justify-content-center btn btn-outline-secondary border-0 barsModalButton2"
+            outline
+            color="warning"
+          >
+            X
+          </div> */}
         </Modal.Header>
         <Modal.Body>
           <Modal.Title id="modalLinkDiv">
             {/* <Link className="AccountInfoLink" tag={Link} to="/" onClick={handleClose}>Home</Link> */}
-            <Link className="AccountInfoLink" tag={Link} to="/addpost" onClick={handleClose2}>add post</Link>
+            {/* <Link className="AccountInfoLink" tag={Link} to="/addpost" onClick={handleClose2}>add post</Link> */}
+            <Link
+              className="AccountInfoLink"
+              tag={Link}
+              to="/threads"
+              onClick={handleClose}
+            >
+              Post a thread
+            </Link>
+
+            <Link
+              className="AccountInfoLink"
+              tag={Link}
+              to="/mood"
+              onClick={handleClose}
+            >
+              change emotion
+            </Link>
+            <Link
+              className="AccountInfoLink"
+              tag={Link}
+              to="/panic"
+              onClick={handleClose}
+            >
+              panic button
+            </Link>
+            <Link
+              className="AccountInfoLink"
+              tag={Link}
+              to="/emergency"
+              onClick={handleClose}
+            >
+              emergency
+            </Link>
           </Modal.Title>
         </Modal.Body>
       </Modal>
@@ -63,6 +105,12 @@ function Nav() {
           <button onClick={handleClose} className="ModalButtonX">
             X
           </button>
+          {/* <div
+            onClick={handleClose}
+            className="d-flex justify-content-center btn btn-outline-secondary border-0 barsModalButton2"
+          >
+            X
+          </div> */}
         </Modal.Header>
         <Modal.Body>
           <Modal.Title id="modalLinkDiv">
