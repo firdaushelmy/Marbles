@@ -9,46 +9,52 @@
 }
 
 .FaqPinkDiv {
-  background-color: #FBA589;
+  background-color: #FBD6C8;
   margin-top: 10px;
-  border-radius: 10px;
   height: 160px;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.QuestionDiv {
-  margin-top: 10px;
-  height: 70px;
+.Accordion {
+  margin-top: 20px;
+  width: 80%;
+}
+
+.FaqAccordionDiv {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-around;
-  width: 100%;
 }
 
-.dropdown-toggle {
-  width: 100%;
-  border: 2px solid #FBD6C8;
-  height: 70px;
-  background-color: white;
-  color: black;
-}
-
-.dropdown-toggle:hover {
-  background-color: #FBD6C8;
-  color: coral;
+.QuestionCardHeader {
+  background-color: white !important;
   border: 2px solid #FBD6C8;
 }
 
-.btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show>.btn-primary.dropdown-toggle {
-  background-color: #FBD6C8;
-  color: coral;
-  border: 2px solid #FBD6C8;
-}
-
-#DropdownContent {
-  width: 100%;
+.QuestionCard {
+  color: #584646 !important;
+  text-decoration:none !important;
+  height: 80px;
+  background-color: white !important;
+  border: none !important;
   display: flex;
-  justify-content: center;
+  align-items:center;
+  cursor: pointer;
+}
+
+.QuestionCard:hover {
+  text-decoration: none !important;
+  color: coral !important;
+}
+
+.QuestionCard:active {
+  text-decoration: none !important;
+  color: coral !important;
+}
+
+.AnswerCard {
+  background-color: #FBD6C8;
 }

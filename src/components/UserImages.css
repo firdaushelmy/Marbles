@@ -5,7 +5,7 @@
   padding-right: 0;
   object-fit: cover;
   box-shadow: 0 5px 35px 0px rgba(0,0,0,.1);
-  transition: 2s box-shadow;
+  transition: 2s box-shadow;  
 }
 
 @media screen and (max-width: 1200px) {

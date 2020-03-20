@@ -71,3 +71,127 @@
   text-decoration: none;
   color: coral;
 }
+
+.VolunteerModal {
+  font-family: 'Open Sans', sans-serif;
+  color: #584646;
+}
+
+.VolunteerModalHeader {
+  background-color:#FBD6C8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+}
+
+.VolunteerPhoneDiv {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#VolunteerInput {
+  border-radius: 10px;
+  border: none;
+  /* box-shadow: 0 5px 35px 0px rgba(0,0,0,.1); */
+  border: 1px solid #D2D0D0;
+  height: 64px;
+  margin-top: 10px;
+}
+
+#VolunteerInputPhoneCode {
+  border-radius: 10px;
+  border: none;
+  border: 1px solid #D2D0D0;
+  height: 64px;
+  margin-top: 10px;
+  background-color: white;
+  color: #584646;
+}
+
+#VolunteerInputPhone {
+  border-radius: 10px;
+  border: none;
+  border: 1px solid #D2D0D0;
+  height: 64px;
+  margin-top: 10px;
+  width: 100%;
+  margin-left: 10px;
+}
+
+#VolunteerInputPhone ::placeholder {
+  display: flex;
+  justify-self: center;
+}
+
+.VolunteerMailDisclaimer {
+  margin-top: 20px;
+}
+
+#VolunteerCheckboxContainer {
+  font-size: 13px;
+}
+
+.VolunteerConsentCheckbox {
+  margin-right: 10px;
+}
+
+.checkmark {
+  width: 50px;
+  height: 25px;
+}
+
+.VolunteerModal .modal-content {
+  width: 100vw;
+  height: 80vh;
+  margin-top: 10vh;
+}
+
+.VolunteerModal .modal-dialog {
+  margin:0;
+}
+
+
+.LetMeVolunteer {
+  background-color: #FBD6C8;
+  border-radius: 5px;
+  border: none;
+  color: black;
+  height: 60px;
+  font-size: 20px;
+}
+
+.LetMeVolunteer:hover {
+  color: #584646;
+}
+
+.VolunteerCloseBtn {
+  color: #584646;
+  height: 40px;
+  width: 135px;
+}
+
+.VolunteerCloseBtn:hover {
+  text-decoration: none;
+  color: #726c6c;
+}
+
+.VolunteerCloseBtn:active {
+  text-decoration: none;
+  color: #726c6c;
+}
+
+#VolunteerCheckBoxContainerDiv {
+  display: flex;
+  flex-direction: column;
+}
+
+.VolunteerXButton {
+  border: none;
+  background-color: transparent;
+  width: 10px;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+}
