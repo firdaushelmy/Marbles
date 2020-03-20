@@ -67,7 +67,7 @@ function Nav() {
               className="AccountInfoLink"
               tag={Link}
               to="/threads"
-              onClick={handleClose}
+              onClick={handleClose2}
             >
               Post a thread
             </Link>
@@ -76,7 +76,7 @@ function Nav() {
               className="AccountInfoLink"
               tag={Link}
               to="/mood"
-              onClick={handleClose}
+              onClick={handleClose2}
             >
               change emotion
             </Link>
@@ -84,7 +84,7 @@ function Nav() {
               className="AccountInfoLink"
               tag={Link}
               to="/panic"
-              onClick={handleClose}
+              onClick={handleClose2}
             >
               panic button
             </Link>
@@ -92,7 +92,7 @@ function Nav() {
               className="AccountInfoLink"
               tag={Link}
               to="/emergency"
-              onClick={handleClose}
+              onClick={handleClose2}
             >
               emergency
             </Link>

@@ -3,11 +3,18 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import axios from "axios";
 import "./comments.css"
 
+<<<<<<< HEAD
+function Comments(threadId, userID) {
+    const [text, setText] = useState("")
+
+
+=======
 function Comments( threads,threadId, userID ) {
     const [text, setText] = useState("")
     const [allComments,setAllComments] = useState([])
     // console.log(threads)
     // setAllComments(threadId) 
+>>>>>>> 00dbf6138b315b42ff83eb44627e32b72cc263c9
     const handleTextChange = (e) => {
         let tt = e.target.value
         let txt = document.getElementById("commentText").append(tt)
@@ -33,7 +40,7 @@ function Comments( threads,threadId, userID ) {
             thread: threadId
         }).then(response => {
             console.log(response.data)
-        }) 
+        })
     }
 
 
@@ -70,10 +77,15 @@ function Comments( threads,threadId, userID ) {
                 </div>
 
             </form>
+<<<<<<< HEAD
+
+
+=======
             </div>
             
+>>>>>>> 00dbf6138b315b42ff83eb44627e32b72cc263c9
         </div>
     )
 }
 
-export default Comments
+export default Comments;
