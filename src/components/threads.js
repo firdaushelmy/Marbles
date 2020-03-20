@@ -90,9 +90,10 @@ function Threads(userID) {
 
                     </input>
                 </div>
-                <div className="btn btn-outline-warning border-0" type="submit" onClick={handleUpload} >
+                <div className="btn btn-outline-warning border-0" type="button" onSubmit={handleUpload} >
                     Post Thread
                     {/* Maybe change this to a button and to onSubmit in the future? */}
+                    
                 </div>
 
             </form>

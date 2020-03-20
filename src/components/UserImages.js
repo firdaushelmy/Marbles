@@ -15,12 +15,19 @@ function UserImages({ threadId, userID }) {
   const handleShowModal = () => setShowModal(true);
   // const images = document.querySelectorAll('.UserImages');
 
+
+
+
+
+
+
+
   useEffect(() => {
     axios
-      .get(`https://marbles-backend.herokuapp.com/api/v1/threads/${threadId}`)
+      .get("https://marbles-backend.herokuapp.com/api/v1/threads/")
       .then(result => {
         console.log(result);
-        setUserImages(result.data);
+        setUserImages(result.data.template);
         setIsLoading(false);
       });
   }, [threadId]);
