@@ -3,9 +3,9 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import axios from "axios";
 import "./comments.css"
 
-function Comments( threadId, userID ) {
+function Comments(threadId, userID) {
     const [text, setText] = useState("")
-    
+
 
     const handleTextChange = (e) => {
         let txt = e.target.value
@@ -19,7 +19,7 @@ function Comments( threadId, userID ) {
             thread: threadId
         }).then(response => {
             console.log(response.data)
-        }) 
+        })
     }
 
 
@@ -40,10 +40,10 @@ function Comments( threadId, userID ) {
                 </div>
 
             </form>
-            
-            
+
+
         </div>
     )
 }
 
-export default Comments
+export default Comments;
