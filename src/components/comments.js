@@ -8,8 +8,9 @@ function Comments( threadId, userID ) {
     
 
     const handleTextChange = (e) => {
-        let txt = e.target.value
-        setText(text)
+        let tt = e.target.value
+        let txt = document.getElementById("commentText").append(tt)
+        setText(txt)
     }
 
     const handleTextSubmit = () => {
@@ -29,9 +30,15 @@ function Comments( threadId, userID ) {
 
     return (
         <div className="container-fluid">
+            <div>
+                {
+                    
+                }
+
+            </div>
             <form onSubmit={handleTextSubmit} >
                 <div>
-                    <input id="commentText" value={text} onChange={handleTextChange()} type="text" placeholder="Write some encouragement here">
+                    <input id="commentText" value={text} onChange={handleTextChange} type="text" placeholder="Write some encouragement here">
 
                     </input>
                 </div>

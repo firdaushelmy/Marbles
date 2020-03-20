@@ -35,7 +35,7 @@ function UserImages({ threadId, userID }) {
     return (
       <>
         <div onClick={handleShowModal}>
-          <Image height="100%" width="100%" src={userImages[0]} className="UserImages" />
+          <Image height="100%" width="100%" src={userImages} className="UserImages" />
         </div>
         <Modal show={showModal}>
           <Modal.Header>
@@ -45,8 +45,9 @@ function UserImages({ threadId, userID }) {
           </Modal.Header>
           <Modal.Body>
             <Modal.Title>
-              <Image src={userImages[0]} className="EnlargedImage"></Image>
+              <Image src={userImages} className="EnlargedImage"></Image>
             </Modal.Title>
+            
           </Modal.Body>
           <Modal.Footer>
             
