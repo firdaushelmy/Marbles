@@ -62,43 +62,26 @@ function Threads(userID) {
 
 
     return (
-        <div className="container-fluid">
-            <form>
-                <img //Display preview image
-                    className="w-75"
-                    style={{
-                        position: "absolute",
-                        left: "50%",
-                        top: "50%",
-                        transform: "translate(-50%, -50%)",
-                        maxHeight: "350px",
-                        maxWidth: "350px"
-                    }}
-                    src={previewImage}
-                    alt="preview" />
-                <div>
-                    <input id="commentText" value={content} onChange={handleContentChange} type="text" placeholder="Write your post here">
-                    </input>
-
+        <div className="container-fluid" id="AddImageContainer">
+            <form className="AddImageForm">
+                <div className="ImagePreviewDivBorder">
+                    <div className="ImagePreviewDiv">
+                        <img className="ImagePreview" src={previewImage} alt="preview" />
+                    </div>
                 </div>
                 <div>
-                    <input
-                        type="file"
-                        name="image-file"
-                        onChange={handleTemplateChange}
-                        multiple={false}>
-
-                    </input>
+                    <input className="CommentText" value={content} onChange={handleContentChange} type="text" placeholder="click to write a caption"></input>
                 </div>
-                <div className="btn btn-outline-warning border-0" type="button" onSubmit={handleUpload} >
-                    Post Thread
-                    {/* Maybe change this to a button and to onSubmit in the future? */}
-                    
+                <div className="AddImageWrapper">
+                    <input id="AddImageInput" type="file" name="image-file" onChange={handleTemplateChange} multiple={false}></input>
+                    <div>
+                        <label for="AddImageInput" className="ChooseImageButton">choose
+                    file</label>
+                    </div>
                 </div>
-
+                <button className="AddPostPostButton" onSubmit={handleUpload}>post
+                </button>
             </form>
-
-
         </div>
     )
 }

@@ -1,0 +1,83 @@
+#AddImageContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  width: 100vw;
+  height: 100vh;
+}
+
+.ImagePreviewDiv {
+  width: 300px;
+  height: 300px;
+  margin: 0 auto;
+  background-color: #FBD6C8;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.ImagePreview {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+}
+
+.CommentText {
+  background-color: pink;
+  border: none;
+  color: white;
+  width: 300px;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+.CommentText::placeholder {
+  color: white;
+  text-align: center;
+}
+
+.CommentText:focus {
+  outline: none;
+}
+
+.AddImageForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.AddImageWrapper {
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  width: 200px;
+}
+
+#AddImageInput{
+  opacity: 0;
+  position: absolute;
+  z-index: -1;
+}
+
+.ChooseImageButton {
+  background-color: #FBD6C8;
+  padding: 10px;
+  border-radius: 10px;
+  width: 300px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.AddPostPostButton {
+  border: none;
+  background-color: #FBD6C8;
+  border: none;
+  width: 300px;
+  height: 60px;
+  border-radius: 10px;
+  margin-top: 20px;
+}
