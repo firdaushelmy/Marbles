@@ -18,11 +18,11 @@ import Volunteer from "./volunteer"
 import FAQ from "./FAQ"
 import MarbleBtn from "./components/marbleBtn";
 import Emergency from "./Emergency";
-import AddPost from "./AddPost.js"
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import Comments from "./components/comments.js"
-import Threads from "./components/threads.js"
+import Comments from "./components/comments.js";
+import Threads from "./components/threads.js";
+import AddThoughts from "./AddThoughts";
 
 function App() {
   const [threads, setThreads] = useState([]);
@@ -78,8 +78,8 @@ function App() {
         <Route path="/mood">
           <Feelings />
         </Route>
-        <Route path="/addpost">
-          <AddPost />
+        <Route path="/addthoughts">
+          <AddThoughts />
         </Route>
         <Route path="/panic">
           <Panic />
@@ -106,7 +106,7 @@ function App() {
           <MarbleBtn />
         </Route>
         <Route path="/comments">
-          <Comments threads={threads}  />
+          <Comments threads={threads} />
         </Route>
         <Route path="/threads">
           <Threads userID={userID} />

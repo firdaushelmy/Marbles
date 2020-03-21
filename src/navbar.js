@@ -69,16 +69,16 @@ function Nav() {
               to="/threads"
               onClick={handleClose2}
             >
-              Post a thread
+              add post
             </Link>
 
             <Link
               className="AccountInfoLink"
               tag={Link}
-              to="/mood"
+              to="/addthoughts"
               onClick={handleClose2}
             >
-              change emotion
+              add thoughts
             </Link>
             <Link
               className="AccountInfoLink"
