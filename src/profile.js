@@ -36,7 +36,7 @@ function Profile() {
       headers: { Authorization: `Bearer ${jwt}` }
     })
       .then((result) => {
-        console.log(result.data.profile_picture)
+        // console.log(result.data.profile_picture)
         setProfileImage(result.data.profile_picture)
       })
       .catch(err => console.log(err.response))
@@ -54,12 +54,8 @@ function Profile() {
       headers: { Authorization: `Bearer ${jwt}` }
     })
       .then((result) => {
-        if (result.data.success) {
-          //for now will console log if successful
-          console.log(result.data)
-        } else {
-          console.log(result.data)
-        }
+        console.log(result.data)
+        window.location.reload()
       })
       .catch(err => console.log(err.response))
   }
