@@ -63,7 +63,7 @@ function Nav() {
           <Modal.Title id="modalLinkDiv">
             {/* <Link className="AccountInfoLink" tag={Link} to="/" onClick={handleClose}>Home</Link> */}
             {/* <Link className="AccountInfoLink" tag={Link} to="/addpost" onClick={handleClose2}>add post</Link> */}
-            <Link
+            <div className="PinkHoverDiv"><Link
               className="AccountInfoLink"
               tag={Link}
               to="/threads"
@@ -71,8 +71,9 @@ function Nav() {
             >
               add post
             </Link>
+            </div>
 
-            <Link
+            <div className="PinkHoverDiv"><Link
               className="AccountInfoLink"
               tag={Link}
               to="/addthoughts"
@@ -80,7 +81,8 @@ function Nav() {
             >
               add thoughts
             </Link>
-            <Link
+            </div>
+            <div className="PinkHoverDiv"><Link
               className="AccountInfoLink"
               tag={Link}
               to="/panic"
@@ -88,7 +90,8 @@ function Nav() {
             >
               panic button
             </Link>
-            <Link
+            </div>
+            <div className="PinkHoverDiv"><Link
               className="AccountInfoLink"
               tag={Link}
               to="/emergency"
@@ -96,6 +99,7 @@ function Nav() {
             >
               emergency
             </Link>
+            </div>
           </Modal.Title>
         </Modal.Body>
       </Modal>
@@ -115,15 +119,33 @@ function Nav() {
         <Modal.Body>
           <Modal.Title id="modalLinkDiv">
             {/* <Link className="AccountInfoLink" tag={Link} to="/home" onClick={handleClose}>Home</Link> */}
-            <Link className="AccountInfoLink" tag={Link} to="/mood" onClick={handleClose}>change emotion</Link>
-            <Link className="AccountInfoLink" tag={Link} to="/panic" onClick={handleClose}>panic button</Link>
-            <Link className="AccountInfoLink" tag={Link} to="/emergency" onClick={handleClose}>emergency</Link>
-            <Link className="AccountInfoLink" tag={Link} to="/clicker" onClick={handleClose}>marble clicker</Link>
-            <Link className="AccountInfoLink" tag={Link} to="/profile" onClick={handleClose}>profile</Link>
-            <Link className="AccountInfoLink" tag={Link} to="/volunteer" onClick={handleClose}>volunteer</Link>
-            <Link className="AccountInfoLink">seek help: how</Link>
-            <Link className="AccountInfoLink" tag={Link} to="/faq" onClick={handleClose}>f.a.q.</Link>
-            <Link className="AccountInfoLink">privacy policy</Link>
+            <div className="PinkHoverDiv">
+              <Link className="AccountInfoLink" tag={Link} to="/mood" onClick={handleClose}>change emotion</Link>
+            </div>
+            <div className="PinkHoverDiv">
+              <Link className="AccountInfoLink" tag={Link} to="/panic" onClick={handleClose}>panic button</Link>
+            </div>
+            <div className="PinkHoverDiv">
+              <Link className="AccountInfoLink" tag={Link} to="/emergency" onClick={handleClose}>emergency</Link>
+            </div>
+            <div className="PinkHoverDiv">
+              <Link className="AccountInfoLink" tag={Link} to="/clicker" onClick={handleClose}>marble clicker</Link>
+            </div>
+            <div className="PinkHoverDiv">
+              <Link className="AccountInfoLink" tag={Link} to="/profile" onClick={handleClose}>profile</Link>
+            </div>
+            <div className="PinkHoverDiv">
+              <Link className="AccountInfoLink" tag={Link} to="/volunteer" onClick={handleClose}>volunteer</Link>
+            </div>
+            <div className="PinkHoverDiv">
+              <Link className="AccountInfoLink">seek help: how</Link>
+            </div>
+            <div className="PinkHoverDiv">
+              <Link className="AccountInfoLink" tag={Link} to="/faq" onClick={handleClose}>f.a.q.</Link>
+            </div>
+            <div className="PinkHoverDiv">
+              <Link className="AccountInfoLink">privacy policy</Link>
+            </div>
           </Modal.Title>
         </Modal.Body>
       </Modal>
