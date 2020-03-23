@@ -51,13 +51,8 @@ function UserImages({ threadId, userID }) {
           <Modal.Footer>
 
             <div>
-<<<<<<< HEAD
               
               <Comments userImages={userImages} threadId={threadId} userID={userID}/>
-=======
-
-              <Comments threadId={threadId} userID={userID} />
->>>>>>> 6a7162c8a7a970a39f1664243c1ee273852c614d
             </div>
 
           </Modal.Footer>
