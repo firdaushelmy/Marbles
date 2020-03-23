@@ -45,7 +45,7 @@ function Login() {
     })
       .then(result => {
         const { status, message, access_token, user } = result.data
-        console.log(result.data.user.id)
+        // console.log(result.data.user.id)
         localStorage.setItem('jwt', access_token)
         localStorage.setItem('user', user)
         localStorage.setItem("current_id", result.data.user.id)

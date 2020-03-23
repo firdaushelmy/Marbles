@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./profile.css";
 import { Link } from "react-router-dom"
 import { Form, Button, Modal } from "react-bootstrap"
 import axios from "axios";
+import Image from "react-graceful-image"
 
 function Profile() {
 
@@ -10,10 +11,13 @@ function Profile() {
   const handleCloseModal = () => setShowModal(false);
   const handleShowModal = () => setShowModal(true);
   const [previewImage, setPreviewImage] = useState(null);
+  const [profileImage, setProfileImage] = useState(null);
   const [template, setTemplate] = useState("")
   const jwt = localStorage.getItem("jwt")
 
-  // -- Set image file to state --- 
+  const current_id = localStorage.getItem("current_id")
+
+  // -- Set selected image file to state --- 
 
   const handleTemplateChange = (e) => {
     setPreviewImage(null)
@@ -24,6 +28,19 @@ function Profile() {
     }
     setTemplate(imageFile)
   }
+
+
+  // Get API call to retrieve profile pic if available 
+  useEffect(() => {
+    axios.get(`http://127.0.0.1:5000/api/v1/users/profilepic`, {
+      headers: { Authorization: `Bearer ${jwt}` }
+    })
+      .then((result) => {
+        console.log(result.data.profile_picture)
+        setProfileImage(result.data.profile_picture)
+      })
+      .catch(err => console.log(err.response))
+  }, []);
 
   // ---- Post profile picture to API --- 
 
@@ -48,7 +65,8 @@ function Profile() {
   }
 
 
-  // Get API call to retrieve profile pic if available 
+
+
 
 
 
@@ -56,7 +74,8 @@ function Profile() {
     <>
       <div className="container" id="ProfileContainer">
         <div className="ProfilePicDisplay">
-          <h6 onClick={handleShowModal}>+profile</h6>
+          {profileImage ? <img onClick={handleShowModal} className="ImagePreview" src={`https://marblesbackend.s3-ap-southeast-1.amazonaws.com/${profileImage}`} alt="preview" /> : <h6 onClick={handleShowModal}>+profile</h6>}
+
         </div>
         <h2>user.username</h2>
         <div className="EncouragementStarred">
@@ -90,13 +109,14 @@ function Profile() {
           <div className="AddImageWrapper">
             <input id="AddImageInput" type="file" name="image-file" onChange={handleTemplateChange} multiple={false}></input>
             <div>
-              <label for="AddImageInput" className="ChooseImageButton">choose
-                    file</label>
+              <label for="AddImageInput" className="ChooseImageButton">choose file</label>
             </div>
           </div>
           {/* Set Image Preview to blank or previously uploaded if avaible */}
           <div className="ImagePreviewDiv">
-            <img className="ImagePreview" src={previewImage} alt="preview" />
+            {previewImage ? <img src={previewImage} /> :
+              profileImage ? <img className="ImagePreview" src={`https://marblesbackend.s3-ap-southeast-1.amazonaws.com/${profileImage}`} alt="preview" /> : <h2>Choose a file</h2>}}
+
           </div>
         </Modal.Body>
         <Modal.Footer>
@@ -109,3 +129,6 @@ function Profile() {
 }
 
 export default Profile;
+
+// URL FOR PROFILEIMAGE
+// src = {`https://marblesbackend.s3-ap-southeast-1.amazonaws.com/${previewImage}`}
