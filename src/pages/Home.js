@@ -13,9 +13,18 @@ import Comments from "../components/comments"
 function Home({ threads, userID, isLoading, threadId }) {
   const [userImages, setUserImages] = useState([]);
   // const [isLoading, setIsLoading] = useState(true);
-  const [showModal, setShowModal] = useState(false);
+  const [showModal, setShowModal] = useState(null);
   const handleCloseModal = () => setShowModal(false);
   const handleShowModal = () => setShowModal(true);
+  
+console.log(threads[0])
+
+const intakeID = () => {
+  let indi = document.getElementsByClassName("UserImages")
+  
+}
+
+
   if (isLoading) {
     return (
       <LoadingIndicator size="250px" />
@@ -53,21 +62,29 @@ function Home({ threads, userID, isLoading, threadId }) {
   //   )
   // }
 
-  return (threads.map(thread => {
+  return (
+    
+    threads.map(thread => {
     return (
       <>
         <Container className="UserContainer">
           <Col xs={12} md={4}>
+<<<<<<< HEAD
+            <div classname="IndividCol">
+              <div onClick={ () => setShowModal(thread.id)}>
+                <Image id={thread.id} className="UserImages" src={`https://marblesbackend.s3-ap-southeast-1.amazonaws.com/${thread.template}`} />
+=======
             <div className="container" id="IndividCol">
               <div onClick={handleShowModal} className="ImageDiv">
                 <Image className="UserImages" src={`https://marblesbackend.s3-ap-southeast-1.amazonaws.com/${thread.template}`} />
+>>>>>>> 6a7162c8a7a970a39f1664243c1ee273852c614d
               </div>
               <h2 className="ThreadContent"><span>{thread.content}</span></h2>
             </div>
           </Col>
         </Container>
 
-        <Modal show={showModal} className="ImageModal">
+        <Modal show={showModal == thread.id} className="ImageModal">
           <Modal.Header>
             <Button onClick={handleCloseModal}>
               Return To Home
@@ -75,7 +92,7 @@ function Home({ threads, userID, isLoading, threadId }) {
           </Modal.Header>
           <Modal.Body>
             <Modal.Title>
-              <Image src={userImages[0]} className="EnlargedImage"></Image>
+              <Image id={thread[thread.id]} src={`https://marblesbackend.s3-ap-southeast-1.amazonaws.com/${thread.template}`} className="EnlargedImage"></Image>
             </Modal.Title>
           </Modal.Body>
           <Modal.Footer>
@@ -88,7 +105,10 @@ function Home({ threads, userID, isLoading, threadId }) {
         </Modal>
       </>
     )
-  }))
+  })
+  
+  
+  )
 }
 
 export default Home;

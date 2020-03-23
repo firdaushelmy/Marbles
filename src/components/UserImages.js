@@ -34,7 +34,7 @@ function UserImages({ threadId, userID }) {
     return (
       <>
         <div onClick={handleShowModal}>
-          <Image height="100%" width="100%" src={userImages} className="UserImages" />
+          <Image height="100%" width="100%" src={`https://marblesbackend.s3-ap-southeast-1.amazonaws.com/${userImages}`} className="UserImages" />
         </div>
         <Modal show={showModal}>
           <Modal.Header>
@@ -44,15 +44,20 @@ function UserImages({ threadId, userID }) {
           </Modal.Header>
           <Modal.Body>
             <Modal.Title>
-              <Image src={userImages} className="EnlargedImage"></Image>
+              <Image src={`https://marblesbackend.s3-ap-southeast-1.amazonaws.com/${userImages}`} className="EnlargedImage"></Image>
             </Modal.Title>
 
           </Modal.Body>
           <Modal.Footer>
 
             <div>
+<<<<<<< HEAD
+              
+              <Comments userImages={userImages} threadId={threadId} userID={userID}/>
+=======
 
               <Comments threadId={threadId} userID={userID} />
+>>>>>>> 6a7162c8a7a970a39f1664243c1ee273852c614d
             </div>
 
           </Modal.Footer>
