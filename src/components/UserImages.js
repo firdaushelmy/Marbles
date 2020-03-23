@@ -13,14 +13,6 @@ function UserImages({ threadId, userID }) {
   const [showModal, setShowModal] = useState(false);
   const handleCloseModal = () => setShowModal(false);
   const handleShowModal = () => setShowModal(true);
-  // const images = document.querySelectorAll('.UserImages');
-
-
-
-
-
-
-
 
   useEffect(() => {
     axios
@@ -54,13 +46,18 @@ function UserImages({ threadId, userID }) {
             <Modal.Title>
               <Image src={`https://marblesbackend.s3-ap-southeast-1.amazonaws.com/${userImages}`} className="EnlargedImage"></Image>
             </Modal.Title>
-            
+
           </Modal.Body>
           <Modal.Footer>
-            
+
             <div>
+<<<<<<< HEAD
               
               <Comments userImages={userImages} threadId={threadId} userID={userID}/>
+=======
+
+              <Comments threadId={threadId} userID={userID} />
+>>>>>>> 6a7162c8a7a970a39f1664243c1ee273852c614d
             </div>
 
           </Modal.Footer>

@@ -26,7 +26,7 @@ import AddThoughts from "./AddThoughts";
 
 function App() {
   const [threads, setThreads] = useState([]);
-  const [userID, setUserID] = useState("")
+  const [userID, setUserID] = useState(null)
   const [isLoading, setIsLoading] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(true);
 
@@ -43,12 +43,13 @@ function App() {
 
   useEffect(() => {
     axios.get("https://marbles-backend.herokuapp.com/api/v1/threads/").then(result => {
-      // console.log(result.data)  
       setThreads(result.data);
       setUserID(result.data.user)
       setIsLoading(false);
+
     });
   }, []);
+  console.log(threads.user)
   if (isLoading) {
     return <LoadingIndicator />;
   } else {
