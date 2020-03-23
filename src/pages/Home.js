@@ -69,15 +69,9 @@ const intakeID = () => {
       <>
         <Container className="UserContainer">
           <Col xs={12} md={4}>
-<<<<<<< HEAD
             <div classname="IndividCol">
               <div onClick={ () => setShowModal(thread.id)}>
                 <Image id={thread.id} className="UserImages" src={`https://marblesbackend.s3-ap-southeast-1.amazonaws.com/${thread.template}`} />
-=======
-            <div className="container" id="IndividCol">
-              <div onClick={handleShowModal} className="ImageDiv">
-                <Image className="UserImages" src={`https://marblesbackend.s3-ap-southeast-1.amazonaws.com/${thread.template}`} />
->>>>>>> 6a7162c8a7a970a39f1664243c1ee273852c614d
               </div>
               <h2 className="ThreadContent"><span>{thread.content}</span></h2>
             </div>
