@@ -13,14 +13,6 @@ function UserImages({ threadId, userID }) {
   const [showModal, setShowModal] = useState(false);
   const handleCloseModal = () => setShowModal(false);
   const handleShowModal = () => setShowModal(true);
-  // const images = document.querySelectorAll('.UserImages');
-
-
-
-
-
-
-
 
   useEffect(() => {
     axios
@@ -54,13 +46,13 @@ function UserImages({ threadId, userID }) {
             <Modal.Title>
               <Image src={userImages} className="EnlargedImage"></Image>
             </Modal.Title>
-            
+
           </Modal.Body>
           <Modal.Footer>
-            
+
             <div>
-              
-              <Comments threadId={threadId} userID={userID}/>
+
+              <Comments threadId={threadId} userID={userID} />
             </div>
 
           </Modal.Footer>

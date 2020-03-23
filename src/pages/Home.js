@@ -59,7 +59,7 @@ function Home({ threads, userID, isLoading, threadId }) {
         <Container className="UserContainer">
           <Col xs={12} md={4}>
             <div classname="IndividCol">
-              <div onClick={handleShowModal}>
+              <div onClick={handleShowModal} className="ImageDiv">
                 <Image className="UserImages" src={`https://marblesbackend.s3-ap-southeast-1.amazonaws.com/${thread.template}`} />
               </div>
               <h2 class="divtext"><span>{thread.content}</span></h2>
