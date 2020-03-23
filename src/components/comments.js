@@ -6,7 +6,7 @@ import "./comments.css"
 function Comments(threads, threadId, userID) {
     const [text, setText] = useState("")
     const [allComments, setAllComments] = useState([])
-    // console.log(threads)
+    // console.log(userID)
     // setAllComments(threadId) 
     const handleTextChange = (e) => {
         let tt = e.target.value

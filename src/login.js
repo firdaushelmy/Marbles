@@ -37,7 +37,7 @@ function Login() {
   const loginCall = () => {
     axios({
       method: 'post',
-      url: 'https://marbles-backend.herokuapp.com/api/v1/users/login',
+      url: 'http://127.0.0.1:5000/api/v1/users/login',
       data: {
         email: email,
         password: password
@@ -45,9 +45,10 @@ function Login() {
     })
       .then(result => {
         const { status, message, access_token, user } = result.data
-        console.log(result)
+        console.log(result.data.user.id)
         localStorage.setItem('jwt', access_token)
         localStorage.setItem('user', user)
+        localStorage.setItem("current_id", result.data.user.id)
         // toast.success(`Welcome back ${user.email} and ${user.name}`)
         // toast.success(`${message}`)
         // setLoggedIn(true)
