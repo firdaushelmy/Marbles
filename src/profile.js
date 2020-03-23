@@ -32,7 +32,7 @@ function Profile() {
 
   // Get API call to retrieve profile pic if available 
   useEffect(() => {
-    axios.get(`http://127.0.0.1:5000/api/v1/users/profilepic`, {
+    axios.get(`http://127.0.0.1:5000/api/v1/users/profilepics/${current_id}`, {
       headers: { Authorization: `Bearer ${jwt}` }
     })
       .then((result) => {
@@ -50,7 +50,7 @@ function Profile() {
     uploadForm.append("image", template)
     console.log(uploadForm.entries())
 
-    axios.post(`http://127.0.0.1:5000/api/v1/users/upload`, uploadForm, {
+    axios.post(`http://127.0.0.1:5000/api/v1/users/profilepics`, uploadForm, {
       headers: { Authorization: `Bearer ${jwt}` }
     })
       .then((result) => {
