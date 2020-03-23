@@ -226,3 +226,9 @@
   background-color: #FBD6C8;
   color: black;
 }
+
+.PinkHoverDiv:active {
+  background-color: rgb(247, 197, 179);
+  color: black;
+}
+
