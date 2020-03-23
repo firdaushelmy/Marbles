@@ -45,9 +45,10 @@ function Login() {
     })
       .then(result => {
         const { status, message, access_token, user } = result.data
-        console.log(result)
+        // console.log(result.data.user.id)
         localStorage.setItem('jwt', access_token)
-        localStorage.setItem('user', user)
+        localStorage.setItem('user', JSON.stringify(user))
+        // assign a variable to JSON.parse(localStorage.getItem('user')) to access id, name and email of current user. See profile.js
         // toast.success(`Welcome back ${user.email} and ${user.name}`)
         // toast.success(`${message}`)
         // setLoggedIn(true)
