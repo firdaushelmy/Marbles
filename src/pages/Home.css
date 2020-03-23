@@ -17,14 +17,12 @@
 }
 
 .IndividCol {
-  /* background-color: #FBD6C8; */
-  width: 100%;
-  /* clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%); */
-  /* height: 320px; */
+  width: 400px;
   height: 100%;
   padding: 6px;
   display: flex;
-  align-content: center;
+  align-items: center;
+  justify-content: center;
   box-shadow: 0 5px 35px 0px rgba(0,0,0,.1);
   /* border-style: double; */
   /* border-width: 10px; */
@@ -41,7 +39,7 @@
 
 .ImageDiv {
   height: 400px;
-  width: 400px;
+  width: 100%;
   display: flex;
   justify-content: center;
   clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
