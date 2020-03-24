@@ -1,0 +1,234 @@
+.Navbar {
+  background-color: rgb(250, 229, 223);
+  display: flex;
+  justify-content: center;
+  height: 60px;
+  position: sticky !important;
+  top: 0;
+  z-index: 999;
+}
+
+.LogoNoMarbles {
+  width: 80px;
+  margin-top: -21px;
+  margin-left: -30px;
+}
+
+#modalLinkDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: -15vh;
+}
+
+#modalLinkDiv #Link {
+  text-decoration: none;
+  text-align: center;
+  font-size: 70px;
+  font-family: 'ProximaNovaCond-Black',sans-serif;
+  color: coral;
+  margin-top: 20px;
+  background-color: #FBD6C8;
+  box-shadow: 0 0 1px 0px coral;
+  /* background: linear-gradient(105deg, rgb(76, 125, 231), rgb(207, 18, 207), rgb(243, 112, 151)); */
+}
+
+#modalLinkDiv #Link:hover {
+  color: rgb(250, 117, 68);
+}
+
+@media screen and (max-width: 740px) {
+  #modalLinkDiv #Link {
+    font-size: 36px;
+    margin: 0.1em 0;
+  }
+}
+
+.AddButton {
+  position: fixed;
+  top: 0;
+  left: 0;
+  margin-top: -10px;
+  margin-left: 2vw;
+  border-radius: 50%;
+  background-color: transparent;
+  border: none;
+  color: darkslategrey;
+  font-size: 50px;
+  cursor: pointer;
+}
+
+.AddButton:hover {
+  background-color: transparent;
+}
+
+.AddButton:active {
+  background-color: transparent;
+}
+
+.NavModal .modal-content {
+  width: 100vw;
+  height: 100vh;
+}
+
+.NavModal .modal-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+}
+
+.NavModal .modal-header {
+  border: none;
+}
+
+.NavModal .modal-dialog {
+  margin:0;
+}
+
+.barsModalButton {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 30px;
+  height: 30px;
+  background-color:transparent;
+  border-radius:50%;
+  border:none;
+  color: darkslategrey;
+  margin-top: 2vh;
+  margin-right:2vw;
+  transition: 1s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.barsModalButton:hover {
+  transform: rotate(360deg);
+  color:darkslategrey;
+  background-color: transparent;
+}
+
+.barsModalButton:active {
+  transform: rotate(360deg);
+  color:darkslategrey;
+  background-color: transparent;
+}
+
+.barsModalButton i {
+  font-size: 15px;
+}
+
+.barsModalButton2 {
+  width: 30px;
+  height: 30px;
+  background-color: transparent;
+  border-radius:50%;
+  border:none;
+  color:coral;
+  /* margin-top: 1vh; */
+  margin-left: 1vw;
+  /* margin-top: 1vh; */
+  /* margin-right:1vw; */
+  transition: 1s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 15px;
+}
+
+.barsModalButton2:hover {
+  transform: rotate(360deg);
+  background-color: transparent;
+  color: darkslategrey;
+}
+
+.barsModalButton2:active {
+  transform: rotate(360deg);
+  background-color: coral;
+}
+
+.ModalButtonX {
+  margin-left: 97%;
+  width: 30px;
+  height: 30px;
+  background-color: transparent;
+  border-radius:50%;
+  border:none;
+  color:coral;
+  margin-right:2vw;
+  transition: 1s;
+  font-size: 15px;
+}
+
+.ModalButtonX:hover {
+  transform: rotate(360deg);
+  background-color: transparent;
+  color: darkslategrey;
+}
+
+.ModalButtonX:active {
+  transform: rotate(360deg);
+  background-color: coral;
+}
+
+#AccountInfoContainer {
+  width: 100vw; 
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: coral;
+  font-family: 'ProximaNovaCond-Black',sans-serif;
+}
+
+.AccountInfoLink {
+  text-decoration: none;
+  font-size: 40px;
+  font-family: 'Raleway';
+  color: coral;
+}
+
+@media screen and (max-width: 740px) {
+  .AccountInfoH1 {
+    font-size: 50px;
+  }
+  
+  .AccountInfoLink {
+    font-size: 20px;
+  }
+}
+
+.AccountInfoLink:hover {
+  text-decoration: none;
+  color: black;
+}
+
+.AccountInfoLink:focus {
+  text-decoration: none;
+  color: black;
+}
+
+.PinkHoverDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 60px;
+  padding: 20px;
+  background-color: transparent;
+}
+
+.PinkHoverDiv:hover {
+  background-color: #FBD6C8;
+  color: black;
+}
+
+.PinkHoverDiv:active {
+  background-color: rgb(247, 197, 179);
+  color: black;
+}
+

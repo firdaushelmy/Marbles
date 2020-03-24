@@ -1,0 +1,135 @@
+body{
+  min-height:100vh;
+  /* background-image: url(/beach_background.JPG);
+  background-repeat: no-repeat;
+  background-size: cover; */
+  background-color: white;
+}
+/* 
+.FrontFacePicture {
+  opacity: 0.8;
+  position: fixed; 
+  top: 0; 
+  bottom: 0; 
+  left: 0; 
+  right: 0; 
+  background-image: url(/frontface.JPG); 
+  background-repeat: no-repeat; 
+  background-size: contain; 
+  z-index: -99999;
+} */
+
+.Quotes {
+  font-size: 20px;
+  color: lightskyblue;
+}
+
+@media screen and (max-width: 740px) {
+  .logo {
+    font-size: 35px;
+  }
+
+  .Quotes {
+    font-size: 15px;
+  }
+
+  .SignUpButton {
+    font-size: 10px;
+  }
+
+  .FrontFacePicture {
+    background-size: cover;
+  }
+}
+
+@keyframes FadeIn2 {
+  0% {
+    opacity: 0;
+    color: rgb(247, 92, 92);
+  }
+
+  25%{
+    color: rgb(85, 177, 238);
+  }
+
+  50% {
+    opacity: 0.5;
+    /* color: rgb(211, 112, 211); */
+    color: white
+  }
+
+  75% {
+    color: rgb(236, 177, 187);
+  }
+
+  100% {
+    opacity: 0;
+    color: rgb(247, 92, 92);
+  }
+}
+
+#CanDoThis {
+  position: absolute;
+  top: 15vw;
+  right: 25vw;
+  animation: 5s ease-in-out 2s infinite normal backwards FadeIn2;
+  color: transparent;
+  font-weight: bold;
+  font-family: 'Kalam', cursive;
+  z-index: -1;
+}
+
+#ChangeToday {
+  position: absolute;
+  right: 30px;
+  top: 340px;
+  animation: 5s ease-in-out 1s infinite normal forwards FadeIn2;
+  color: transparent;
+  font-weight: bold;
+  font-family: 'Kalam', cursive;
+  z-index: -1;
+}
+
+#DontWorry {
+  position: absolute;
+  bottom: 5vh;
+  left: 25vw;
+  animation: 5s ease-in-out 5s infinite normal backwards FadeIn2;
+  color: transparent;
+  font-weight: bold;
+  font-family: 'Kalam', cursive;
+  z-index: -1;
+}
+
+#JamesBlunt {
+  position: absolute;
+  bottom: 45vh;
+  right: 35vw;
+  animation: 5s ease-in-out 4s infinite normal forwards FadeIn2;
+  color: transparent;
+  font-weight: bold;
+  font-family: 'Kalam', cursive;
+  z-index: -1;
+}
+
+#AreLoved {
+  position: absolute;
+  top: 35vw;
+  left: 10vw;
+  animation: 5s ease-in-out 3s infinite normal forwards FadeIn2;
+  color: transparent;
+  font-weight: bold;
+  font-family: 'Kalam', cursive;
+  z-index: -1;
+}
+
+#GoSlowly {
+  position: absolute;
+  bottom: 17vh;
+  right: 17vw;
+  animation: 5s ease-in-out 3s infinite normal forwards FadeIn2;
+  color: transparent;
+  font-weight: bold;
+  font-family: 'Kalam', cursive;
+  z-index: -1;
+}

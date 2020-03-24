@@ -1,0 +1,266 @@
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    -webkit-transform: scale3d(0.3, 0.3, 0.3);
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes lightSpeedIn {
+  from {
+    -webkit-transform: translate3d(100%, 0, 0) skewX(-30deg);
+    transform: translate3d(100%, 0, 0) skewX(-30deg);
+    opacity: 0;
+  }
+
+  60% {
+    -webkit-transform: skewX(20deg);
+    transform: skewX(20deg);
+    opacity: 1;
+  }
+
+  80% {
+    -webkit-transform: skewX(-5deg);
+    transform: skewX(-5deg);
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    visibility: visible;
+  }
+}
+
+@keyframes flipInY {
+  from {
+    -webkit-transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
+    transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+    opacity: 0;
+  }
+
+  40% {
+    -webkit-transform: perspective(400px) rotate3d(0, 1, 0, -20deg);
+    transform: perspective(400px) rotate3d(0, 1, 0, -20deg);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+
+  60% {
+    -webkit-transform: perspective(400px) rotate3d(0, 1, 0, 10deg);
+    transform: perspective(400px) rotate3d(0, 1, 0, 10deg);
+    opacity: 1;
+  }
+
+  80% {
+    -webkit-transform: perspective(400px) rotate3d(0, 1, 0, -5deg);
+    transform: perspective(400px) rotate3d(0, 1, 0, -5deg);
+  }
+
+  to {
+    -webkit-transform: perspective(400px);
+    transform: perspective(400px);
+  }
+}
+
+
+#SignUpButtonContainer {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-height:100vh;
+  margin-top: 140px;
+  flex-direction: column;
+}
+
+.Logo {
+  margin-bottom: 10px;
+  animation: 1s ease-in-out 0s 1 flipInY;
+}
+
+.AnythingOnYourMind {
+  font-style: italic;
+  font-size: 25px;
+  margin-bottom: 20px;
+  visibility: hidden;
+  animation: 2s ease-out 1s 1 normal forwards lightSpeedIn;
+}
+
+
+.StartAnonDiv {
+  background-color: #FBD6C8;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  width: 350px;
+  padding:10px;
+  box-shadow: 0 5px 35px 0px rgba(0,0,0,.1);
+  animation: 1s ease-out 0s 1 zoomIn;
+}
+
+.StartAnon {
+  border: none;
+  background-color: transparent;
+  color: black;
+  font-size: 30px;
+  font-family: 'Open Sans', sans-serif;  
+  position: relative;
+    /* border-radius: 75px; */
+  /* background: linear-gradient(105deg, rgb(76, 125, 231), rgb(207, 18, 207), rgb(243, 112, 151)); */
+  /* margin-top: 40px; */
+}
+
+.StartAnon:hover {
+  text-decoration: none;
+  color: coral;
+}
+
+.SignUpLogIn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.SignUpButton {
+  color: black;
+  font-size: 25px;
+  animation: 1s ease-out 0s 1 zoomIn;
+}
+
+.SignUpButton:hover {
+  text-decoration: none;
+  color: coral;
+}
+
+@media screen and (max-width: 740px) {
+  .StartAnon {
+    font-size: 20px;
+  }
+
+  .Logo {
+    width: 140px;
+  }
+
+  .SignUpButton {
+    font-size: 15px;
+  }
+
+  .AnythingOnYourMind {
+    font-size: 12px;
+  }
+
+  .StartAnonDiv {
+    width: 200px;
+  }
+}
+
+
+/* .AboutButton:before{
+  content: '';
+  position:absolute;
+  top: -3px;
+  left: -3px;
+  width: 0%;
+  height: 0%;
+  background: transparent;
+  border: 3px solid transparent;
+  box-sizing: content-box !important;
+}
+
+	.AboutButton:hover:before{
+    animation: animate 1s linear forwards;
+  }
+
+  	.AboutButton:active:before{
+    animation: animate 1s linear forwards;
+  }
+
+
+  @keyframes animate {
+  0%
+  {
+    width: 0%;
+    height:0%;
+    border-top-color:transparent;
+    border-right-color:transparent;
+    border-bottom-color:white;
+    border-left-color:transparent;
+  }
+  50%
+  {
+    width: 100%;
+    height:0%;
+    border-top-color:transparent;
+    border-right-color:transparent;
+    border-bottom-color:white;
+    border-left-color:white;
+  }
+  100%
+  {
+    width: 100%;
+    height:100%;
+    border-top-color:transparent;
+    border-right-color:transparent;
+    border-bottom-color:white;
+    border-left-color:white;
+  }
+}
+
+.AboutButton:after {
+  content: '';
+  position:absolute;
+  top: -2px;
+  left: -3px;
+  width: 100%;
+  height: 100%;
+  background:transparent;
+  border: 3px solid transparent;
+  box-sizing: content-box !important;
+}
+
+.AboutButton:hover:after {
+  animation: animate2 1s linear forwards;
+  animation-delay: 1s;
+}
+
+.AboutButton:active:after {
+  animation: animate2 1s linear forwards;
+  animation-delay: 1s;
+}
+
+@keyframes animate2 {
+  0%
+  {
+    width: 0%;
+    height:0%;
+    border-top-color:white;
+    border-right-color:transparent;
+    border-bottom-color:transparent;
+    border-left-color:transparent;
+  }
+  50%
+  {
+    width: 0%;
+    height:100%;
+    border-top-color:white;
+    border-right-color:white;
+    border-bottom-color:transparent;
+    border-left-color:transparent;
+  }
+  100%
+  {
+    width: 100%;
+    height:100%;
+    border-top-color:white;
+    border-right-color:white;
+    border-bottom-color:transparent;
+    border-left-color:transparent;
+  }
+} */

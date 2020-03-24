@@ -1,0 +1,60 @@
+#FaqDiv {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: 'Open Sans', sans-serif;
+  color: #584646;
+}
+
+.FaqPinkDiv {
+  background-color: #FBD6C8;
+  margin-top: 10px;
+  height: 160px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Accordion {
+  margin-top: 20px;
+  width: 80%;
+}
+
+.FaqAccordionDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.QuestionCardHeader {
+  background-color: white !important;
+  border: 2px solid #FBD6C8;
+}
+
+.QuestionCard {
+  color: #584646 !important;
+  text-decoration:none !important;
+  height: 80px;
+  background-color: white !important;
+  border: none !important;
+  display: flex;
+  align-items:center;
+  cursor: pointer;
+}
+
+.QuestionCard:hover {
+  text-decoration: none !important;
+  color: coral !important;
+}
+
+.QuestionCard:active {
+  text-decoration: none !important;
+  color: coral !important;
+}
+
+.AnswerCard {
+  background-color: #FBD6C8;
+}
