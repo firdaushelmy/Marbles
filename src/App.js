@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
 import Feelings from "./feelings";
-import { Route } from "react-router-dom";
+import { Route, Redirect } from "react-router-dom";
 import LoadingIndicator from "./components/LoadingIndicator";
 import axios from "axios"
 import Panic from "./panic"
@@ -89,7 +89,7 @@ function App() {
           <AddEmergency />
         </Route>
         <Route path="/profile">
-          <Profile />
+          {localStorage.getItem("jwt") ? <Profile /> : <Redirect to="/" />}
         </Route>
         <Route path="/volunteer">
           <Volunteer />
