@@ -68,6 +68,7 @@ function Home({ threads, userID, isLoading, threadId }) {
       return (
         <>
           <Container className="UserContainer">
+            {/* took out the stuff in col, and restored it without bells and whistles. added styling for three rows in the home.css */}
             <Col>
               <div classname="container" id="IndividCol">
                 <div className="ImageDiv" onClick={() => setShowModal(thread.id)}>
