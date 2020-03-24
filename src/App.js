@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
 import Feelings from "./feelings";
-import { Route } from "react-router-dom";
+import { Route, Redirect } from "react-router-dom";
 import LoadingIndicator from "./components/LoadingIndicator";
 import axios from "axios"
 import Panic from "./panic"
@@ -49,6 +49,16 @@ function App() {
 
     });
   }, []);
+
+  //User <PrivateRoute/> instead of <Route><Route> when you need user to be loggedin first bfore accessing page. It will check if a jwt exists and kick back to "/" if none available
+  const PrivateRoute = ({ component: Component, ...rest }) => (
+    <Route {...rest} render={(props) => (
+      localStorage.getItem("jwt")
+        ? <Component {...props} />
+        : <Redirect to='/' />
+    )} />
+  )
+
   console.log(threads.user)
   if (isLoading) {
     return <LoadingIndicator />;
@@ -88,9 +98,8 @@ function App() {
         <Route path="/addemergency">
           <AddEmergency />
         </Route>
-        <Route path="/profile">
-          <Profile />
-        </Route>
+        <PrivateRoute path="/profile" component={Profile} />
+        {/* Change Route to the above PrivateRoute pattern if you want to require login first */}
         <Route path="/volunteer">
           <Volunteer />
         </Route>
