@@ -19,10 +19,6 @@ function Home({ threads, userID, isLoading, threadId }) {
   
 console.log(threads[0])
 
-const intakeID = () => {
-  let indi = document.getElementsByClassName("UserImages")
-  
-}
 
 
   if (isLoading) {
@@ -34,7 +30,7 @@ const intakeID = () => {
   //   let userCopy = [...threads]
   //   while (userCopy.length) columnUser.push(userCopy.splice(0, 3));
   //   return (
-  //     <Container className="UserContainer">
+  //     <Container className="UserContainer">0
   //       {
   //         columnUser.map(x => {
   //           return (
@@ -92,7 +88,7 @@ const intakeID = () => {
           <Modal.Footer>
 
             <div>
-              <Comments threadId={threadId} userID={userID} />
+              <Comments threads={threads} threadId={thread.id} userID={userID} />
             </div>
 
           </Modal.Footer>

@@ -46,10 +46,10 @@ function App() {
       setThreads(result.data);
       setUserID(result.data.user)
       setIsLoading(false);
-
+      console.log(result.data)
     });
   }, []);
-  console.log(threads.user)
+  
   if (isLoading) {
     return <LoadingIndicator />;
   } else {
@@ -107,7 +107,7 @@ function App() {
           <MarbleBtn />
         </Route>
         <Route path="/comments">
-          <Comments threads={threads} />
+          <Comments  />
         </Route>
         <Route path="/threads">
           <Threads userID={userID} />

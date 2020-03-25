@@ -6,16 +6,17 @@ import "./comments.css"
 function Comments(threads, threadId, userID) {
     const [text, setText] = useState("")
     const [allComments, setAllComments] = useState([])
-    // console.log(userID)
-    // setAllComments(threadId) 
+    console.log(threadId)
+    console.log(threads)
     const handleTextChange = (e) => {
         let tt = e.target.value
+        console.log(tt)
         let txt = document.getElementById("commentText").append(tt)
         setText(txt)
     }
 
     useEffect(() => {
-        axios.get("https://marbles-backend.herokuapp.com/api/v1/comments/1").then((response) => {
+        axios.get(`https://marbles-backend.herokuapp.com/api/v1/comments/${threadId}`).then((response) => {
 
             setAllComments(response.data)
 
@@ -26,11 +27,12 @@ function Comments(threads, threadId, userID) {
 
     }, [])
 
-    const handleTextSubmit = () => {
+    const handleTextSubmit = (e) => {
+        e.preventDefault()
         axios.post(`https://marbles-backend.herokuapp.com/api/v1/comments/new/${threadId}`, {
             text: text,
             user: userID,
-            thread: threadId
+            thread: threads.id
         }).then(response => {
             console.log(response.data)
         })
@@ -43,19 +45,7 @@ function Comments(threads, threadId, userID) {
 
     return (
         <div className="container-fluid">
-            <div>
-                {/* {allComments} */}
-                {/* {allComments.map( com => {
-                    return (
-                        <div>
-                            {com}
-                            </div>
-
-                    );
-                })
-                    
-                } */}
-            </div>
+            
 
 
             <div>
@@ -65,14 +55,30 @@ function Comments(threads, threadId, userID) {
 
                         </  input>
                     </div>
-                    <div className="btn btn-outline-warning border-0" type="submit button" >
+                    <button className="btn btn-outline-warning border-0" type="submit button" >
                         Encourage
-                </div>
+                </button>
 
                 </form>
 
 
             </div>
+             
+                
+
+            {allComments.map(comment =>{
+                return(
+                    <div>
+                            {comment.text}
+                        </div>
+
+
+                )
+            })
+            }
+            
+
+
         </div>
     )
 }
