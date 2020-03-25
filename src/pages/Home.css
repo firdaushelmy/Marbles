@@ -23,13 +23,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 5px 35px 0px rgba(0, 0, 0, 0.1);
-  /* border-style: double; */
-  /* border-width: 10px; */
-  /* border: 4px double rgb(209, 224, 255); */
-  /* border-radius: 10%; */
+  /* box-shadow: 0 5px 35px 0px rgba(0, 0, 0, 0.1); */
   flex-direction: column;
-  animation: changeShadow 5s infinite;
+  /* animation: changeShadow 5s infinite; */
 }
 
 @keyframes changeShadow {
@@ -68,7 +64,7 @@
 
 @media screen and (max-width: 740px) {
   .ImageDiv {
-    height: 350px;
+    height: 280px;
   }
 
   .UserContainer {

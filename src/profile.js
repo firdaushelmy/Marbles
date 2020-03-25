@@ -86,9 +86,9 @@ function Profile() {
         </div>
         <Link tag={Link} to="/mood" className="ProfileLink">edit profile</Link>
         <Link tag={Link} to="/emergency" className="ProfileLink">emergency contact</Link>
-        <Link tag={Link} to="/mood" className="ProfileLink">volunteer</Link>
+        <Link tag={Link} to="/volunteer" className="ProfileLink">volunteer</Link>
         <Link tag={Link} to="/mood" className="ProfileLink">how to seek help</Link>
-        <Link tag={Link} to="/mood" className="ProfileLink">f.a.q.</Link>
+        <Link tag={Link} to="/faq" className="ProfileLink">f.a.q.</Link>
         <Link tag={Link} to="/mood" className="ProfileLink">support group</Link>
       </div>
       {/* MODAL TO UPDATE PROFILE PIC HERE  */}
