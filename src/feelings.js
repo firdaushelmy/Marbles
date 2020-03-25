@@ -20,7 +20,7 @@ function Feelings() {
           </div>
           <div className="col-md-4 col-sm-6 col-xs-6">
             <div className="Emotion">
-              <DelayLink delay="1000" tag={Link} to="/home" className="FeelingType">Anxious</DelayLink>
+              <DelayLink delay="1000" tag={Link} to="/home" className="FeelingType">Angry</DelayLink>
             </div>
           </div>
           <div className="col-md-4 col-sm-6 col-xs-6">

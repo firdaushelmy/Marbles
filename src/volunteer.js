@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./volunteer.css";
 import { Link } from "react-router-dom";
 import { Modal, Button } from "react-bootstrap";
+import Image from "react-graceful-image";
 
 function Volunteer() {
   const [show, setShow] = useState(false);
@@ -12,7 +13,9 @@ function Volunteer() {
   return (
     <>
       <div className="container" id="VolunteerDiv">
-        <div className="OrgLogoImage"></div>
+        <div className="OrgLogoImage">
+          <Image className="befriendersPic" src={"../befrienders.jpg"}></Image>
+        </div>
         <h6 className="BrandName">BefriendersKL</h6>
         <h6>helpline volunteer</h6>
         <h6>03-7957-1306</h6>
