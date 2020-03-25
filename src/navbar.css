@@ -54,7 +54,7 @@
   border-radius: 50%;
   background-color: transparent;
   border: none;
-  color: darkslategrey;
+  color: #747779;
   font-size: 50px;
   cursor: pointer;
 }
@@ -69,7 +69,7 @@
 
 .NavModal .modal-content {
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 .NavModal .modal-body {
@@ -96,7 +96,7 @@
   background-color:transparent;
   border-radius:50%;
   border:none;
-  color: darkslategrey;
+  color: #747779;
   margin-top: 2vh;
   margin-right:2vw;
   transition: 1s;
@@ -108,13 +108,13 @@
 
 .barsModalButton:hover {
   transform: rotate(360deg);
-  color:darkslategrey;
+  color:#747779;
   background-color: transparent;
 }
 
 .barsModalButton:active {
   transform: rotate(360deg);
-  color:darkslategrey;
+  color:#747779;
   background-color: transparent;
 }
 

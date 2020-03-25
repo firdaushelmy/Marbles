@@ -17,7 +17,7 @@ function Panic() {
     <div className="container" id="PanicSurrounding">
       <div className="PanicSurround1">
         <div className="PanicSurround2">
-          <button className="Panic" onClick={handleClick}>
+          <button className="Panic">
             PANIC
            </button>
         </div>
