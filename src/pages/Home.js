@@ -17,12 +17,6 @@ function Home({ threads, userID, isLoading, threadId }) {
   const handleCloseModal = () => setShowModal(false);
   const handleShowModal = () => setShowModal(true);
 
-  console.log(threads[0])
-
-  const intakeID = () => {
-    let indi = document.getElementsByClassName("UserImages")
-
-  }
 
 
   if (isLoading) {
@@ -34,7 +28,7 @@ function Home({ threads, userID, isLoading, threadId }) {
   //   let userCopy = [...threads]
   //   while (userCopy.length) columnUser.push(userCopy.splice(0, 3));
   //   return (
-  //     <Container className="UserContainer">
+  //     <Container className="UserContainer">0
   //       {
   //         columnUser.map(x => {
   //           return (
@@ -84,25 +78,25 @@ function Home({ threads, userID, isLoading, threadId }) {
               <Button onClick={handleCloseModal}>
                 Return To Home
           </Button>
-            </Modal.Header>
-            <Modal.Body>
-              <Modal.Title>
-                <Image id={thread[thread.id]} src={`https://marblesbackend.s3-ap-southeast-1.amazonaws.com/${thread.template}`} className="EnlargedImage"></Image>
-              </Modal.Title>
-            </Modal.Body>
-            <Modal.Footer>
+          </Modal.Header>
+          <Modal.Body>
+            <Modal.Title>
+              <Image id={thread[thread.id]} src={`https://marblesbackend.s3-ap-southeast-1.amazonaws.com/${thread.template}`} className="EnlargedImage"></Image>
+            </Modal.Title>
+          </Modal.Body>
+          <Modal.Footer>
 
-              <div>
-                <Comments threadId={threadId} userID={userID} />
-              </div>
+            <div>
+              <Comments threads={threads} threadId={thread.id} userID={userID} />
+            </div>
 
-            </Modal.Footer>
-          </Modal>
-        </>
-      )
-    })
-
-
+          </Modal.Footer>
+        </Modal>
+      </>
+    )
+  })
+  
+  
   )
 }
 
