@@ -5,15 +5,9 @@
   flex-direction: column;
   column-count: 3;
   margin-top: 30px;
-}
-
-.col-12 {
-  padding-bottom: 80px;
-}
-
-.container {
   float: left;
   width: 33%;
+  height: 400px;
   padding: 5px;
 }
 
@@ -45,7 +39,7 @@
 }
 
 .ImageDiv {
-  height: 300px;
+  height: 350px;
   width: 80%;
   display: flex;
   justify-content: center;
@@ -74,7 +68,11 @@
 
 @media screen and (max-width: 740px) {
   .ImageDiv {
-    height: 340px;
+    height: 350px;
+  }
+
+  .UserContainer {
+    width: 100%;
   }
 }
 
