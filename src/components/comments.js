@@ -25,8 +25,7 @@ function Comments(threads, threadId, userID) {
           .then(response => {
               let com = response.data.comments;
               let comm = com.sort(function(a, b) {return b.id - a.id})
-              console.log(comm)
-            
+              
             setAllComments(comm);
           });
 
@@ -47,7 +46,19 @@ console.log(localStorage.getItem("user"));
           )
           .then(response => {
             console.log(response.data);
+            let com = response.data.comments;
+            let comm = com.sort(function(a, b) {
+              return b.id - a.id;
+            });
+            console.log(comm);
+            let newComments = [...allComments];
+            newComments.push(comm);
+
+            setAllComments(newComments);
           });
+
+          setText("");
+
     }
 
 
