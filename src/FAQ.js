@@ -8,7 +8,7 @@ function FAQ() {
       <div className="FaqPinkDiv">
         <h6>frequently asked questions</h6>
       </div>
-      <div className="FaqAccordionDiv">
+      <div className="container" id="FaqAccordionDiv">
         <Accordion className="Accordion">
           <div className="QuestionCardHeader">
             <Accordion.Toggle as={Card.Header} variant="link" eventKey="0" className="QuestionCard">
