@@ -43,10 +43,15 @@ function App() {
 
   useEffect(() => {
     axios.get("https://marbles-backend.herokuapp.com/api/v1/threads/").then(result => {
-      setThreads(result.data);
+    console.log(result.data)
+    let tempt = result.data;
+    let temp = tempt.sort((a, b) => {
+      return b.id - a.id;
+    });  
+    setThreads(temp);
       setUserID(result.data.user)
       setIsLoading(false);
-
+      console.log(result.data)
     });
   }, []);
 
@@ -116,7 +121,7 @@ function App() {
           <MarbleBtn />
         </Route>
         <Route path="/comments">
-          <Comments threads={threads} />
+          <Comments  />
         </Route>
         <Route path="/threads">
           <Threads userID={userID} />

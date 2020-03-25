@@ -83,9 +83,11 @@ function SignUpPage(props) {
         gender: gender
       })
         .then(response => {
-          console.log(response.data.new_user);
+          
+          console.log(response.data.new_user.id);
           toast.success("You have successfully signed up");
           localStorage.setItem("jwt", response.data.access_token);
+          localStorage.setItem("user", response.data.new_user.id);
           history.push("/mood");
         })
         .catch(error => {
