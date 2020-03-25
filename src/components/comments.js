@@ -6,36 +6,48 @@ import "./comments.css"
 function Comments(threads, threadId, userID) {
     const [text, setText] = useState("")
     const [allComments, setAllComments] = useState([])
-    console.log(threadId)
+    console.log(threads.threadId)
     console.log(threads)
+    console.log(allComments)
+   
     const handleTextChange = (e) => {
         let tt = e.target.value
         console.log(tt)
-        let txt = document.getElementById("commentText").append(tt)
-        setText(txt)
+        // let txt = document.getElementById("commentText").append(tt)
+        setText(tt)
     }
-
+ console.log(text);
     useEffect(() => {
-        axios.get(`https://marbles-backend.herokuapp.com/api/v1/comments/${threadId}`).then((response) => {
-
-            setAllComments(response.data)
-
-
-        })
+        axios
+          .get(
+            `https://marbles-backend.herokuapp.com/api/v1/comments/${threads.threadId}`
+          )
+          .then(response => {
+              let com = response.data.comments;
+              let comm = com.sort(function(a, b) {return b.id - a.id})
+              console.log(comm)
+            
+            setAllComments(comm);
+          });
 
 
 
     }, [])
-
+console.log(localStorage.getItem("user"));
     const handleTextSubmit = (e) => {
         e.preventDefault()
-        axios.post(`https://marbles-backend.herokuapp.com/api/v1/comments/new/${threadId}`, {
-            text: text,
-            user: userID,
-            thread: threads.id
-        }).then(response => {
-            console.log(response.data)
-        })
+        axios
+          .post(
+            `https://marbles-backend.herokuapp.com/api/v1/comments/new/${threads.threadId}`,
+            {
+              text: text,
+              user: localStorage.getItem("user"),
+              thread: threads.threadId
+            }
+          )
+          .then(response => {
+            console.log(response.data);
+          });
     }
 
 

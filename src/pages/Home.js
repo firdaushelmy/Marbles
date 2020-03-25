@@ -16,8 +16,6 @@ function Home({ threads, userID, isLoading, threadId }) {
   const [showModal, setShowModal] = useState(null);
   const handleCloseModal = () => setShowModal(false);
   const handleShowModal = () => setShowModal(true);
-  
-console.log(threads[0])
 
 
 
@@ -59,25 +57,26 @@ console.log(threads[0])
   // }
 
   return (
-    
-    threads.map(thread => {
-    return (
-      <>
-        <Container className="UserContainer">
-          <Col xs={12} md={4}>
-            <div classname="IndividCol">
-              <div onClick={ () => setShowModal(thread.id)}>
-                <Image id={thread.id} className="UserImages" src={`https://marblesbackend.s3-ap-southeast-1.amazonaws.com/${thread.template}`} />
-              </div>
-              <h2 className="ThreadContent"><span>{thread.content}</span></h2>
-            </div>
-          </Col>
-        </Container>
 
-        <Modal show={showModal == thread.id} className="ImageModal">
-          <Modal.Header>
-            <Button onClick={handleCloseModal}>
-              Return To Home
+    threads.map(thread => {
+      return (
+        <>
+          <Container className="UserContainer">
+            {/* took out the stuff in col, and restored it without bells and whistles. added styling for three rows in the home.css */}
+            <Col>
+              <div classname="container" id="IndividCol">
+                <div className="ImageDiv" onClick={() => setShowModal(thread.id)}>
+                  <Image id={thread.id} className="UserImages" src={`https://marblesbackend.s3-ap-southeast-1.amazonaws.com/${thread.template}`} />
+                </div>
+                <h2 className="ThreadContent"><span>{thread.content}</span></h2>
+              </div>
+            </Col>
+          </Container>
+
+          <Modal show={showModal == thread.id} className="ImageModal">
+            <Modal.Header>
+              <Button onClick={handleCloseModal}>
+                Return To Home
           </Button>
           </Modal.Header>
           <Modal.Body>

@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import "./navbar.css";
 import { Navbar } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
+import DelayLink from "./DelayLink";
 
 function Nav() {
   const [show, setShow] = useState(false);

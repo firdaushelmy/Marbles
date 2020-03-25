@@ -19,7 +19,9 @@ function UserImages({ threadId, userID }) {
       .get("https://marbles-backend.herokuapp.com/api/v1/threads/")
       .then(result => {
         console.log(result);
-        setUserImages(result.data.template);
+        let tempt =result.data.template;
+        let temp = tempt.sort((a,b) => {return b.id - a.id})
+        setUserImages(temp);
         setIsLoading(false);
       });
   }, [threadId]);

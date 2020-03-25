@@ -52,7 +52,7 @@ function Login() {
         // toast.success(`Welcome back ${user.email} and ${user.name}`)
         // toast.success(`${message}`)
         // setLoggedIn(true)
-        history.push('/home') //redirects user to profile page after login
+        history.push('/mood') //redirects user to profile page after login
       })
       .catch(error => {
         // console.error(error.response) // so that we know what went wrong if the request failed
