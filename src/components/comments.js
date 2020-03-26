@@ -10,18 +10,18 @@ function Comments(threads, threadId, userID) {
     console.log(threads.threadId)
     console.log(threads)
     console.log(allComments)
-    const [btnDisabled,setBtnDisabled] = useState(true)
+    // const [btnDisabled,setBtnDisabled] = useState(true)
     
-    const btnState = () => {
+    // const btnState = () => {
         
-        const button = (document.getElementById("cmtBtn"));
-        button.disabled = btnDisabled
-        if (text != "") {
-            button.disabled = false
-            setBtnDisabled(false)
-        } 
+    //     const button = (document.getElementById("cmtBtn"));
+    //     button.disabled = btnDisabled
+    //     if (text != "") {
+    //         button.disabled = false
+    //         setBtnDisabled(false)
+    //     } 
         
-    }
+    // }
     
     
     
@@ -31,12 +31,13 @@ function Comments(threads, threadId, userID) {
         console.log(tt)
         // let txt = document.getElementById("commentText").append(tt)
         setText(tt)
+        setTempText(tt)
     }
     console.log(text);
-    const onChange = (e) => {
-        btnState()
-        handleTextChange(e)
-    }
+    // const onChange = (e) => {
+    //     // btnState()
+    //     handleTextChange(e)
+    // }
     useEffect(() => {
         axios
         .get(
@@ -68,22 +69,23 @@ console.log(localStorage.getItem("user"));
           )
           .then(response => {
             console.log(response.data);
-            let com = response.data.comments;
-            let comm = com.sort(function(a, b) {
-              return b.id - a.id;
-            });
-            console.log(comm);
-            let newComments = [...allComments];
-            newComments.push(comm);
+            // let com = response.data.comments;
+            // let comm = com.sort(function(a, b) {
+            //   return b.id - a.id;
+            // });
+            // console.log(comm);
+            // let newComments = [...allComments];
+            // newComments.push(comm);
 
-            setAllComments(newComments);
-          });
+            // setAllComments(newComments);
+        });
+        setTempText("")
 
-          setText("");
+
 
     }
 
-
+    const [tempText, setTempText] = useState("")
 
 
 
@@ -96,7 +98,7 @@ console.log(localStorage.getItem("user"));
             <div>
                 <form onSubmit={handleTextSubmit} >
                     <div>
-                        <input id="commentText" value={text} onChange={onChange} type="text" placeholder="Write some encouragement here">
+                        <input id="commentText" value={tempText} onChange={handleTextChange} type="text" placeholder="Write some encouragement here">
 
                         </  input>
                     </div>
