@@ -23,13 +23,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 5px 35px 0px rgba(0, 0, 0, 0.1);
-  /* border-style: double; */
-  /* border-width: 10px; */
-  /* border: 4px double rgb(209, 224, 255); */
-  /* border-radius: 10%; */
+  /* box-shadow: 0 5px 35px 0px rgba(0, 0, 0, 0.1); */
   flex-direction: column;
-  animation: changeShadow 5s infinite;
+  /* animation: changeShadow 5s infinite; */
 }
 
 @keyframes changeShadow {
@@ -68,7 +64,7 @@
 
 @media screen and (max-width: 740px) {
   .ImageDiv {
-    height: 350px;
+    height: 280px;
   }
 
   .UserContainer {
@@ -89,8 +85,25 @@
 }
 
 .EnlargedImage {
-  width: 100%;
-  height: 80vh;
+  width: 45vw;
+}
+
+.ReturnToHome {
+  background-color: #FBD6C8;
+  color: black;
+  border: 2px solid #FBA589;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.ReturnToHome:hover {
+  background-color: #FBA589;
+  border: 2px solid #FBA589;
+}
+
+.ReturnToHome:active {
+  background-color: #FBA589 !important;
+  border: 2px solid #FBA589 !important;
+  outline: none !important;
 }
 
 .ImageButton {
@@ -113,6 +126,56 @@
   background-color: black;
   opacity: 0.5;
 }
+
+.ImageModal .modal-header {
+  border: none;
+  background-color: rgb(250, 228, 220);
+}
+
+.ImageModal .modal-body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(250, 228, 220);
+}
+
+.ImageModal .modal-content {
+  width: 50vw;
+  min-height: 100vh;
+}
+
+.ImageModal .modal-dialog {
+  margin-left: 25vw;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.ImageModal .modal-footer {
+  border: none;
+  padding: 0 auto;
+  background-color: rgb(250, 228, 220);
+}
+
+.CommentWrapperHome {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (max-width: 740px) {
+  .ImageModal .modal-content {
+    width: 100vw;
+  }
+
+  .ImageModal .modal-dialog {
+    margin: 0;
+  }
+
+  .EnlargedImage {
+    width: 100vw;
+  }
+}
+
 /* #CommentIcon {
   color: rgb(46, 45, 45);
   font-size: 30px;

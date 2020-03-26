@@ -139,25 +139,55 @@
   color: coral;
 }
 
-@media screen and (max-width: 740px) {
+/* @media screen and (max-width: 1000px) {
+  #SignUpButtonContainer {
+    margin-top: 130px;
+  }
+
   .StartAnon {
-    font-size: 20px;
+    font-size: 27px;
   }
 
   .Logo {
-    width: 140px;
+    width: 280px;
   }
 
   .SignUpButton {
-    font-size: 15px;
+    font-size: 25px;
   }
 
   .AnythingOnYourMind {
-    font-size: 12px;
+    font-size: 25px;
   }
 
   .StartAnonDiv {
+    width: 270px;
+  }
+} */
+
+@media screen and (max-width: 500px) {
+  #SignUpButtonContainer {
+    margin-top: 110px;
+  }
+
+  .StartAnon {
+    font-size: 25px;
+  }
+
+  .Logo {
     width: 200px;
+  }
+
+  .SignUpButton {
+    font-size: 20px;
+  }
+
+  .AnythingOnYourMind {
+    font-size: 18px;
+  }
+
+  .StartAnonDiv {
+    width: 240px;
   }
 }
 

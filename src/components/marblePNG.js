@@ -6,7 +6,7 @@ function MarblePNG({ handleClick }) {
   return (
     <div>
       <div>
-        <img onClick={handleClick} src={logo} />
+        <img onClick={handleClick} src={"../logo_no_marbles.png"} />
       </div>
     </div>
   );

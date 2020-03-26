@@ -68,35 +68,33 @@ function Home({ threads, userID, isLoading, threadId }) {
                 <div className="ImageDiv" onClick={() => setShowModal(thread.id)}>
                   <Image id={thread.id} className="UserImages" src={`https://marblesbackend.s3-ap-southeast-1.amazonaws.com/${thread.template}`} />
                 </div>
-                <h2 className="ThreadContent"><span>{thread.content}</span></h2>
+                <h6 className="ThreadContent"><span>{thread.content}</span></h6>
               </div>
             </Col>
           </Container>
 
           <Modal show={showModal == thread.id} className="ImageModal">
             <Modal.Header>
-              <Button onClick={handleCloseModal}>
+              <Button className="ReturnToHome" onClick={handleCloseModal}>
                 Return To Home
           </Button>
-          </Modal.Header>
-          <Modal.Body>
-            <Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
               <Image id={thread[thread.id]} src={`https://marblesbackend.s3-ap-southeast-1.amazonaws.com/${thread.template}`} className="EnlargedImage"></Image>
-            </Modal.Title>
-          </Modal.Body>
-          <Modal.Footer>
+            </Modal.Body>
+            <Modal.Footer>
 
-            <div>
-              <Comments threads={threads} threadId={thread.id} userID={userID} />
-            </div>
+              <div className="CommentWrapperHome">
+                <Comments threads={threads} threadId={thread.id} userID={userID} />
+              </div>
 
-          </Modal.Footer>
-        </Modal>
-      </>
-    )
-  })
-  
-  
+            </Modal.Footer>
+          </Modal>
+        </>
+      )
+    })
+
+
   )
 }
 
