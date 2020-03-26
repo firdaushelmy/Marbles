@@ -7,13 +7,13 @@ function Playlist() {
     width: '100%',
     height: 500,
   };
-  const view = 'list'; // or 'coverart'
-  const theme = 'black'; // or 'white'
+  const view = 'coverart'; // or 'coverart'
+  const theme = 'black';
 
   return (
     <div className="container" id="playlistContainer">
       <h1 className="playlistHeader">Playlist curated for you</h1>
-      <SpotifyPlayer
+      <SpotifyPlayer className="SpotifyPlayer"
         uri="spotify:playlist:35vz6hV0QQgSHeAT6stHnA"
         size={size}
         view={view}
