@@ -23,6 +23,7 @@ import "react-toastify/dist/ReactToastify.css";
 import Comments from "./components/comments.js";
 import Threads from "./components/threads.js";
 import AddThoughts from "./AddThoughts";
+import Playlist from "./playlist";
 
 function App() {
   const [threads, setThreads] = useState([]);
@@ -43,12 +44,12 @@ function App() {
 
   useEffect(() => {
     axios.get("https://marbles-backend.herokuapp.com/api/v1/threads/").then(result => {
-    console.log(result.data)
-    let tempt = result.data;
-    let temp = tempt.sort((a, b) => {
-      return b.id - a.id;
-    });  
-    setThreads(temp);
+      console.log(result.data)
+      let tempt = result.data;
+      let temp = tempt.sort((a, b) => {
+        return b.id - a.id;
+      });
+      setThreads(temp);
       setUserID(result.data.user)
       setIsLoading(false);
       console.log(result.data)
@@ -121,10 +122,13 @@ function App() {
           <MarbleBtn />
         </Route>
         <Route path="/comments">
-          <Comments  />
+          <Comments />
         </Route>
         <Route path="/threads">
           <Threads userID={userID} />
+        </Route>
+        <Route path="/playlist">
+          <Playlist />
         </Route>
       </>
     );

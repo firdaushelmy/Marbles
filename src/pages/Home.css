@@ -129,12 +129,14 @@
 
 .ImageModal .modal-header {
   border: none;
+  background-color: rgb(250, 228, 220);
 }
 
 .ImageModal .modal-body{
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: rgb(250, 228, 220);
 }
 
 .ImageModal .modal-content {
@@ -151,6 +153,7 @@
 .ImageModal .modal-footer {
   border: none;
   padding: 0 auto;
+  background-color: rgb(250, 228, 220);
 }
 
 .CommentWrapperHome {
