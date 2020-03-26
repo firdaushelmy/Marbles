@@ -86,10 +86,10 @@ function Nav() {
             <div className="PinkHoverDiv"><Link
               className="AccountInfoLink"
               tag={Link}
-              to="/panic"
+              to="/playlist"
               onClick={handleClose2}
             >
-              panic button
+              playlist
             </Link>
             </div>
             <div className="PinkHoverDiv"><Link
