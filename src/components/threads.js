@@ -63,7 +63,7 @@ function Threads(userID) {
 
     return (
         <div className="container-fluid" id="AddImageContainer">
-            <form className="AddImageForm">
+            <form className="AddImageForm" onSubmit={handleUpload}>
                 <div className="ImagePreviewDivBorder">
                     <div className="ImagePreviewDiv">
                         <img className="ImagePreview" src={previewImage} alt="preview" />
@@ -79,7 +79,7 @@ function Threads(userID) {
                     file</label>
                     </div>
                 </div>
-                <button className="AddPostPostButton" onSubmit={handleUpload}>post
+                <button className="AddPostPostButton" >post
                 </button>
             </form>
         </div>
