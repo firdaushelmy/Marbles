@@ -4,11 +4,34 @@ import axios from "axios";
 import "./comments.css"
 import CommentLikes from "./commentlikes"
 
-function Comments(threads, threadId, userID) {
+function Comments( threads, threadId, userID) {
     const [text, setText] = useState("")
     const [allComments, setAllComments] = useState([])
+    const [comID, setComID] = useState("")
+    const [totalLikes, setTotalLikes] = useState("")
+
+    
+
+    const addLikes = (e) => {
+        e.preventDefault()
+        axios.post(`https://marbles-backend.herokuapp.com/api/v1/comment_like/c_like/${comID}`, {
+            user: localStorage.getItem("user"),
+            comment: comID
+
+
+        }
+
+        ).then(response => {
+            console.log(response.data)
+        })
+    }
+
+
+
+    // let cid = document.getElementById(`${allComments.id}`)
+    // setComID(allComments.id)
     console.log(threads.threadId)
-    console.log(threads)
+    console.log(comID)
     console.log(allComments)
     // const [btnDisabled,setBtnDisabled] = useState(true)
     
@@ -40,6 +63,18 @@ function Comments(threads, threadId, userID) {
     // }
     useEffect(() => {
         axios
+            .get(
+                `https://marbles-backend.herokuapp.com/api/v1/comment_like/${comID}`
+            )
+            .then(response => {
+                console.log(response)
+
+                // setTotalLikes()
+            });
+
+        
+        
+        axios
         .get(
             `https://marbles-backend.herokuapp.com/api/v1/comments/${threads.threadId}`
           )
@@ -48,8 +83,10 @@ function Comments(threads, threadId, userID) {
               let comm = com.sort(function(a, b) {return b.id - a.id})
               console.log(comm)
             setAllComments(comm);
+            
           });
 
+        
           
     }, [])
 console.log(localStorage.getItem("user"));
@@ -93,7 +130,7 @@ console.log(localStorage.getItem("user"));
     return (
         <div className="container-fluid">
             
-            <CommentLikes ID={threads.threadId} />
+            
 
             <div>
                 <form onSubmit={handleTextSubmit} >
@@ -116,7 +153,29 @@ console.log(localStorage.getItem("user"));
             {allComments.map(comment =>{
                 return(
                     <div>
+                        <div>
+                            <form onSubmit={addLikes}>
+
+                            <button 
+                        onClick={() => setComID(comment.id)}
+                            >
+                                +
+                </button>
+                            </form>
+                            <div>
+                                No of likes: {totalLikes}
+                            </div>
+                        </div>
+                        <div id={comment.id} 
+                         >
+
                             {comment.text}
+                        </div>
+                      <div>
+                          
+                          
+
+                      </div>
                         </div>
 
 

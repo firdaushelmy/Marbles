@@ -7,8 +7,10 @@ import "./comments.css";
 
 
 
-function CommentLikes( ID) {
+function CommentLikes( commentID, ID) {
     const [totalLikes, setTotalLikes] = useState("0")
+    const [fetchCmtID, setFetchCmtID] = useState("")
+    console.log(commentID.commentID.text)
     useEffect(() => {
         axios
             .get(
@@ -23,8 +25,20 @@ function CommentLikes( ID) {
 
     }, [])
 
+    const addLikes = () => {
+        axios.post(`https://marbles-backend.herokuapp.com/api/v1/comment_like/c_like/${ID}`, {
+            user: localStorage.getItem("user"),
+            comment: commentID.id,
+
+
+        }
+        
+        ).then(response => {
+            console.log(response.data)
+        })
+    }
     
-    
+
     
     
     
@@ -34,7 +48,7 @@ function CommentLikes( ID) {
     return (
         <div>
             <div>
-                <button>
+                <button onClick={addLikes}>
                     +
                 </button>
             </div>
@@ -44,7 +58,7 @@ function CommentLikes( ID) {
                 </button>
             </div>
             <div>
-
+                No of likes: {totalLikes}
             </div>
         </div>
     )
