@@ -80,9 +80,7 @@ function Threads(userID) {
                     file</label>
                     </div>
                 </div>
-                <Link tag={Link} to="/home">
-                    <button className="AddPostPostButton" >post</button>
-                </Link>
+                <button className="AddPostPostButton" >post</button>
             </form>
         </div>
     )
