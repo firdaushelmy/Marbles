@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import "bootstrap/dist/css/bootstrap.min.css";
 import axios from "axios";
-import "./threads.css"
+import "./threads.css";
+import { Link } from "react-router-dom"
 
 function Threads(userID) {
     const [content, setContent] = useState("")
@@ -79,8 +80,9 @@ function Threads(userID) {
                     file</label>
                     </div>
                 </div>
-                <button className="AddPostPostButton" >post
-                </button>
+                <Link tag={Link} to="/home">
+                    <button className="AddPostPostButton" >post</button>
+                </Link>
             </form>
         </div>
     )
