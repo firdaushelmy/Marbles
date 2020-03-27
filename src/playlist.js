@@ -2,7 +2,7 @@ import React from "react";
 import "./playlist.css";
 import SpotifyPlayer from 'react-spotify-player';
 
-function Playlist() {
+function Playlist(isLoading) {
   const size = {
     width: '100%',
     height: 500,

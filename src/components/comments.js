@@ -4,7 +4,7 @@ import axios from "axios";
 import "./comments.css";
 import { Container, Col, Button } from "reactstrap";
 
-function Comments(threads, threadId, userID) {
+function Comments(threads, threadId, userID, isLoading) {
   const [text, setText] = useState("")
   const [allComments, setAllComments] = useState([])
   console.log(threads.threadId)
