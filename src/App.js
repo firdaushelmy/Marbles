@@ -24,6 +24,7 @@ import Comments from "./components/comments.js";
 import Threads from "./components/threads.js";
 import AddThoughts from "./AddThoughts";
 import Playlist from "./playlist";
+import CommentLikes from "./components/commentlikes";
 
 function App() {
   const [threads, setThreads] = useState([]);
@@ -124,12 +125,15 @@ function App() {
         <Route path="/comments">
           <Comments />
         </Route>
+        <Route path="/commentlikes">
+          <CommentLikes />
+        </Route>
         <Route path="/threads">
           <Threads userID={userID} />
         </Route>
-        <Route path="/playlist">
+        {/* <Route path="/playlist">
           <Playlist />
-        </Route>
+        </Route> */}
       </>
     );
   }
