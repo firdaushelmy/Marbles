@@ -65,10 +65,12 @@ function Home({ threads, userID, isLoading, threadId }) {
             {/* took out the stuff in col, and restored it without bells and whistles. added styling for three rows in the home.css */}
             <Col>
               <div classname="container" id="IndividCol">
-                <div className="ImageDiv" onClick={() => setShowModal(thread.id)}>
+                <div className="ImageDiv">
                   <Image id={thread.id} className="UserImages" src={`https://marblesbackend.s3-ap-southeast-1.amazonaws.com/${thread.template}`} />
                 </div>
-                <h6 className="ThreadContent"><span>{thread.content}</span></h6>
+                <div className="ThreadDiv" onClick={() => setShowModal(thread.id)}>
+                  <h6 className="ThreadContent"><span>{thread.content}</span></h6>
+                </div>
               </div>
             </Col>
           </Container>
