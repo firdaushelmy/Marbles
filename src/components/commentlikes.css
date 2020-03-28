@@ -1,0 +1,21 @@
+.CommentLikeDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.CommentLikeButton {
+  background-color: #FBD6C8;
+  border: 2px solid pink;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.CommentLikeButton:active {
+  background-color: pink;
+}
+
+.CommentLikeButton:focus {
+  background-color: pink;
+  outline: none;
+}

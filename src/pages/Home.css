@@ -9,6 +9,9 @@
   width: 33%;
   height: 400px;
   padding: 5px;
+  position:relative;
+  /* height:100%;
+  min-height:320px */
 }
 
 .UserContainer col {
@@ -40,8 +43,8 @@
   display: flex;
   justify-content: center;
   clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-  background-color: #fbd6c8;
   padding: 5px;
+  position: relative;
 }
 
 .UserImages {
@@ -58,7 +61,12 @@
 
 @media screen and (max-width: 1200px) {
   .ImageDiv {
-    height: 200px;
+    height: 280px;
+  }
+
+  .ThreadDiv {
+    height: 275px !important;
+    top: 58px !important;
   }
 }
 
@@ -67,25 +75,18 @@
     height: 280px;
   }
 
+  .ThreadDiv {
+    height: 280px;
+  }
+
   .UserContainer {
     width: 100%;
   }
 }
 
-.UserImages:hover {
-  opacity: 0.8;
-}
-
-.UserImages:active {
-  opacity: 0.5;
-}
-
-.ThreadContent {
-  font-family: "Open Sans", sans-serif;
-}
-
 .EnlargedImage {
   width: 45vw;
+  object-fit: cover;
 }
 
 .ReturnToHome {
@@ -132,7 +133,7 @@
   background-color: rgb(250, 228, 220);
 }
 
-.ImageModal .modal-body{
+.ImageModal .modal-body {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -160,6 +161,7 @@
   margin: 0 auto;
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 
 @media screen and (max-width: 740px) {
@@ -176,80 +178,52 @@
   }
 }
 
-/* #CommentIcon {
-  color: rgb(46, 45, 45);
-  font-size: 30px;
-}
-
-.CommentIconDiv {
-  background-color: white;
-  width: 40px;
-  height: 30px;
-  position: absolute;
-  top: 78%;
-}
-
-::placeholder {
-  color:rgb(46, 45, 45);
-} */
-
-/* .CommentInputContainer {
-  width: 100%;
-  border-style: none;
-  background-color: transparent;
-  border: 3px solid rgb(46, 45, 45);
-  height: 40px;
-  margin-top: 30px;
-}
-
-.form-control {
-  background-color: transparent;
-  border: none;
-  margin-left: 40px;
+/* ----CSS for text over image ---- */
+.ThreadDiv {
+  position:absolute;
+  top: 25px;
+  left: 50;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 340px;
   width: 70%;
-  transition: none;
-  outline: none;
-  border: none;
-  resize: none;
-  color: rgb(46, 45, 45);
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  background: rgba(0, 0, 0, 0.2);
 }
 
-.form-control:focus {
-  background-color: transparent;
-  outline: none;
-  border: none;
-  box-shadow: none;
-  resize: none;
-  color: rgb(46, 45, 45);
+.ThreadContent {
+  width:100%;
+  padding-top:13.5%;  
+  text-align:center;
+  font-weight:bold;
+  font-size:5vw;
+  color:white;
+  font-family:arial;
 }
 
-.CommentPostButton {
-  position: absolute;
-  right: 25px;
-  top: 87%;
-  background-color: white;
-  border: none;
-  -webkit-text-stroke: 0.4px rgb(46, 45, 45);
-  font-weight: bold;
-  font-family: 'Sigmar One', cursive;
+.ThreadDiv:hover {
+  opacity: 0.8;
+  cursor: pointer;
 }
 
-.CommentPostButton:hover {
-  background-color: white;
-  color: rgb(46, 45, 45);
-  font-weight: normal;
+.ThreadDiv:active {
+  opacity: 0.5;
 }
 
-.CommentPostButton:focus {
-  background-color: white;
-  color: rgb(46, 45, 45);
-  font-weight: normal;
-} */
+.ThreadContent {
+  font-family: "Open Sans", sans-serif;
+}
 
-/* .HalfDiv {
-  margin-top: 30px;
-  background-color: white;
-  height: 100px;
-  padding-right: 15px;
-  padding-left: 15px;
-} */
+h6 span { 
+   color: white; 
+   font-family: 'Open Sans', sans-serif; 
+   font-size: 25px;
+   letter-spacing: -1px;  
+   padding: 10px; 
+}  
+@media (min-width: 1200px) {
+  .ThreadContent{
+    font-size:40px;
+  }
+}

@@ -2,23 +2,24 @@ import React, { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import axios from "axios";
 import "./comments.css";
+import "./commentlikes.css"
 
 
 
 
 
-function CommentLikes( {comID} ) {
+function CommentLikes({ comID }) {
     const [totalLikes, setTotalLikes] = useState("0")
     // const [likes, setLikes] = useState(comID)
 
     console.log(comID)
     useEffect(() => {
         axios.get(
-                `https://marbles-backend.herokuapp.com/api/v1/comment_like/${comID}`
-            )
+            `https://marbles-backend.herokuapp.com/api/v1/comment_like/${comID}`
+        )
             .then(response => {
                 console.log(response)
-                
+
                 setTotalLikes(response.data.msg.length)
             });
 
@@ -42,19 +43,20 @@ function CommentLikes( {comID} ) {
                 }
             });
     };
-    
-    
-    return (
-        <div>
 
-        <form onSubmit={addLikes}>
-            <button>+</button>
-        </form>
+
+    return (
+        <div className="CommentLikeDiv">
+            <form onSubmit={addLikes}>
+                <button className="CommentLikeButton">
+                    <i className="far fa-thumbs-up"></i><span></span>
+                </button>
+            </form>
             <div>
-                Likes: {totalLikes}
+                {totalLikes}
             </div>
         </div>
-        
+
     )
 }
 

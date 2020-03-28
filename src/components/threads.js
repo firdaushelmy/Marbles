@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
 import "bootstrap/dist/css/bootstrap.min.css";
 import axios from "axios";
-import "./threads.css"
+import "./threads.css";
+import { Link } from "react-router-dom"
+import Text2Image from '@xg4/text2image'
 
 function Threads(userID) {
     const [content, setContent] = useState("")
@@ -16,6 +18,14 @@ function Threads(userID) {
         uploadForm.append("image", template)
         uploadForm.append("caption", content)
         console.log(uploadForm.entries())
+
+        const ti = new Text2Image()
+        const url = ti.createURL('hello world')
+        const img = new Image()
+        img.src = url
+        setTemplate(img)
+        console.log(template)
+
 
         axios.post(`https://marbles-backend.herokuapp.com/api/v1/threads/`, uploadForm, {
             headers: { Authorization: `Bearer ${jwt}` }
@@ -79,8 +89,7 @@ function Threads(userID) {
                     file</label>
                     </div>
                 </div>
-                <button className="AddPostPostButton" >post
-                </button>
+                <button className="AddPostPostButton" >post</button>
             </form>
         </div>
     )
