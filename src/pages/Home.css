@@ -180,8 +180,8 @@
 /* ----CSS for text over image ---- */
 .ThreadDiv {
   position:absolute;
-  top:-405px;
-  left:50;
+  top: 25px;
+  left: 50;
   display: flex;
   justify-content: center;
   align-items: center;
