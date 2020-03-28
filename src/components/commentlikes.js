@@ -9,39 +9,23 @@ import "./comments.css";
 
 function CommentLikes( comID ) {
     const [totalLikes, setTotalLikes] = useState("0")
+    const [likes, setLikes] = useState(comID)
 
-    console.log(comID)
+    console.log(likes)
     useEffect(() => {
         axios.get(
-                `https://marbles-backend.herokuapp.com/api/v1/comment_like/${comID}`
+                `https://marbles-backend.herokuapp.com/api/v1/comment_like/${likes}`
             )
             .then(response => {
                 console.log(response)
                 
-                setTotalLikes(response.data.length)
+                setTotalLikes(response.data.msg.length)
             });
 
 
     }, [])
 
-    // const addLikes = () => {
-    //     axios.post(`https://marbles-backend.herokuapp.com/api/v1/comment_like/c_like/${ID}`, {
-    //         user: localStorage.getItem("user"),
-    //         comment: commentID.id,
 
-
-    //     }
-        
-    //     ).then(response => {
-    //         console.log(response.data)
-    //     })
-    // }
-    
-
-    
-    
-    
-    
     
     
     return (
