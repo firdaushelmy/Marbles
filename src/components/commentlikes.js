@@ -25,15 +25,35 @@ function CommentLikes( {comID} ) {
 
     }, [])
 
-
+    const addLikes = e => {
+        e.preventDefault();
+        axios
+            .post(
+                `https://marbles-backend.herokuapp.com/api/v1/comment_like/c_like/${comID}`,
+                {
+                    user: localStorage.getItem("user"),
+                    comment: comID
+                }
+            )
+            .then(response => {
+                console.log(response)
+                if (response.data.success) {
+                    setTotalLikes(totalLikes + 1);
+                }
+            });
+    };
     
     
     return (
-        
-            
+        <div>
+
+        <form onSubmit={addLikes}>
+            <button>+</button>
+        </form>
             <div>
                 Likes: {totalLikes}
             </div>
+        </div>
         
     )
 }

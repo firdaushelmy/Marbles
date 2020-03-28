@@ -191,9 +191,9 @@ console.log(localStorage.getItem("user"));
                     return (
                         <div>
                             <div>
-                                <form onSubmit={addLikes}>
+                                {/* <form onSubmit={addLikes}>
                                     <button onClick={() => setComID(comment.id)}>+</button>
-                                </form>
+                                </form> */}
                                 <div>
                                     <CommentLikes comID={comment.id} />
                                 </div>
