@@ -133,7 +133,7 @@
   background-color: rgb(250, 228, 220);
 }
 
-.ImageModal .modal-body{
+.ImageModal .modal-body {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -161,6 +161,7 @@
   margin: 0 auto;
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 
 @media screen and (max-width: 740px) {
@@ -203,6 +204,7 @@
 
 .ThreadDiv:hover {
   opacity: 0.8;
+  cursor: pointer;
 }
 
 .ThreadDiv:active {

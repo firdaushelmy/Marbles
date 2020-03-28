@@ -3,7 +3,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import axios from "axios";
 import "./comments.css";
 import { Container, Col, Button } from "reactstrap";
-import CommentLikes from "./commentlikes"
+import CommentLikes from "./commentlikes";
+import Image from "react-graceful-image";
 
 function Comments(threads, threadId, userID) {
   const [text, setText] = useState("")
@@ -109,25 +110,28 @@ function Comments(threads, threadId, userID) {
           <div>
             <input id="commentText" value={tempText} onChange={handleTextChange} type="text" placeholder="Write some encouragement here"></input>
           </div>
-          <button id="cmtBtn" className="btn btn-outline-warning border-0" type="submit button">Encourage</button>
+          <button className="EncourageBtn" type="submit button">Encourage</button>
         </form>
       </div>
 
-      {allComments.length > 0
-        ? allComments.map(comment => {
-          return (
-            <div>
-              <div>
-                <div>
+      {
+        allComments.length > 0
+          ? allComments.map(comment => {
+            return (
+              <div className="WholeCommentDiv">
+                <div id={comment.id}>
+                  <Image className="CommentUserImage" src={"../noprofilepic.jpg"}></Image>
+                </div>
+                <div className="CommentPartDiv">
+                  {comment.text}
                   <CommentLikes comID={comment.id} />
                 </div>
               </div>
-              <div id={comment.id}>{comment.text}</div>
-            </div>
-          );
-        })
-        : ""}
-    </div>
+            );
+          })
+          : ""
+      }
+    </div >
   )
 }
 
