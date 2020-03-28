@@ -24,19 +24,6 @@ function Comments(threads, threadId, userID) {
       console.log(response.data)
     })
   }
-  const addLikes = (e) => {
-    e.preventDefault()
-    axios.post(`https://marbles-backend.herokuapp.com/api/v1/comment_like/c_like/${comID}`, {
-      user: localStorage.getItem("user"),
-      comment: comID
-
-
-    }
-
-    ).then(response => {
-      console.log(response.data)
-    })
-  }
 
   useEffect(() => {
     axios
