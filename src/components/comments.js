@@ -139,7 +139,12 @@ console.log(localStorage.getItem("user"));
             }
           )
           .then(response => {
-            console.log(response.data);
+            console.log(response.data.data.text);
+              let newComments = [response.data.data, ...allComments]
+              let com = newComments;
+              let comm = com.sort(function (a, b) { return b.id - a.id }) // This will depend on what your backend returns
+            let newestComments = [...comm]
+              setAllComments(newestComments)
            
         });
         setTempText("")
@@ -192,7 +197,7 @@ console.log(localStorage.getItem("user"));
                                 <CommentLikes comID={comID}/>
                             </div>
                         </div>
-                        <div id={comment.id} 
+                        <div  
                          >
 
                             {comment.text}
