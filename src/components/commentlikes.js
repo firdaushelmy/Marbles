@@ -7,24 +7,37 @@ import "./comments.css";
 
 
 
-function CommentLikes( ID) {
+function CommentLikes( comID ) {
     const [totalLikes, setTotalLikes] = useState("0")
+
+    console.log(comID)
     useEffect(() => {
-        axios
-            .get(
-                `https://marbles-backend.herokuapp.com/api/v1/comment_like/${ID}`
+        axios.get(
+                `https://marbles-backend.herokuapp.com/api/v1/comment_like/${comID}`
             )
             .then(response => {
-                console.log(response.data)
+                console.log(response)
                 
-                setTotalLikes()
+                setTotalLikes(response.data.length)
             });
 
 
     }, [])
 
+    // const addLikes = () => {
+    //     axios.post(`https://marbles-backend.herokuapp.com/api/v1/comment_like/c_like/${ID}`, {
+    //         user: localStorage.getItem("user"),
+    //         comment: commentID.id,
+
+
+    //     }
+        
+    //     ).then(response => {
+    //         console.log(response.data)
+    //     })
+    // }
     
-    
+
     
     
     
@@ -32,21 +45,12 @@ function CommentLikes( ID) {
     
     
     return (
-        <div>
+        
+            
             <div>
-                <button>
-                    +
-                </button>
+                Likes: {totalLikes}
             </div>
-            <div>
-                <button>
-                    -
-                </button>
-            </div>
-            <div>
-
-            </div>
-        </div>
+        
     )
 }
 
