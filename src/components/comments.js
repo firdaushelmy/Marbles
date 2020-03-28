@@ -29,9 +29,9 @@ function Comments( threads, threadId, userID) {
 
 
     
-    console.log(threads.threadId)
-    console.log(comID)
-    console.log(allComments)
+    // console.log(threads.threadId)
+    // console.log(comID)
+    // console.log(allComments)
     // const [btnDisabled,setBtnDisabled] = useState(true)
     
     // const btnState = () => {
@@ -112,7 +112,8 @@ console.log(localStorage.getItem("user"));
             console.log(response.data.data.text);
               let newComments = [response.data.data, ...allComments]
               let com = newComments;
-              let comm = com.sort(function (a, b) { return b.id - a.id }) // This will depend on what your backend returns
+              let comm = com.sort(function (a, b) { return b.id - a.id }) 
+              
             let newestComments = [...comm]
               setAllComments(newestComments)
            
@@ -151,7 +152,7 @@ console.log(localStorage.getItem("user"));
              
                 
 
-            {allComments.map(comment =>{
+            {/* {allComments.map(comment =>{
                 return(
                     <div>
                         <div>
@@ -164,7 +165,7 @@ console.log(localStorage.getItem("user"));
                 </button>
                             </form>
                             <div>
-                                <CommentLikes comID={comment.id}/>
+                                <CommentLikes comID={comID}/>
                             </div>
                         </div>
                         <div  
@@ -182,7 +183,27 @@ console.log(localStorage.getItem("user"));
 
                 )
             })
-            }
+            } */}
+
+
+            {allComments.length > 0
+                ? allComments.map(comment => {
+                    return (
+                        <div>
+                            <div>
+                                <form onSubmit={addLikes}>
+                                    <button onClick={() => setComID(comment.id)}>+</button>
+                                </form>
+                                <div>
+                                    <CommentLikes comID={comment.id} />
+                                </div>
+                            </div>
+                            <div id={comment.id}>{comment.text}</div>
+                            <div></div>
+                        </div>
+                    );
+                })
+                : ""}
             
 
 

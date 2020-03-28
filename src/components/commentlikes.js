@@ -7,14 +7,14 @@ import "./comments.css";
 
 
 
-function CommentLikes( comID ) {
+function CommentLikes( {comID} ) {
     const [totalLikes, setTotalLikes] = useState("0")
-    const [likes, setLikes] = useState(comID)
+    // const [likes, setLikes] = useState(comID)
 
-    console.log(likes)
+    console.log(comID)
     useEffect(() => {
         axios.get(
-                `https://marbles-backend.herokuapp.com/api/v1/comment_like/${likes}`
+                `https://marbles-backend.herokuapp.com/api/v1/comment_like/${comID}`
             )
             .then(response => {
                 console.log(response)
