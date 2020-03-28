@@ -28,8 +28,7 @@ function Comments( threads, threadId, userID) {
 
 
 
-    // let cid = document.getElementById(`${allComments.id}`)
-    // setComID(allComments.id)
+    
     console.log(threads.threadId)
     console.log(comID)
     console.log(allComments)
@@ -47,20 +46,6 @@ function Comments( threads, threadId, userID) {
     // }
     
     
-    
-    const handleTextChange = (e) => {
-        
-        let tt = e.target.value
-        console.log(tt)
-        // let txt = document.getElementById("commentText").append(tt)
-        setText(tt)
-        setTempText(tt)
-    }
-    console.log(text);
-    // const onChange = (e) => {
-    //     // btnState()
-    //     handleTextChange(e)
-    // }
     useEffect(() => {
         axios
             .get(
@@ -69,8 +54,57 @@ function Comments( threads, threadId, userID) {
             .then(response => {
                 console.log(response)
 
-                // setTotalLikes()
+                setTotalLikes(response.length)
             });
+
+    }, [])
+
+
+
+
+    const handleTextChange = (e) => {
+        
+        let tt = e.target.value
+        console.log(tt)
+        
+        setText(tt)
+        setTempText(tt)
+    }
+    console.log(text);
+    
+    useEffect(() => {
+        
+
+        // let one = `https://marbles-backend.herokuapp.com/api/v1/comment_like/${comID}`
+        // let two = `https://marbles-backend.herokuapp.com/api/v1/comments/${threads.threadId}`
+        
+
+        // const requestOne = axios.get(one);
+        // const requestTwo = axios.get(two);
+        
+
+        // axios.all([requestOne, requestTwo]).then(axios.spread((...responses) => {
+        //     const responseOne = responses[0]
+        //     const responseTwo = responses[1]
+        //     let com = responseTwo.data.comments;
+        //     let comm = com.sort(function (a, b) { return b.id - a.id })
+        //     console.log(comm)
+        //     console.log(responseOne);
+        //     setAllComments(comm);
+        //     // use/access the results 
+        // })).catch(errors => {
+        //     console.log(errors)
+        //     // react on errors.
+        // })
+        
+        
+        
+        
+        
+        
+        
+        
+        
 
         
         
@@ -106,15 +140,7 @@ console.log(localStorage.getItem("user"));
           )
           .then(response => {
             console.log(response.data);
-            // let com = response.data.comments;
-            // let comm = com.sort(function(a, b) {
-            //   return b.id - a.id;
-            // });
-            // console.log(comm);
-            // let newComments = [...allComments];
-            // newComments.push(comm);
-
-            // setAllComments(newComments);
+           
         });
         setTempText("")
 
@@ -163,7 +189,7 @@ console.log(localStorage.getItem("user"));
                 </button>
                             </form>
                             <div>
-                                No of likes: {totalLikes}
+                                <CommentLikes comID={comID}/>
                             </div>
                         </div>
                         <div id={comment.id} 
