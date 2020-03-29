@@ -20,7 +20,7 @@ function SignUpPage(props) {
       i = 0,
       min = an == "a" ? 10 : 0,
       max = an == "n" ? 10 : 62;
-    for (; i++ < len; ) {
+    for (; i++ < len;) {
       var r = (Math.random() * (max - min) + min) << 0;
       str += String.fromCharCode((r += r > 9 ? (r < 36 ? 55 : 61) : 48));
     }
@@ -83,11 +83,15 @@ function SignUpPage(props) {
         gender: gender
       })
         .then(response => {
-          
-          console.log(response.data.new_user.id);
+
+          // console.log(response.data);
           toast.success("You have successfully signed up");
-          localStorage.setItem("jwt", response.data.access_token);
-          localStorage.setItem("user", response.data.new_user.id);
+          // localStorage.setItem("jwt", response.data.access_token);
+          // localStorage.setItem("user", response.data.new_user.id);
+          const { status, message, access_token, new_user } = response.data
+          // console.log(result.data.user.id)
+          localStorage.setItem('jwt', access_token)
+          localStorage.setItem('user', JSON.stringify(new_user))
           history.push("/mood");
         })
         .catch(error => {
