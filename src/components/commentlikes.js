@@ -11,6 +11,7 @@ import "./commentlikes.css"
 function CommentLikes({ comID }) {
     const [totalLikes, setTotalLikes] = useState("0")
     // const [likes, setLikes] = useState(comID)
+    const current_user = JSON.parse(localStorage.getItem('user'))
 
     console.log(comID)
     useEffect(() => {
@@ -32,7 +33,7 @@ function CommentLikes({ comID }) {
             .post(
                 `https://marbles-backend.herokuapp.com/api/v1/comment_like/c_like/${comID}`,
                 {
-                    user: localStorage.getItem("user"),
+                    user: current_user.id,
                     comment: comID
                 }
             )
