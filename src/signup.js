@@ -141,7 +141,7 @@ function SignUp() {
     })
       .then(response => {
         // console.log(response)
-        history.push('/home')
+        history.push('/login')
         toast.success(`Hello ${name}, you're account is ${email}`)
       })
       .catch(error => {
