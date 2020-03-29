@@ -8,7 +8,7 @@ import { Link } from "react-router-dom"
 import Image from "react-graceful-image"
 import ImgSrc from "react-graceful-image";
 import Comments from "../components/comments"
-
+import ThreadLikes from "../components/threadlikes.js"
 
 function Home({ threads, userID, isLoading, threadId }) {
   const [userImages, setUserImages] = useState([]);
@@ -72,8 +72,10 @@ function Home({ threads, userID, isLoading, threadId }) {
                   <h6 className="ThreadContent"><span>{thread.content}</span></h6>
                 </div>
               </div>
+              <ThreadLikes threadID={thread.id} />
             </Col>
           </Container>
+
 
           <Modal show={showModal == thread.id} className="ImageModal">
             <Modal.Header>
