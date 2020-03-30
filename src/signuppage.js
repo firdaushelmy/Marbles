@@ -58,22 +58,7 @@ function SignUpPage(props) {
     console.log(username);
   };
 
-  // const signUp = () => {
-  //   Axios.post("http://127.0.0.1:5000/api/v1/users/", {
-  //     name: username,
-  //     email: email,
-  //     password: password,
-  //     gender: gender
-  //   })
-  //     .then(response => {
-  //       console.log(response.data.new_user);
-  //       toast.success("You have successfully signed up");
-  //       localStorage.setItem("jwt", response.data.access_token);
-  //     })
-  //     .catch(error => {
-  //       console.log(error.message);
-  //     });
-  // };
+ 
   useEffect(() => {
     if (username !== "") {
       Axios.post("https://marbles-backend.herokuapp.com/api/v1/users/", {
@@ -98,23 +83,7 @@ function SignUpPage(props) {
 
   console.log(username);
 
-  // const logIn = () => {
-  //   Axios.post("https://marbles-backend.herokuapp.com/api/v1/users/login", {
-  //     name: username,
-  //     email: email,
-  //     password: password
-  //   })
-  //     .then(response => {
-  //       console.log(response);
-  //       localStorage.setItem("jwt", response.data.access_token);
-  //       setLogInStateToTrue();
-  //       toast.success("You have successfully log in");
-  //     })
-  //     .catch(error => {
-  //       console.log(error.response);
-  //     });
-  // };
-  // console.log(username);
+  
 
   return (
     <>
