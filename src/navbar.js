@@ -92,15 +92,6 @@ function Nav() {
               playlist
             </Link>
             </div>
-            <div className="PinkHoverDiv"><Link
-              className="AccountInfoLink"
-              tag={Link}
-              to="/emergency"
-              onClick={handleClose2}
-            >
-              emergency
-            </Link>
-            </div>
           </Modal.Title>
         </Modal.Body>
       </Modal>

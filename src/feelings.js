@@ -13,18 +13,18 @@ function Feelings() {
         <div className="container-fluid row justify-content-center align-items-center">
           {/* <div className="col-lg-6 col-md-12 col-sm-12 d-flex"> */}
           <div className="col-md-4 col-sm-6 col-xs-6">
-            <div className="Emotion">
+            <div className="Emotion" id="Depressed">
               <DelayLink delay="1000" tag={Link} to="/home" className="FeelingType">
                 Depressed</DelayLink>
             </div>
           </div>
           <div className="col-md-4 col-sm-6 col-xs-6">
-            <div className="Emotion">
+            <div className="Emotion" id="Angry">
               <DelayLink delay="1000" tag={Link} to="/home" className="FeelingType">Angry</DelayLink>
             </div>
           </div>
           <div className="col-md-4 col-sm-6 col-xs-6">
-            <div className="Emotion">
+            <div className="Emotion" id="Heartbroken">
               <DelayLink delay="1000" tag={Link} to="/home" className="FeelingType">Heartbroken</DelayLink>
             </div>
           </div>
