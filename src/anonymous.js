@@ -4,16 +4,16 @@ import { Link } from "react-router-dom"
 
 function Anonymous() {
   return (
-    <div className="container" id="ProfileContainer">
-      <Link tag={Link} to="/login" className="CreateAccount">create an account</Link>
+    <div className="container" id="anonContainer">
+      <Link tag={Link} to="/login" className="createAccount">create an account</Link>
       <h6>create an account to track your contribution and past posts from other devices</h6>
       <h6>anonymous accounts are deactivated after 15 days of inactivity.</h6>
-      <Link tag={Link} to="/login" className="AnonymousLink">log in</Link>
-      <Link tag={Link} to="/mood" className="AnonymousLink">volunteer</Link>
-      <Link tag={Link} to="/mood" className="AnonymousLink">how to seek help</Link>
-      <Link tag={Link} to="/mood" className="AnonymousLink">f.a.q.</Link>
-      <Link tag={Link} to="/mood" className="AnonymousLink">privacy policy</Link>
-      <Link tag={Link} to="/mood" className="AnonymousLink">support group</Link>
+      <Link tag={Link} to="/login" className="anonymousLink">log in</Link>
+      <Link tag={Link} to="/mood" className="anonymousLink">volunteer</Link>
+      <Link tag={Link} to="/mood" className="anonymousLink">how to seek help</Link>
+      <Link tag={Link} to="/mood" className="anonymousLink">f.a.q.</Link>
+      <Link tag={Link} to="/mood" className="anonymousLink">privacy policy</Link>
+      <Link tag={Link} to="/mood" className="anonymousLink">support group</Link>
     </div>
   )
 }

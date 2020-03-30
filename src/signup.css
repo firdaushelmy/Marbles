@@ -1,10 +1,37 @@
-#SignUpContainer {
+#signUpContainer {
   width: 100vw;
   margin-top: 10vh; 
   font-family: 'Raleway';
 }
 
-.SignUpBtn {
+.signUpLogo {
+  margin-bottom: 10px;
+  animation: 1s ease-in-out 0s 1 flipInY;
+}
+
+@media screen and (max-width: 500px) {
+  .signUpLogo {
+    width: 200px;
+  }
+}
+
+.signUpForm {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#signUpInput {
+  border-radius: 10px;
+  border: none;
+  /* box-shadow: 0 5px 35px 0px rgba(0,0,0,.1); */
+  border: 1px solid #D2D0D0;
+  height: 64px;
+  margin-top: 10px;
+}
+
+.signUpBtn {
   margin-top: 20px;
   background-color: #FBD6C8;
   box-shadow: 0 0 1px 0px coral;
@@ -19,33 +46,25 @@
   height: 40px;
 }
 
-.SignUpBtn:hover {
+.signUpBtn:hover {
   text-decoration: none;
   color: coral;
 }
 
-.SignUpBtn:active {
+.signUpBtn:active {
   text-decoration: none;
   color: coral;
 }
 
-.SignUpForm {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.SignUpField {
-  padding-top: 10px;
-  font-weight: bold;
-}
-
-#SignUpInput {
-  border-radius: 10px;
-  border: none;
-  /* box-shadow: 0 5px 35px 0px rgba(0,0,0,.1); */
-  border: 1px solid #D2D0D0;
-  height: 64px;
+.signUpChangedMeMind {
   margin-top: 10px;
+  color: black;
+  font-size: 11px;
+  font-weight: 300;
+  margin-bottom: 40px;
+}
+
+.signUpChangedMeMind:hover {
+  color: grey;
+  text-decoration:none;
 }

@@ -25,47 +25,37 @@ function Nav() {
     <>
       <Navbar className="navbar">
         <Navbar.Brand>
-          <div onClick={handleShow2} className="AddButton">
+          <div onClick={handleShow2} className="addButton">
             +
           </div>
         </Navbar.Brand>
         <Navbar.Collapse className="justify-content-end">
           <Navbar.Text>
             <Link tag={Link} to="/home">
-              <img className="LogoNoMarbles" src="./logo_no_marbles.png" />
+              <img className="logoNoMarbles" src="./logo_no_marbles.png" />
             </Link>
           </Navbar.Text>
         </Navbar.Collapse>
         <Navbar.Collapse className="justify-content-end">
           <Navbar.Text>
             <div onClick={handleShow} className="barsModalButton">
-              <i className="fa fa-bars"></i>
+              <i className="fa fa-bars" id="barsModalButtonIcon"></i>
               <span></span>
             </div>
           </Navbar.Text>
         </Navbar.Collapse>
       </Navbar>
 
-      <Modal className="NavModal" show={show2}>
-        <Modal.Header className="closebarsModalButton2">
+      <Modal className="navModal" show={show2}>
+        <Modal.Header>
           <button onClick={handleClose2} className="barsModalButton2">
             X
           </button>
-          {/* <div
-            onClick={handleClose2}
-            className="d-flex justify-content-center btn btn-outline-secondary border-0 barsModalButton2"
-            outline
-            color="warning"
-          >
-            X
-          </div> */}
         </Modal.Header>
         <Modal.Body>
           <Modal.Title id="modalLinkDiv">
-            {/* <Link className="AccountInfoLink" tag={Link} to="/" onClick={handleClose}>Home</Link> */}
-            {/* <Link className="AccountInfoLink" tag={Link} to="/addpost" onClick={handleClose2}>add post</Link> */}
-            <div className="PinkHoverDiv"><Link
-              className="AccountInfoLink"
+            <div className="pinkHoverDiv"><Link
+              className="accountInfoLink"
               tag={Link}
               to="/threads"
               onClick={handleClose2}
@@ -74,8 +64,8 @@ function Nav() {
             </Link>
             </div>
 
-            <div className="PinkHoverDiv"><Link
-              className="AccountInfoLink"
+            <div className="pinkHoverDiv"><Link
+              className="accountInfoLink"
               tag={Link}
               to="/addthoughts"
               onClick={handleClose2}
@@ -83,8 +73,8 @@ function Nav() {
               add thoughts
             </Link>
             </div>
-            <div className="PinkHoverDiv"><Link
-              className="AccountInfoLink"
+            <div className="pinkHoverDiv"><Link
+              className="accountInfoLink"
               tag={Link}
               to="/playlist"
               onClick={handleClose2}
@@ -96,47 +86,40 @@ function Nav() {
         </Modal.Body>
       </Modal>
 
-      <Modal className="NavModal" show={show}>
-        <Modal.Header className="closebarsModalButton2">
-          <button onClick={handleClose} className="ModalButtonX">
+      <Modal className="navModal" show={show}>
+        <Modal.Header>
+          <button onClick={handleClose} className="modalButtonX">
             X
           </button>
-          {/* <div
-            onClick={handleClose}
-            className="d-flex justify-content-center btn btn-outline-secondary border-0 barsModalButton2"
-          >
-            X
-          </div> */}
         </Modal.Header>
         <Modal.Body>
           <Modal.Title id="modalLinkDiv">
-            {/* <Link className="AccountInfoLink" tag={Link} to="/home" onClick={handleClose}>Home</Link> */}
-            <div className="PinkHoverDiv">
-              <Link className="AccountInfoLink" tag={Link} to="/mood" onClick={handleClose}>change emotion</Link>
+            <div className="pinkHoverDiv">
+              <Link className="accountInfoLink" tag={Link} to="/mood" onClick={handleClose}>change emotion</Link>
             </div>
-            <div className="PinkHoverDiv">
-              <Link className="AccountInfoLink" tag={Link} to="/panic" onClick={handleClose}>panic button</Link>
+            <div className="pinkHoverDiv">
+              <Link className="accountInfoLink" tag={Link} to="/panic" onClick={handleClose}>panic button</Link>
             </div>
-            <div className="PinkHoverDiv">
-              <Link className="AccountInfoLink" tag={Link} to="/emergency" onClick={handleClose}>emergency</Link>
+            <div className="pinkHoverDiv">
+              <Link className="accountInfoLink" tag={Link} to="/emergency" onClick={handleClose}>emergency</Link>
             </div>
-            <div className="PinkHoverDiv">
-              <Link className="AccountInfoLink" tag={Link} to="/clicker" onClick={handleClose}>marble clicker</Link>
+            <div className="pinkHoverDiv">
+              <Link className="accountInfoLink" tag={Link} to="/clicker" onClick={handleClose}>marble clicker</Link>
             </div>
-            <div className="PinkHoverDiv">
-              <Link className="AccountInfoLink" tag={Link} to="/profile" onClick={handleClose}>profile</Link>
+            <div className="pinkHoverDiv">
+              <Link className="accountInfoLink" tag={Link} to="/profile" onClick={handleClose}>profile</Link>
             </div>
-            <div className="PinkHoverDiv">
-              <Link className="AccountInfoLink" tag={Link} to="/volunteer" onClick={handleClose}>volunteer</Link>
+            <div className="pinkHoverDiv">
+              <Link className="accountInfoLink" tag={Link} to="/volunteer" onClick={handleClose}>volunteer</Link>
             </div>
-            <div className="PinkHoverDiv">
-              <Link className="AccountInfoLink" tag={Link} to="/supportgroup">support group</Link>
+            <div className="pinkHoverDiv">
+              <Link className="accountInfoLink" tag={Link} to="/supportgroup">support group</Link>
             </div>
-            <div className="PinkHoverDiv">
-              <Link className="AccountInfoLink" tag={Link} to="/faq" onClick={handleClose}>f.a.q.</Link>
+            <div className="pinkHoverDiv">
+              <Link className="accountInfoLink" tag={Link} to="/faq" onClick={handleClose}>f.a.q.</Link>
             </div>
-            <div className="PinkHoverDiv">
-              <Link className="AccountInfoLink">privacy policy</Link>
+            <div className="pinkHoverDiv">
+              <Link className="accountInfoLink">privacy policy</Link>
             </div>
           </Modal.Title>
         </Modal.Body>

@@ -1,11 +1,11 @@
-#PanicSurrounding {
+#panicSurrounding {
   display:flex;
   justify-content: center;
   align-items: center;
   height: 90vh;
 }
 
-.Panic {
+.panic {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -29,23 +29,23 @@
   font-family: 'Open Sans', sans-serif;
 }
 
-.Panic:active {
+.panic:active {
   /* box-shadow: 0 5px #666; */
   transform: translateY(4px);
   font-size: 50px;
 }
 
-.Panic:focus {
+.panic:focus {
   outline: none;
   box-shadow: inset 2px 2px 4px rgba(0,0,0,0.4), 2px 2px 4px rgba(0,0,0,0.4);
 }
 
-.Panic:hover {
+.panic:hover {
   background-color: rgb(240, 8, 8);
   cursor: pointer;
 }
 
-.PanicSurround2 {
+.panicSurround2 {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -55,7 +55,7 @@
   clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
 }
 
-.PanicSurround1 {
+.panicSurround1 {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -67,7 +67,7 @@
 }
 
 @media (max-width: 740px) {
-  .Panic {
+  .panic {
     width: 300px;
     height: 300px;
   }

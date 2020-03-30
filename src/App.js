@@ -85,9 +85,6 @@ function App() {
         <Route path="/anonymous">
           <Anonymous />
         </Route>
-        <Route path="/anonymous">
-          <Anonymous />
-        </Route>
         <Route path="/home">
           <Home threads={threads} userID={userID} isLoading={isLoading} />
         </Route>
