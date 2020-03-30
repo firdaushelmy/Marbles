@@ -23,7 +23,7 @@ function Nav() {
 
   return (
     <>
-      <Navbar className="Navbar">
+      <Navbar className="navbar">
         <Navbar.Brand>
           <div onClick={handleShow2} className="AddButton">
             +
@@ -130,7 +130,7 @@ function Nav() {
               <Link className="AccountInfoLink" tag={Link} to="/volunteer" onClick={handleClose}>volunteer</Link>
             </div>
             <div className="PinkHoverDiv">
-              <Link className="AccountInfoLink">seek help: how</Link>
+              <Link className="AccountInfoLink" tag={Link} to="/supportgroup">support group</Link>
             </div>
             <div className="PinkHoverDiv">
               <Link className="AccountInfoLink" tag={Link} to="/faq" onClick={handleClose}>f.a.q.</Link>

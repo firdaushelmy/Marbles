@@ -72,24 +72,22 @@ function Threads(userID) {
 
 
     return (
-        <div className="container-fluid" id="AddImageContainer">
-            <form className="AddImageForm" onSubmit={handleUpload}>
-                <div className="ImagePreviewDivBorder">
-                    <div className="ImagePreviewDiv">
-                        <img className="ImagePreview" src={previewImage} alt="preview" />
-                    </div>
+        <div className="container-fluid" id="addImageContainer">
+            <form className="addImageForm" onSubmit={handleUpload}>
+                <div className="imagePreviewDiv">
+                    <img className="imagePreview" src={previewImage} alt="preview" />
                 </div>
                 <div>
-                    <input className="CommentText" value={content} onChange={handleContentChange} type="text" placeholder="click to write a caption"></input>
+                    <input className="commentText" value={content} onChange={handleContentChange} type="text" placeholder="click to write a caption"></input>
                 </div>
-                <div className="AddImageWrapper">
-                    <input id="AddImageInput" type="file" name="image-file" onChange={handleTemplateChange} multiple={false}></input>
+                <div className="addImageWrapper">
+                    <input id="addImageInput" type="file" name="image-file" onChange={handleTemplateChange} multiple={false}></input>
                     <div>
-                        <label for="AddImageInput" className="ChooseImageButton">choose
+                        <label for="addImageInput" className="chooseImageButton">choose
                     file</label>
                     </div>
                 </div>
-                <button className="AddPostPostButton" >post</button>
+                <button className="addPostPostButton" >post</button>
             </form>
         </div>
     )

@@ -35,9 +35,9 @@ function ThreadLikes({ threadID }) {
     };
     return (
         <>
-            <div onClick={addLikes} className="Likes">
-                <span className="ThumbsUpIcon"><i className="far fa-thumbs-up"></i></span>
-                <div className="TotalLikes">
+            <div onClick={addLikes} className="likes">
+                <span className="thumbsUpIcon"><i className="far fa-thumbs-up"></i></span>
+                <div className="totalLikes">
                     {totalLikes}
                 </div>
             </div>

@@ -1,4 +1,4 @@
-#AddImageContainer {
+#addImageContainer {
   display: flex;
   justify-content: center;
   margin-top: 30px;
@@ -6,7 +6,13 @@
   height: 100vh;
 }
 
-.ImagePreviewDiv {
+.addImageForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.imagePreviewDiv {
   width: 300px;
   height: 300px;
   margin: 0 auto;
@@ -18,13 +24,13 @@
   margin-bottom: 30px;
 }
 
-.ImagePreview {
+.imagePreview {
   width: 300px;
   height: 300px;
   object-fit: cover;
 }
 
-.CommentText {
+.commentText {
   background-color: pink;
   border: none;
   color: white;
@@ -33,22 +39,16 @@
   padding: 5px;
 }
 
-.CommentText::placeholder {
+.commentText::placeholder {
   color: white;
   text-align: center;
 }
 
-.CommentText:focus {
+.commentText:focus {
   outline: none;
 }
 
-.AddImageForm {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.AddImageWrapper {
+.addImageWrapper {
   height: 60px;
   display: flex;
   justify-content: center;
@@ -57,13 +57,13 @@
   width: 200px;
 }
 
-#AddImageInput{
+#addImageInput{
   opacity: 0;
   position: absolute;
   z-index: -1;
 }
 
-.ChooseImageButton {
+.chooseImageButton {
   background-color: #FBD6C8;
   padding: 10px;
   border-radius: 10px;
@@ -72,7 +72,7 @@
   cursor: pointer;
 }
 
-.AddPostPostButton {
+.addPostPostButton {
   border: none;
   background-color: #FBD6C8;
   border: none;

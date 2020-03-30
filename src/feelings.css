@@ -12,7 +12,7 @@
 }
 
 
-.HowYouDoin {
+.howYouDoin {
   display: flex;
   justify-content: center;
   /* color: rgb(4, 63, 100); */
@@ -22,7 +22,7 @@
   animation: 3s ease-out 0s 1 slideFromTop;
 }
 
-.HowYouDoin p {
+.howYouDoin p {
   margin-top: 5vh;
 }
 
@@ -36,7 +36,7 @@
   }
 }
 
-.EmotionBar {
+.emotionBar {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -45,7 +45,7 @@
   animation: 1s ease-in-out 2s 1 normal forwards FadeIn;
 }
 
-.Emotion {
+.emotion {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -68,7 +68,7 @@
 }
 
 @media screen and (max-width: 740px) {
-  .Emotion {
+  .emotion {
     font-size: 20px;
     border-width: 7px;
     width: 150px;
@@ -76,26 +76,26 @@
   }
 }
 
-.FeelingType  {
+.feelingType  {
   position: relative;
   color: coral;
   transition: 1s;
   z-index: 3;
 }
 
-.FeelingType:hover {
+.feelingType:hover {
   color: #fff;
   transform: rotateY(360deg);
   text-decoration: none;
 }
 
-.FeelingType:active {
+.feelingType:active {
   color: #fff;
   transform: rotateY(360deg);
   text-decoration: none;
 }
 
-.Emotion:before {
+.emotion:before {
   content: "";
   position: absolute;
   top: 100%;
@@ -106,31 +106,31 @@
 }
 
 
-.Emotion:hover:before {
+.emotion:hover:before {
   top: 0;
   z-index: 2;
 }
 
-#Depressed:before{
+#depressed:before{
   background: #3b5999;
 }
 
-#Angry:before{
+#angry:before{
   background: purple;
 }
 
-#Heartbroken:before{
+#heartbroken:before{
   background: pink;
 }
 
-#Worried:before{
+#worried:before{
   background: orange;
 }
 
-#Reflective:before{
+#reflective:before{
   background: lightseagreen;
 }
 
-#Other:before{
+#other:before{
   background:lavender;
 }

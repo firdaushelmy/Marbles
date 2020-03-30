@@ -19,8 +19,8 @@ function UserImages({ threadId, userID }) {
       .get("https://marbles-backend.herokuapp.com/api/v1/threads/")
       .then(result => {
         console.log(result);
-        let tempt =result.data.template;
-        let temp = tempt.sort((a,b) => {return b.id - a.id})
+        let tempt = result.data.template;
+        let temp = tempt.sort((a, b) => { return b.id - a.id })
         setUserImages(temp);
         setIsLoading(false);
       });
@@ -36,7 +36,7 @@ function UserImages({ threadId, userID }) {
     return (
       <>
         <div onClick={handleShowModal}>
-          <Image height="100%" width="100%" src={`https://marblesbackend.s3-ap-southeast-1.amazonaws.com/${userImages}`} className="UserImages" />
+          <Image height="100%" width="100%" src={`https://marblesbackend.s3-ap-southeast-1.amazonaws.com/${userImages}`} className="userImages" />
         </div>
         <Modal show={showModal}>
           <Modal.Header>
@@ -46,15 +46,15 @@ function UserImages({ threadId, userID }) {
           </Modal.Header>
           <Modal.Body>
             <Modal.Title>
-              <Image src={`https://marblesbackend.s3-ap-southeast-1.amazonaws.com/${userImages}`} className="EnlargedImage"></Image>
+              <Image src={`https://marblesbackend.s3-ap-southeast-1.amazonaws.com/${userImages}`} className="enlargedImage"></Image>
             </Modal.Title>
 
           </Modal.Body>
           <Modal.Footer>
 
             <div>
-              
-              <Comments userImages={userImages} threadId={threadId} userID={userID}/>
+
+              <Comments userImages={userImages} threadId={threadId} userID={userID} />
             </div>
 
           </Modal.Footer>
