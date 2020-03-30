@@ -131,9 +131,9 @@ function App() {
         <Route path="/threads">
           <Threads userID={userID} />
         </Route>
-        {/* <Route path="/playlist">
+        <Route path="/playlist">
           <Playlist />
-        </Route> */}
+        </Route>
       </>
     );
   }

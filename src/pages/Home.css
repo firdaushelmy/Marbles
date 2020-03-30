@@ -200,6 +200,10 @@
   font-size:5vw;
   color:white;
   font-family:arial;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .ThreadDiv:hover {

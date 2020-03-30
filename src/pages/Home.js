@@ -8,7 +8,7 @@ import { Link } from "react-router-dom"
 import Image from "react-graceful-image"
 import ImgSrc from "react-graceful-image";
 import Comments from "../components/comments"
-
+import ThreadLikes from "../components/threadlikes.js"
 
 function Home({ threads, userID, isLoading, threadId }) {
   const [userImages, setUserImages] = useState([]);
@@ -69,11 +69,16 @@ function Home({ threads, userID, isLoading, threadId }) {
                   <Image id={thread.id} className="UserImages" src={`https://marblesbackend.s3-ap-southeast-1.amazonaws.com/${thread.template}`} />
                 </div>
                 <div className="ThreadDiv" onClick={() => setShowModal(thread.id)}>
-                  <h6 className="ThreadContent"><span>{thread.content}</span></h6>
+                  <h6 className="ThreadContent"><span>{thread.content}</span>
+                    <div className="ThreadLikes">
+                      <ThreadLikes threadID={thread.id} />
+                    </div>
+                  </h6>
                 </div>
               </div>
             </Col>
           </Container>
+
 
           <Modal show={showModal == thread.id} className="ImageModal">
             <Modal.Header>
