@@ -1,11 +1,11 @@
-#ProfileContainer {
+#profileContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
   font-family: 'Open Sans', sans-serif;
 }
 
-.ProfilePicDisplay {
+.profilePicDisplay {
   /* border: 2px solid #FBA589; */
   background-color: #FBD6C8;
   width: 220px;
@@ -18,7 +18,13 @@
   margin-bottom: 10px;
 }
 
-.EncouragementStarred {
+.profileImagePreview {
+  width: 220px;
+  height: 250px;
+  object-fit: cover;
+}
+
+.encouragementStarred {
   display: flex;
   flex-direction: row;
   width: 20%;
@@ -26,13 +32,13 @@
   margin-top: 10px;
 }
 
-.Encouragements {
+.encouragements {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.ProfileLink {
+.profileLink {
   margin-top: 20px;
   background-color: #FBD6C8;
   box-shadow: 0 0 1px 0px coral;
@@ -48,13 +54,115 @@
   padding: 40px;
 }
 
-.ProfileLink:hover {
+.profileLink:hover {
   text-decoration: none;
   color: coral;
 }
 
-.ProfileLink:active {
+.profileLink:active {
   text-decoration: none;
   color: coral;
 }
 
+.addProfilePicModal .modal-header {
+  border: none;
+  background-color: lavenderblush;
+}
+
+.addProfilePicModal .modal-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: lavenderblush;
+}
+
+.addProfilePicModal .modal-content {
+  width: 50vw;
+  min-height: 100vh;
+}
+
+.addProfilePicModal .modal-dialog {
+  margin-left: 25vw;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.addProfilePicModal .modal-footer {
+  border: none;
+  padding: 0 auto;
+  background-color: lavenderblush;
+}
+
+@media screen and (max-width: 740px) {
+  .addProfilePicModal .modal-content {
+    width: 100vw;
+  }
+
+  .addProfilePicModal .modal-dialog {
+    margin: 0;
+  }
+}
+
+.profileBackButton {
+  background-color: #FBD6C8;
+  color: black;
+  border: 2px solid #FBA589;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.profileBackButton:hover {
+  background-color: #FBA589;
+  border: 2px solid #FBA589;
+}
+
+.profileBackButton:active {
+  background-color: #FBA589 !important;
+  border: 2px solid #FBA589 !important;
+  outline: none !important;
+}
+.addImageWrap {
+  height: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  width: 200px;
+}
+
+.profileImagePreviewDiv {
+  width: 300px;
+  height: 300px;
+  background-color: #FBD6C8;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  margin-bottom: 30px;
+}
+
+.profileImagePreview {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+}
+
+#addProfileImageInput{
+  opacity: 0;
+  position: absolute;
+  z-index: -1;
+}
+
+.chooseProfileImageButton {
+  background-color: #FBD6C8;
+  padding: 10px;
+  border-radius: 10px;
+  width: 100%;
+  text-align: center;
+  cursor: pointer;
+}
+
+.PostProfilePicButton {
+  border: 2px solid #FBA589;
+  background-color: #FBD6C8;
+  width: 100%;
+  height: 60px;
+  border-radius: 10px;
+}

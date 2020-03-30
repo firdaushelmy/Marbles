@@ -3,11 +3,11 @@ import "./AddThoughts.css";
 
 function AddThoughts() {
   return (
-    <div className="container" id="AddThoughtsContainer">
-      <div className="AddYourThoughts">write your thoughts
-      <button className="AddThoughtsPost">post</button>
+    <div className="container" id="addThoughtsContainer">
+      <div className="addYourThoughts">write your thoughts
+      <button className="addThoughtsPost">post</button>
       </div>
-      <textarea autoResize="true" placeholder="click me and start writing" className="AddThoughtsTextArea"></textarea>
+      <textarea autoResize="true" placeholder="click me and start writing" className="addThoughtsTextArea"></textarea>
     </div>
   )
 }

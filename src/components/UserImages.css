@@ -1,4 +1,4 @@
-.UserImages {
+.userImages {
   width: 100%;
   height: 100%;
   padding-left: 0;
@@ -11,27 +11,27 @@
 }
 
 @media screen and (max-width: 1200px) {
-  .UserImages {
+  .userImages {
     width: 200px;
   }
 }
 
 @media screen and (max-width:740px) {
-  .UserImages{
+  .userImages{
     width: 340px;
   }
 }
 
-.UserImages:hover {
+.userImages:hover {
   opacity: 0.8;
 }
 
-.UserImages:active {
+.userImages:active {
   opacity: 0.5;
 }
 
 
-.EnlargedImage {
+.enlargedImage {
   width: 100%;
   height: 80vh;
 }

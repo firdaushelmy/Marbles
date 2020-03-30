@@ -1,10 +1,38 @@
-#LogInContainer {
+#logInContainer {
   width: 100vw;
   font-family: 'Raleway';
   margin-top: 10vh;
 }
 
-.LogInBtn {
+.logInLogo {
+  margin-bottom: 10px;
+  animation: 1s ease-in-out 0s 1 flipInY;
+}
+
+@media screen and (max-width: 500px) {
+  .logInLogo {
+    width: 200px;
+  }
+}
+
+#loginStuff {
+  width: 100%;
+  display: flex;
+  flex-direction: column;  
+  align-items: center;
+  margin-top: 10px;
+}
+
+#logInInput {
+  border-radius: 10px;
+  border: none;
+  /* box-shadow: 0 5px 35px 0px rgba(0,0,0,.1); */
+  border: 1px solid #D2D0D0;
+  height: 64px;
+  margin-top: 10px;
+}
+
+.logInBtn {
   margin-top: 20px;
   background-color: #FBD6C8;
   box-shadow: 0 0 1px 0px coral;
@@ -19,44 +47,25 @@
   height: 40px;
 }
 
-.LogInBtn:hover {
+.logInBtn:hover {
   text-decoration: none;
   color: coral;
 }
 
-.LogInBtn:active {
+.logInBtn:active {
   text-decoration: none;
   color: coral;
 }
 
-#loginStuff {
-  width: 100%;
-  display: flex;
-  flex-direction: column;  
-  align-items: center;
-}
-
-.LogIn {
-  font-weight: bold;
-}
-
-#LogInInput {
-  border-radius: 10px;
-  border: none;
-  /* box-shadow: 0 5px 35px 0px rgba(0,0,0,.1); */
-  border: 1px solid #D2D0D0;
-  height: 64px;
-  margin-top: 10px;
-}
-
-.ChangedMeMind {
+.loginChangedMeMind {
   margin-top: 10px;
   color: black;
   font-size: 11px;
   font-weight: 300;
+  margin-bottom: 40px;
 }
 
-.ChangedMeMind:hover {
+.loginChangedMeMind:hover {
   color: grey;
   text-decoration:none;
 }

@@ -12,7 +12,7 @@
 }
 
 
-.HowYouDoin {
+.howYouDoin {
   display: flex;
   justify-content: center;
   /* color: rgb(4, 63, 100); */
@@ -22,17 +22,11 @@
   animation: 3s ease-out 0s 1 slideFromTop;
 }
 
-.HowYouDoin p {
+.howYouDoin p {
   margin-top: 5vh;
 }
 
 @keyframes FadeIn {
-  /* 0% {
-    transform: translateX(-100%);
-  }
-  100% {
-    transform: translateX(0);
-  } */
   from {
     opacity: 0;
   }
@@ -42,22 +36,19 @@
   }
 }
 
-.EmotionBar {
+.emotionBar {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   margin-top: 5vh;
-  /* margin-left:-300vw; */
-  /* transform: translateX(-100%); */
   opacity:0;
   animation: 1s ease-in-out 2s 1 normal forwards FadeIn;
 }
 
-.Emotion {
+.emotion {
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 2px solid white;
   width: 200px;
   height: 200px;
   border-radius: 50%;
@@ -71,60 +62,43 @@
   transition: 2s box-shadow;
   border-style: double;
   border-width: 10px;
-  /* border-color: lightskyblue; */
-  border-color: rgb(247, 154, 120);
-}
-
-
-.EmotionBar div div div {
   background-color: #fff;
-  display: flex;
-  width: 200px;
-  height: 200px;
-  text-align: center;
-  border-radius: 50%;
-  position: relative;
+  border-color: rgb(247, 154, 120);
   overflow: hidden;
-  z-index: 1;
 }
 
 @media screen and (max-width: 740px) {
-  .Emotion {
-      font-size: 20px;
-      border-width: 7px;
-  }
-
-  .EmotionBar div div div {
+  .emotion {
+    font-size: 20px;
+    border-width: 7px;
     width: 150px;
     height:150px;
   }
 }
 
-.FeelingType  {
+.feelingType  {
   position: relative;
-  /* color: rgb(2, 103, 165); */
   color: coral;
   transition: 1s;
   z-index: 3;
 }
 
-.FeelingType:hover {
+.feelingType:hover {
   color: #fff;
   transform: rotateY(360deg);
   text-decoration: none;
 }
 
-.FeelingType:active {
+.feelingType:active {
   color: #fff;
   transform: rotateY(360deg);
   text-decoration: none;
 }
 
-.EmotionBar div div div:before {
+.emotion:before {
   content: "";
   position: absolute;
   top: 100%;
-  left: 0;
   width: 100%;
   height: 100%;
   transition: .5s;
@@ -132,31 +106,31 @@
 }
 
 
-.EmotionBar div div div:hover:before {
+.emotion:hover:before {
   top: 0;
   z-index: 2;
 }
 
-.EmotionBar div div:nth-child(1) div:before{
+#depressed:before{
   background: #3b5999;
 }
 
-.EmotionBar div div:nth-child(2) div:before{
+#angry:before{
   background: purple;
 }
 
-.EmotionBar div div:nth-child(3) div:before{
+#heartbroken:before{
   background: pink;
 }
 
-#Worried:before{
+#worried:before{
   background: orange;
 }
 
-#Reflective:before{
+#reflective:before{
   background: lightseagreen;
 }
 
-#Other:before{
+#other:before{
   background:lavender;
 }

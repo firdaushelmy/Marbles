@@ -1,28 +1,17 @@
-#EmergencyContainer {
+#emergencyContainer {
   width: 100vw; 
   font-family: 'Raleway';
   margin-top: 10vh;
 }
 
-.EmergencyForm {
+.emergencyForm {
   width: 100%;
   flex-direction: column;
   display: flex;
   justify-content: center;
 }
 
-.AddEmergency {
-  margin-top: 20px;
-  border-radius: 25px;
-  color: black;
-  border: none;
-  padding: 10px;
-  width: 100%;
-  background-color: #FBD6C8;
-  /* background: linear-gradient(105deg, rgb(76, 125, 231), rgb(207, 18, 207), rgb(243, 112, 151)); */
-}
-
-#EmergencyInput {
+#emergencyInput {
   border-radius: 10px;
   border: 1px solid #D2D0D0;
   height: 64px;
@@ -31,11 +20,22 @@
   width: 100%;
 }
 
-#EmergencyInput option {
+#emergencyInput option {
   width: 200px;
 }
 
-.EmergencyField {
+.emergencyField {
   margin-top: 20px;
   margin-bottom: -6px;
+}
+
+.addEmergency {
+  margin-top: 20px;
+  border-radius: 25px;
+  color: black;
+  border: none;
+  padding: 10px;
+  width: 100%;
+  background-color: #FBD6C8;
+  /* background: linear-gradient(105deg, rgb(76, 125, 231), rgb(207, 18, 207), rgb(243, 112, 151)); */
 }

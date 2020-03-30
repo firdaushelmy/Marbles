@@ -1,8 +1,4 @@
-#EmergencyStuffContainer {
-  margin-top: 30px;
-}
-
-.EmergencyDiv {
+.emergencyDiv {
   width: 100%;
   height: 100%;
   display: flex;
@@ -13,7 +9,7 @@
   color: #584646;
 }
 
-.EmergencyPinkDiv {
+.emergencyPinkDiv {
   background-color: rgb(250, 229, 223);
   margin-top: 30px;
   height: 100px;
@@ -25,13 +21,21 @@
 }
 
 @media screen and (max-width: 740px) {
-  .EmergencyPinkDiv {
+  .emergencyPinkDiv {
     width: 100%;
     border-radius: 0;
   }
 }
 
-.AddEmergencyButtonDiv {
+#emergencyStuffContainer {
+  margin-top: 30px;
+}
+
+.addEmergencyButton:hover {
+  text-decoration: none;
+}
+
+.addEmergencyButtonDiv {
   width: 100%;
   height: 70px;
   margin-top: 30px;
@@ -43,10 +47,6 @@
   border:none;
 }
 
-.AddEmergencyButton:hover {
-  text-decoration: none;
-}
-
-.AddEmergencyButtonDiv:hover {
+.addEmergencyButtonDiv:hover {
   color: #584646;
 }

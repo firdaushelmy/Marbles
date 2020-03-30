@@ -13,7 +13,7 @@ function Playlist() {
   return (
     <div className="container" id="playlistContainer">
       <h1 className="playlistHeader">Playlist curated for you</h1>
-      <SpotifyPlayer className="SpotifyPlayer"
+      <SpotifyPlayer
         uri="spotify:playlist:35vz6hV0QQgSHeAT6stHnA"
         size={size}
         view={view}

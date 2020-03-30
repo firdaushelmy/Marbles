@@ -14,10 +14,10 @@ function Panic() {
   }
 
   return (
-    <div className="container" id="PanicSurrounding">
-      <div className="PanicSurround1">
-        <div className="PanicSurround2">
-          <button className="Panic">
+    <div className="container" id="panicSurrounding">
+      <div className="panicSurround1">
+        <div className="panicSurround2">
+          <button className="panic">
             PANIC
            </button>
         </div>

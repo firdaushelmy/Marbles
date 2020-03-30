@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import axios from "axios";
+import "./threadlikes.css";
+
 function ThreadLikes({ threadID }) {
     const [totalLikes, setTotalLikes] = useState("0")
     const current_user = JSON.parse(localStorage.getItem('user'))
@@ -33,11 +35,11 @@ function ThreadLikes({ threadID }) {
     };
     return (
         <>
-            <div onClick={addLikes}>
-                <span><i className="far fa-thumbs-up"></i></span>
-            </div>
-            <div>
-                {totalLikes}
+            <div onClick={addLikes} className="likes">
+                <span className="thumbsUpIcon"><i className="far fa-thumbs-up"></i></span>
+                <div className="totalLikes">
+                    {totalLikes}
+                </div>
             </div>
         </>
     )
