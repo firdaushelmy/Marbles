@@ -110,7 +110,7 @@ function Comments(threads, threadId, userID) {
           <div>
             <input id="commentText" value={tempText} onChange={handleTextChange} type="text" placeholder="Write some encouragement here"></input>
           </div>
-          <button className="EncourageBtn" type="submit button">Encourage</button>
+          <Button className="ReturnToHome" type="submit button">Encourage</Button>
         </form>
       </div>
 

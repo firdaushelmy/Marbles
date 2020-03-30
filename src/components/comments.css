@@ -67,23 +67,21 @@
 
 .EncourageBtn {
   margin-top: 10px;
-  background-color: #FBA589;
+  background-color: #FBD6C8;
+  color: black;
   border: 2px solid #FBA589;
-  color: white;
+  font-family: 'Open Sans', sans-serif;
   margin-bottom: 20px;
 }
 
 .EncourageBtn:hover {
-  background-color: rgb(250, 228, 220);
-  /* border: 2px solid #FBA589; */
-  border: 2px solid transparent;
-  color: #FBA589;
+  background-color: #FBA589;
+  border: 2px solid #FBA589;
 }
 
 .EncourageBtn:active {
-  background-color: rgb(250, 228, 220) !important;
-  border: 2px solid transparent !important;
-  color: #FBA589 !important;
+  background-color: #FBA589 !important;
+  border: 2px solid #FBA589 !important;
   outline: none !important;
 }
 
