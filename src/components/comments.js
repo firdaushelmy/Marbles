@@ -11,11 +11,12 @@ function Comments(threads, threadId, userID) {
   const [allComments, setAllComments] = useState([])
   const [comID, setComID] = useState("")
   const [totalLikes, setTotalLikes] = useState("0")
+  const current_user = JSON.parse(localStorage.getItem('user'))
 
   const addLikes = (e) => {
     e.preventDefault()
     axios.post(`https://marbles-backend.herokuapp.com/api/v1/comment_like/c_like/${comID}`, {
-      user: localStorage.getItem("user"),
+      user: current_user.id,
       comment: comID
 
 
@@ -83,7 +84,7 @@ console.log(text)
         `https://marbles-backend.herokuapp.com/api/v1/comments/new/${threads.threadId}`,
         {
           text: text,
-          user: localStorage.getItem("user"),
+          user: current_user.id,
           thread: threads.threadId
         }
       )
