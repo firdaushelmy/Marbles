@@ -113,7 +113,7 @@ function Nav() {
               <Link className="accountInfoLink" tag={Link} to="/volunteer" onClick={handleClose}>volunteer</Link>
             </div>
             <div className="pinkHoverDiv">
-              <Link className="accountInfoLink" tag={Link} to="/supportgroup">support group</Link>
+              <Link className="accountInfoLink" tag={Link} to="/supportgroup" onClick={handleClose}>support group</Link>
             </div>
             <div className="pinkHoverDiv">
               <Link className="accountInfoLink" tag={Link} to="/faq" onClick={handleClose}>f.a.q.</Link>
