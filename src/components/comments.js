@@ -75,7 +75,9 @@ function Comments(threads, threadId, userID) {
   const handleTextSubmit = (e) => {
     e.preventDefault()
 
-
+console.log(text)
+    console.log(localStorage.getItem("user"))
+    console.log(threads.threadId)
 
     axios
       .post(
