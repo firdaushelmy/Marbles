@@ -6,13 +6,13 @@ import "./threadlikes.css";
 function ThreadLikes({ threadID }) {
     const [totalLikes, setTotalLikes] = useState("0")
     const current_user = JSON.parse(localStorage.getItem('user'))
-    console.log(`thread is is ${threadID}`)
+    // console.log(`thread is is ${threadID}`)
     useEffect(() => {
         axios.get(
             `https://marbles-backend.herokuapp.com/api/v1/thread_likes/${threadID}`
         )
             .then(response => {
-                console.log(response.data)
+                // console.log(response.data)
                 setTotalLikes(response.data.length)
             });
     }, [])
