@@ -92,23 +92,23 @@ function SignUpPage(props) {
   return (
     <>
       <Landing />
-      <div className="mx-auto row" id="SignUpButtonContainer">
-        <img className="Logo" src="./logo.png"></img>
-        <h6 className="AnythingOnYourMind">anything on your mind</h6>
-        <div className="StartAnonDiv">
+      <div className="mx-auto row" id="signUpButtonContainer">
+        <img className="signUpPageLogo" src="./logo.png"></img>
+        <h6 className="anythingOnYourMind">anything on your mind</h6>
+        <div className="startAnonDiv">
           <Link
             // onClick={() => handleSubmit(signUp)}
             onClick={handleSubmit}
-            className="StartAnon"
+            className="startAnon"
           >
             start anonymously
           </Link>
         </div>
-        <div className="SignUpLogIn">
-          <Link className="SignUpButton" tag={Link} to="/signup">
+        <div className="signUpLogIn">
+          <Link className="signUpButton" tag={Link} to="/signup">
             sign up
           </Link>
-          <Link className="SignUpButton" tag={Link} to="/login">
+          <Link className="signUpButton" tag={Link} to="/login">
             log in
           </Link>
         </div>

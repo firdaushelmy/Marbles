@@ -156,14 +156,14 @@ function SignUp() {
       <Landing />
       <div
         className="container d-flex flex-column align-items-center"
-        id="SignUpContainer"
+        id="signUpContainer"
       >
-        <img className="Logo" src="./logo.png"></img>
+        <img className="signUpLogo" src="./logo.png"></img>
         {/* Note: Had to change <input></input> to <Input/> in order for FormFeedback to work */}
-        <form className="SignUpForm">
+        <form className="signUpForm">
           <Input
             className="form-control"
-            id="SignUpInput"
+            id="signUpInput"
             type="text"
             placeholder="username"
             onChange={handleNameInput} {...getInputProp()}
@@ -171,14 +171,14 @@ function SignUp() {
           {getFormFeedback()}
           <input
             className="form-control"
-            id="SignUpInput"
+            id="signUpInput"
             type="text"
             placeholder="email"
             onChange={handleEmailInput}
           ></input>
           <Input
             className="form-control"
-            id="SignUpInput"
+            id="signUpInput"
             type="password"
             placeholder="password"
             onChange={handlePassInput} {...getPassProp()}
@@ -186,16 +186,16 @@ function SignUp() {
           {getPassFeedback()}
           <Input
             className="form-control"
-            id="SignUpInput"
+            id="signUpInput"
             type="password"
             placeholder="confirm password"
             onChange={handleConfPassInput} {...getConfPassProp()}
           />
           {getConfPassFeedback()}
-          <button type="submit" className="SignUpBtn" onClick={handleLogin} disabled={email.length < 6 || password.length < 6 || name.length < 6 || confirmPass.length < 6}>
+          <button type="submit" className="signUpBtn" onClick={handleLogin} disabled={email.length < 6 || password.length < 6 || name.length < 6 || confirmPass.length < 6}>
             Sign Up
           </button>
-          <Link tag={Link} to="/" className="ChangedMeMind">
+          <Link tag={Link} to="/" className="signUpChangedMeMind">
             changed my mind
           </Link>
         </form>

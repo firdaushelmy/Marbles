@@ -13,12 +13,21 @@ function Playlist() {
   return (
     <div className="container" id="playlistContainer">
       <h1 className="playlistHeader">Playlist curated for you</h1>
-      <SpotifyPlayer className="SpotifyPlayer"
+      <SpotifyPlayer
         uri="spotify:playlist:35vz6hV0QQgSHeAT6stHnA"
         size={size}
         view={view}
         theme={theme}
       />
+      <div className="votePlaylist">
+        <button className="likePlaylist">
+          <i className="fas fa-thumbs-up"></i>
+        </button>
+        <button className="dislikePlaylist">
+          <i className="fas fa-thumbs-down"></i>
+        </button>
+      </div>
+
     </div>
   )
 }

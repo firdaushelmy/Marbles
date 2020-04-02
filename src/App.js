@@ -25,6 +25,7 @@ import Threads from "./components/threads.js";
 import AddThoughts from "./AddThoughts";
 import Playlist from "./playlist";
 import CommentLikes from "./components/commentlikes";
+import SupportGroup from "./supportgroup.js";
 
 function App() {
   const [threads, setThreads] = useState([]);
@@ -84,9 +85,6 @@ function App() {
         <Route path="/anonymous">
           <Anonymous />
         </Route>
-        <Route path="/anonymous">
-          <Anonymous />
-        </Route>
         <Route path="/home">
           <Home threads={threads} userID={userID} isLoading={isLoading} />
         </Route>
@@ -131,9 +129,12 @@ function App() {
         <Route path="/threads">
           <Threads userID={userID} />
         </Route>
-        {/* <Route path="/playlist">
+        <Route path="/playlist">
           <Playlist />
-        </Route> */}
+        </Route>
+        <Route path="/supportgroup">
+          <SupportGroup />
+        </Route>
       </>
     );
   }

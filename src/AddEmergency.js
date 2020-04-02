@@ -5,23 +5,15 @@ import axios from "axios"
 
 function AddEmergency() {
   const [emergencyNumber, setEmergencyNumber] = useState("")
-  
   const [emergencyName, setEmergencyName] = useState("")
-  
   const [relation, setRelation] = useState("")
-
-  const [email, setEmail] = useState("")
-  
+  const [email, setEmail] = useState("") 
   let history = useHistory()
-
-  const currentUser = JSON.parse(localStorage.getItem('user')).id
-  
-  const [tempNumber, setTempNumber] = useState("")
-  
+  const currentUser = JSON.parse(localStorage.getItem('user'))
+  console.log(currentUser.id)
+  const [tempNumber, setTempNumber] = useState("") 
   const [tempName, setTempName] = useState("")
-
   const [tempRelation, setTempRelation] = useState("")
-
   const [tempEmail, setTempEmail] = useState("")
 
   
@@ -47,7 +39,8 @@ function AddEmergency() {
     setTempEmail(e.target.value)
   }
 
-  useEffect(() => {
+  const handleSubmit = (e) => {
+    e.preventDefault()
     axios.post(`https://marbles-backend.herokuapp.com/api/v1/emergencies/new/${currentUser}`, {
       'user': currentUser,
       'contact_no' : emergencyNumber,
@@ -59,29 +52,31 @@ function AddEmergency() {
       console.log(response)
       history.push("/emergency")
     })
+  }
 
 
-  }, [emergencyName, emergencyNumber, relation, email])
+
 
 
 
 
   return (
-    <div className="container d-flex flex-column align-items-center" id="EmergencyContainer">
+    <div className="container d-flex flex-column align-items-center" id="emergencyContainer">
       <h1>Emergency</h1>
-      <form className="EmergencyForm">
+      <form className="EmergencyForm" onSubmit={handleSubmit}>
         <input type="text" placeholder="Emergency phone number" className="form-control" id="EmergencyInput" onChange={handleNumberChange} value={tempNumber}></input>
         <input type="text" placeholder="Emergency contact name" className="form-control" id="EmergencyInput" onChange={handleNameChange} value={tempName}  ></input>
         <input type="text" placeholder="Emergency email" className="form-control" id="EmergencyInput" onChange={handleEmailChange} value={tempEmail}  ></input>
         <h6 className="EmergencyField">Relation:</h6>
         <select className="form-control" id="EmergencyInput" onChange={handleRelationChange} value={tempRelation}>
+          <option>--Choose an option--</option>
           <option>Mother</option>
           <option>Father</option>
           <option>Sibling</option>
           <option>Friend</option>
           <option>Other</option>
         </select>
-        <Link ><button type="submit" className="AddEmergency">Add</button></Link>
+        <button type="submit" className="AddEmergency">Add</button>
       </form>
     </div>
   )

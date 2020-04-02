@@ -113,7 +113,7 @@ console.log(text)
           <div>
             <input id="commentText" value={tempText} onChange={handleTextChange} type="text" placeholder="Write some encouragement here"></input>
           </div>
-          <button className="EncourageBtn" type="submit button">Encourage</button>
+          <Button className="encourageBtn" type="submit">Encourage</Button>
         </form>
       </div>
 
@@ -121,11 +121,11 @@ console.log(text)
         allComments.length > 0
           ? allComments.map(comment => {
             return (
-              <div className="WholeCommentDiv">
+              <div className="wholeCommentDiv">
                 <div id={comment.id}>
-                  <Image className="CommentUserImage" src={"../noprofilepic.jpg"}></Image>
+                  <Image className="commentUserImage" src={"../noprofilepic.jpg"}></Image>
                 </div>
-                <div className="CommentPartDiv">
+                <div className="commentPartDiv">
                   {comment.text}
                   <CommentLikes comID={comment.id} />
                 </div>

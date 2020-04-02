@@ -57,38 +57,40 @@ function Home({ threads, userID, isLoading, threadId }) {
   // }
 
   return (
-
     threads.map(thread => {
       return (
         <>
-          <Container className="UserContainer">
+          <Container className="userContainer">
             {/* took out the stuff in col, and restored it without bells and whistles. added styling for three rows in the home.css */}
-            <Col>
-              <div classname="container" id="IndividCol">
-                <div className="ImageDiv">
-                  <Image id={thread.id} className="UserImages" src={`https://marblesbackend.s3-ap-southeast-1.amazonaws.com/${thread.template}`} />
+            <Col className="userContainerCol">
+              <div classname="container" id="individCol">
+                <div className="imageDiv">
+                  <Image id={thread.id} className="userImages" src={`https://marblesbackend.s3-ap-southeast-1.amazonaws.com/${thread.template}`} />
                 </div>
-                <div className="ThreadDiv" onClick={() => setShowModal(thread.id)}>
-                  <h6 className="ThreadContent"><span>{thread.content}</span></h6>
+                <div className="threadDiv" onClick={() => setShowModal(thread.id)}>
+                  <h6 className="threadContent"><span>{thread.content}</span>
+                    <div>
+                      <ThreadLikes threadID={thread.id} />
+                    </div>
+                  </h6>
                 </div>
               </div>
-              <ThreadLikes threadID={thread.id} />
             </Col>
           </Container>
 
 
-          <Modal show={showModal == thread.id} className="ImageModal">
+          <Modal show={showModal == thread.id} className="imageModal">
             <Modal.Header>
-              <Button className="ReturnToHome" onClick={handleCloseModal}>
+              <Button className="returnToHome" onClick={handleCloseModal}>
                 Return To Home
           </Button>
             </Modal.Header>
             <Modal.Body>
-              <Image id={thread[thread.id]} src={`https://marblesbackend.s3-ap-southeast-1.amazonaws.com/${thread.template}`} className="EnlargedImage"></Image>
+              <Image id={thread[thread.id]} src={`https://marblesbackend.s3-ap-southeast-1.amazonaws.com/${thread.template}`} className="enlargedImage"></Image>
             </Modal.Body>
             <Modal.Footer>
 
-              <div className="CommentWrapperHome">
+              <div className="commentWrapperHome">
                 <Comments threads={threads} threadId={thread.id} userID={userID} />
               </div>
 
@@ -97,8 +99,6 @@ function Home({ threads, userID, isLoading, threadId }) {
         </>
       )
     })
-
-
   )
 }
 

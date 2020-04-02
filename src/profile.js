@@ -67,53 +67,52 @@ function Profile() {
 
   return (
     <>
-      <div className="container" id="ProfileContainer">
+      <div className="container" id="profileContainer">
         {/* IF PROFILE IMAGE EXISTS,DISPLAY IT. ELSE, SHOW "+PROFILE". CLICKING BOTH WILL OPEN MODAL */}
-        <div className="ProfilePicDisplay">
-          {profileImage ? <img onClick={handleShowModal} className="ImagePreview" src={`https://marblesbackend.s3-ap-southeast-1.amazonaws.com/${profileImage}`} alt="preview" /> : <h6 onClick={handleShowModal}>+profile</h6>}
-
+        <div className="profilePicDisplay">
+          {profileImage ? <img onClick={handleShowModal} className="profileImagePreview" src={`https://marblesbackend.s3-ap-southeast-1.amazonaws.com/${profileImage}`} alt="preview" /> : <h6 onClick={handleShowModal}>+profile</h6>}
         </div>
         <h2>{current_user.name}</h2>
-        <div className="EncouragementStarred">
-          <div className="Encouragements">
+        <div className="encouragementStarred">
+          <div className="encouragements">
             <h6>{Math.floor(Math.random() * 1000)}</h6>
             <h6>encs</h6>
           </div>
-          <div className="Encouragements">
+          <div className="encouragements">
             <h6>{Math.floor(Math.random() * 1000)}</h6>
             <h6>stars</h6>
           </div>
         </div>
-        <Link tag={Link} to="/mood" className="ProfileLink">edit profile</Link>
-        <Link tag={Link} to="/emergency" className="ProfileLink">emergency contact</Link>
-        <Link tag={Link} to="/volunteer" className="ProfileLink">volunteer</Link>
-        <Link tag={Link} to="/mood" className="ProfileLink">how to seek help</Link>
-        <Link tag={Link} to="/faq" className="ProfileLink">f.a.q.</Link>
-        <Link tag={Link} to="/mood" className="ProfileLink">support group</Link>
+        <Link tag={Link} to="/mood" className="profileLink">edit profile</Link>
+        <Link tag={Link} to="/emergency" className="profileLink">emergency contact</Link>
+        <Link tag={Link} to="/volunteer" className="profileLink">volunteer</Link>
+        <Link tag={Link} to="/mood" className="profileLink">how to seek help</Link>
+        <Link tag={Link} to="/faq" className="profileLink">f.a.q.</Link>
+        <Link tag={Link} to="/mood" className="profileLink">support group</Link>
       </div>
       {/* MODAL TO UPDATE PROFILE PIC HERE  */}
-      <Modal show={showModal} className="ImageModal">
+      <Modal show={showModal} className="addProfilePicModal">
         <Modal.Header>
-          <Button onClick={handleCloseModal}>
-            Return To Home
+          <Button onClick={handleCloseModal} className="profileBackButton">
+            back
           </Button>
         </Modal.Header>
         <Modal.Body>
           <Modal.Title>
           </Modal.Title>
-          <div className="AddImageWrapper">
-            <input id="AddImageInput" type="file" name="image-file" onChange={handleTemplateChange} multiple={false}></input>
-            <label for="AddImageInput" className="ChooseImageButton">Choose a file</label>
-          </div>
-          {/* IF NO PROFILE IMAGE EXISTS, DISPLAY PREVIEW IMAGE ONCE CHOSEN BY USER. IF NEITHER EXISTS, DISPLAY THE H2 TEXT*/}
-          <div className="ImagePreviewDiv">
-            {previewImage ? <img src={previewImage} /> :
-              profileImage ? <img className="ImagePreview" src={`https://marblesbackend.s3-ap-southeast-1.amazonaws.com/${profileImage}`} alt="preview" /> : <h2>Choose a file</h2>}
+          <div className="addImageWrap">
+            <div className="profileImagePreviewDiv">
+              {previewImage ? <img src={previewImage} /> :
+                profileImage ? <img className="profileImagePreview" src={`https://marblesbackend.s3-ap-southeast-1.amazonaws.com/${profileImage}`} alt="preview" /> : <h2>choose a file</h2>}
 
+            </div>
+            <input id="addProfileImageInput" type="file" name="image-file" onChange={handleTemplateChange} multiple={false}></input>
+            <label for="addProfileImageInput" className="chooseProfileImageButton">choose a file</label>
+            {/* IF NO PROFILE IMAGE EXISTS, DISPLAY PREVIEW IMAGE ONCE CHOSEN BY USER. IF NEITHER EXISTS, DISPLAY THE H2 TEXT*/}
           </div>
         </Modal.Body>
         <Modal.Footer>
-          <button className="AddPostPostButton" onClick={handleUpload}>post
+          <button className="PostProfilePicButton" onClick={handleUpload}>post
                 </button>
         </Modal.Footer>
       </Modal>

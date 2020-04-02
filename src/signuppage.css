@@ -69,21 +69,32 @@
 }
 
 
-#SignUpButtonContainer {
+#signUpButtonContainer {
   display: flex;
   align-items: center;
-  width: 100%;
   min-height:100vh;
   margin-top: 140px;
   flex-direction: column;
 }
 
-.Logo {
+@media screen and (max-width: 500px) {
+  #signUpButtonContainer {
+    margin-top: 110px;
+  }
+}
+
+.signUpPageLogo {
   margin-bottom: 10px;
   animation: 1s ease-in-out 0s 1 flipInY;
 }
 
-.AnythingOnYourMind {
+@media screen and (max-width: 500px) {
+  .signUpPageLogo {
+    width: 200px;
+  }
+}
+
+.anythingOnYourMind {
   font-style: italic;
   font-size: 25px;
   margin-bottom: 20px;
@@ -91,8 +102,13 @@
   animation: 2s ease-out 1s 1 normal forwards lightSpeedIn;
 }
 
+@media screen and (max-width: 500px) {
+  .anythingOnYourMind {
+    font-size: 18px;
+  }
+}
 
-.StartAnonDiv {
+.startAnonDiv {
   background-color: #FBD6C8;
   border-radius: 10px;
   display: flex;
@@ -104,90 +120,53 @@
   animation: 1s ease-out 0s 1 zoomIn;
 }
 
-.StartAnon {
+@media screen and (max-width: 500px) {
+  .startAnonDiv {
+    width: 240px;
+  }
+}
+
+.startAnon {
   border: none;
   background-color: transparent;
   color: black;
   font-size: 30px;
   font-family: 'Open Sans', sans-serif;  
   position: relative;
-    /* border-radius: 75px; */
-  /* background: linear-gradient(105deg, rgb(76, 125, 231), rgb(207, 18, 207), rgb(243, 112, 151)); */
-  /* margin-top: 40px; */
 }
 
-.StartAnon:hover {
+.startAnon:hover {
   text-decoration: none;
   color: coral;
 }
 
-.SignUpLogIn {
+@media screen and (max-width: 500px) {
+  .startAnon {
+    font-size: 25px;
+  }
+}
+
+.signUpLogIn {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-top: 10px;
 }
 
-.SignUpButton {
+.signUpButton {
   color: black;
   font-size: 25px;
   animation: 1s ease-out 0s 1 zoomIn;
 }
 
-.SignUpButton:hover {
+.signUpButton:hover {
   text-decoration: none;
   color: coral;
 }
 
-/* @media screen and (max-width: 1000px) {
-  #SignUpButtonContainer {
-    margin-top: 130px;
-  }
-
-  .StartAnon {
-    font-size: 27px;
-  }
-
-  .Logo {
-    width: 280px;
-  }
-
-  .SignUpButton {
-    font-size: 25px;
-  }
-
-  .AnythingOnYourMind {
-    font-size: 25px;
-  }
-
-  .StartAnonDiv {
-    width: 270px;
-  }
-} */
-
 @media screen and (max-width: 500px) {
-  #SignUpButtonContainer {
-    margin-top: 110px;
-  }
-
-  .StartAnon {
-    font-size: 25px;
-  }
-
-  .Logo {
-    width: 200px;
-  }
-
-  .SignUpButton {
+  .signUpButton {
     font-size: 20px;
-  }
-
-  .AnythingOnYourMind {
-    font-size: 18px;
-  }
-
-  .StartAnonDiv {
-    width: 240px;
   }
 }
 

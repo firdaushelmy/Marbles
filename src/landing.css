@@ -1,44 +1,16 @@
-body{
+body {
   min-height:100vh;
-  /* background-image: url(/beach_background.JPG);
-  background-repeat: no-repeat;
-  background-size: cover; */
   background-color: white;
 }
-/* 
-.FrontFacePicture {
-  opacity: 0.8;
-  position: fixed; 
-  top: 0; 
-  bottom: 0; 
-  left: 0; 
-  right: 0; 
-  background-image: url(/frontface.JPG); 
-  background-repeat: no-repeat; 
-  background-size: contain; 
-  z-index: -99999;
-} */
 
-.Quotes {
+.quotes {
   font-size: 20px;
   color: lightskyblue;
 }
 
 @media screen and (max-width: 740px) {
-  .logo {
-    font-size: 35px;
-  }
-
-  .Quotes {
+  .quotes {
     font-size: 15px;
-  }
-
-  .SignUpButton {
-    font-size: 10px;
-  }
-
-  .FrontFacePicture {
-    background-size: cover;
   }
 }
 
@@ -68,7 +40,7 @@ body{
   }
 }
 
-#CanDoThis {
+#canDoThis {
   position: absolute;
   top: 15vw;
   right: 25vw;
@@ -79,7 +51,7 @@ body{
   z-index: -1;
 }
 
-#ChangeToday {
+#changeToday {
   position: absolute;
   right: 30px;
   top: 340px;
@@ -90,7 +62,7 @@ body{
   z-index: -1;
 }
 
-#DontWorry {
+#dontWorry {
   position: absolute;
   bottom: 5vh;
   left: 25vw;
@@ -101,7 +73,7 @@ body{
   z-index: -1;
 }
 
-#JamesBlunt {
+#jamesBlunt {
   position: absolute;
   bottom: 45vh;
   right: 35vw;
@@ -112,7 +84,7 @@ body{
   z-index: -1;
 }
 
-#AreLoved {
+#areLoved {
   position: absolute;
   top: 35vw;
   left: 10vw;
@@ -123,7 +95,7 @@ body{
   z-index: -1;
 }
 
-#GoSlowly {
+#goSlowly {
   position: absolute;
   bottom: 17vh;
   right: 17vw;

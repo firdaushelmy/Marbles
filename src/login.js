@@ -63,8 +63,8 @@ function Login() {
   return (
     <>
       <Landing />
-      <div className="container d-flex flex-column align-items-center" id="LogInContainer">
-        <img className="Logo" src="./logo.png"></img>
+      <div className="container d-flex flex-column align-items-center" id="logInContainer">
+        <img className="logInLogo" src="./logo.png"></img>
         <form id="loginStuff">
           <input type="text" className="form-control" placeholder="email address" id="LogInInput" value={email} onChange={handleEmailInput} />
           <input type="password" className="form-control" placeholder="password" id="LogInInput" value={password} onChange={handlePassInput} />

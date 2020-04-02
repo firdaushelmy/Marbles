@@ -1,4 +1,4 @@
-#VolunteerDiv {
+#volunteerDiv {
   width: 100%;
   height: 100%;
   display: flex;
@@ -6,9 +6,10 @@
   justify-content: center;
   font-family: 'Open Sans', sans-serif;
   color: #584646;
+  margin-top: 30px;
 }
 
-.OrgLogoImage {
+.orgLogoImage {
   background-color: #FBD6C8;
   margin-top: 10px;
   border-radius: 10px;
@@ -29,7 +30,13 @@
   }
 }
 
-.VolunteerSocialMediaDiv {
+.brandName {
+  font-weight: bold;
+  margin-top: 20px;
+  font-size: 30px;
+}
+
+.volunteerSocialMediaDiv {
   display: flex;
   flex-direction: row;
   width: 240px;
@@ -37,35 +44,23 @@
   align-items: center;
 }
 
-.FacebookIcon {
+.facebookIcon {
   color: #FBA589;
 }
 
-.TwitterIcon {
+.twitterIcon {
   color: #FBA589;
 }
 
-.InstagramIcon {
+.instagramIcon {
   color: #FBA589;
 }
 
-.SocialName {
+.socialName {
   font-weight: bold;
 }
 
-.BrandName {
-  font-weight: bold;
-  margin-top: 20px;
-  font-size: 30px;
-}
-
-.VolunteerTitle {
-  font-weight: bold;
-  font-size: 20px;
-  margin-top: 20px;
-}
-
-.VolunteerButton {
+.volunteerButton {
   background-color: #FBD6C8;
   width: 200px;
   height: 50px;
@@ -77,21 +72,27 @@
   justify-content: center;
 }
 
-.VolunteerLink {
+.volunteerLink {
   color: #584646;
 }
 
-.VolunteerLink:hover {
+.volunteerLink:hover {
   text-decoration: none;
   color: coral;
 }
 
-.VolunteerModal {
+.volunteerTitle {
+  font-weight: bold;
+  font-size: 20px;
+  margin-top: 20px;
+}
+
+.volunteerModal {
   font-family: 'Open Sans', sans-serif;
   color: #584646;
 }
 
-.VolunteerModalHeader {
+.volunteerModalHeader {
   background-color:#FBD6C8;
   display: flex;
   justify-content: center;
@@ -99,13 +100,22 @@
   height: 100px;
 }
 
-.VolunteerPhoneDiv {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+.volunteerModal .modal-content {
+  width: 100vw;
+  height: 100vh;
 }
 
-#VolunteerInput {
+.volunteerModal .modal-dialog {
+  margin: 0;
+}
+
+@media screen and (max-width: 740px) {
+  .volunteer .modal-body {
+    height: 300px;
+  }
+}
+
+#volunteerInput {
   border-radius: 10px;
   border: none;
   /* box-shadow: 0 5px 35px 0px rgba(0,0,0,.1); */
@@ -114,7 +124,13 @@
   margin-top: 10px;
 }
 
-#VolunteerInputPhoneCode {
+.volunteerPhoneDiv {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#volunteerInputPhoneCode {
   border-radius: 10px;
   border: none;
   border: 1px solid #D2D0D0;
@@ -124,7 +140,7 @@
   color: #584646;
 }
 
-#VolunteerInputPhone {
+#volunteerInputPhone {
   border-radius: 10px;
   border: none;
   border: 1px solid #D2D0D0;
@@ -134,20 +150,25 @@
   margin-left: 10px;
 }
 
-#VolunteerInputPhone ::placeholder {
+#volunteerInputPhone ::placeholder {
   display: flex;
   justify-self: center;
 }
 
-.VolunteerMailDisclaimer {
+#volunteerCheckBoxContainerDiv {
+  display: flex;
+  flex-direction: column;
+}
+
+.volunteerMailDisclaimer {
   margin-top: 20px;
 }
 
-#VolunteerCheckboxContainer {
+#volunteerCheckboxContainer {
   font-size: 13px;
 }
 
-.VolunteerConsentCheckbox {
+.volunteerConsentCheckbox {
   margin-right: 10px;
 }
 
@@ -156,18 +177,7 @@
   height: 25px;
 }
 
-.VolunteerModal .modal-content {
-  width: 100vw;
-  height: 80vh;
-  margin-top: 10vh;
-}
-
-.VolunteerModal .modal-dialog {
-  margin:0;
-}
-
-
-.LetMeVolunteer {
+.letMeVolunteer {
   background-color: #FBD6C8;
   border-radius: 5px;
   border: none;
@@ -176,36 +186,22 @@
   font-size: 20px;
 }
 
-.LetMeVolunteer:hover {
+.letMeVolunteer:hover {
   color: #584646;
 }
 
-.VolunteerCloseBtn {
+.volunteerCloseBtn {
   color: #584646;
   height: 40px;
   width: 135px;
 }
 
-.VolunteerCloseBtn:hover {
+.volunteerCloseBtn:hover {
   text-decoration: none;
   color: #726c6c;
 }
 
-.VolunteerCloseBtn:active {
+.volunteerCloseBtn:active {
   text-decoration: none;
   color: #726c6c;
-}
-
-#VolunteerCheckBoxContainerDiv {
-  display: flex;
-  flex-direction: column;
-}
-
-.VolunteerXButton {
-  border: none;
-  background-color: transparent;
-  /* width: 10px; */
-  position: absolute;
-  top: 10px;
-  right: 20px;
 }

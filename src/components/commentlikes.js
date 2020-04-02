@@ -47,9 +47,9 @@ function CommentLikes({ comID }) {
 
 
     return (
-        <div className="CommentLikeDiv">
+        <div className="commentLikeDiv">
             <form onSubmit={addLikes}>
-                <button className="CommentLikeButton">
+                <button className="commentLikeButton">
                     <i className="far fa-thumbs-up"></i><span></span>
                 </button>
             </form>

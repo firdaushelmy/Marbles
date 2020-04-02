@@ -1,8 +1,8 @@
-#AddThoughtsContainer {
+#addThoughtsContainer {
   font-family: 'Open Sans', sans-serif;
 }
 
-.AddYourThoughts {
+.addYourThoughts {
   background-color: #F7BDA9;
   margin-top: 10px;
   height: 100px;
@@ -13,15 +13,22 @@
   font-size: 30px;
 }
 
-.AddThoughtsPost {
+.addThoughtsPost {
   background-color: #FBD6C8;
   border: none;
   border-radius: 5px;
   width: 140px;
   margin-left: 20px;
+  padding: 10px;
 }
 
-.AddThoughtsTextArea {
+.addThoughtsPost:hover {
+  background-color: #F7BDA9;
+  border: 5px solid #FBD6C8;
+  padding: 5px;
+}
+
+.addThoughtsTextArea {
   width: 100%;
   height: 500px;
   border-radius: 10px;
@@ -35,44 +42,45 @@
   font-family: 'Special Elite', cursive;
   line-height: 3.3;
   background-blend-mode: lighten;
+  margin-top: 20px;
 }
 
 @media screen and (max-width: 1000px) {
-  .AddThoughtsTextArea {
+  .addThoughtsTextArea {
     padding-top: 30px;
     line-height: 2.4;
   }
 }
 
 @media screen and (max-width: 750px) {
-  .AddThoughtsTextArea {
+  .addThoughtsTextArea {
     padding-top: 0;
     line-height: 1.8;
   }
 }
 
 @media screen and (max-width: 740px) {
-  .AddThoughtsTextArea {
+  .addThoughtsTextArea {
     padding-top: 20px;
     line-height: 1.65;
   }
 
-  .AddYourThoughts {
+  .addYourThoughts {
     font-size: 20px;
   }
 
-  .AddThoughtsPost {
+  .addThoughtsPost {
     width: 80px;
   }
 }
 
-.AddThoughtsTextArea::placeholder {
+.addThoughtsTextArea::placeholder {
   color: black;
   text-align: center;
   padding-top: 195px;
 }
 
-.AddThoughtsTextArea:focus {
+.addThoughtsTextArea:focus {
   outline: none;
   /* background: none;   */
   background-color: #FBD6C8;

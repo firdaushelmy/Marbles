@@ -1,4 +1,4 @@
-.FaqDiv {
+.faqDiv {
   width: 100%;
   height: 100%;
   display: flex;
@@ -9,7 +9,7 @@
   color: #584646;
 }
 
-.FaqPinkDiv {
+.faqPinkDiv {
   background-color: #FBD6C8;
   margin-top: 10px;
   height: 160px;
@@ -21,29 +21,29 @@
 }
 
 @media screen and (max-width: 740px) {
-  .FaqPinkDiv {
+  .faqPinkDiv {
     width: 100%;
     border-radius: 0;
   }
 }
 
-.Accordion {
-  margin-top: 20px;
-  width: 100%;
-}
-
-#FaqAccordionDiv {
+#faqAccordionDiv {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.QuestionCardHeader {
+.accordion {
+  margin-top: 20px;
+  width: 100%;
+}
+
+.questionCardHeader {
   background-color: white !important;
   border: 2px solid #FBD6C8;
 }
 
-.QuestionCard {
+.questionCard {
   color: #584646 !important;
   text-decoration:none !important;
   height: 80px;
@@ -54,16 +54,16 @@
   cursor: pointer;
 }
 
-.QuestionCard:hover {
+.questionCard:hover {
   text-decoration: none !important;
   color: coral !important;
 }
 
-.QuestionCard:active {
+.questionCard:active {
   text-decoration: none !important;
   color: coral !important;
 }
 
-.AnswerCard {
+.answerCard {
   background-color: #FBD6C8;
 }
