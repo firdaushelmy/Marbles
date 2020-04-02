@@ -103,5 +103,3 @@ function Home({ threads, userID, isLoading, threadId }) {
 }
 
 export default Home;
-
-

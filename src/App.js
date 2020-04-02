@@ -26,6 +26,7 @@ import AddThoughts from "./AddThoughts";
 import Playlist from "./playlist";
 import CommentLikes from "./components/commentlikes";
 import SupportGroup from "./supportgroup.js";
+import Thoughts from "./thoughts";
 
 function App() {
   const [threads, setThreads] = useState([]);
@@ -134,6 +135,9 @@ function App() {
         </Route>
         <Route path="/supportgroup">
           <SupportGroup />
+        </Route>
+        <Route path="/thoughts">
+          <Thoughts />
         </Route>
       </>
     );
