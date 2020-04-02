@@ -11,3 +11,31 @@
   margin-top: 20px;
   margin-bottom: 20px;
 }
+
+.votePlaylist {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin-top: 15px;
+  margin-bottom: 20px;
+}
+
+.likePlaylist {
+  font-size: 30px;
+  margin-left: 10px;
+  color: #FBA589;
+}
+
+.likePlaylist:focus {
+  color: #FBD6C8;
+}
+
+.dislikePlaylist {
+  font-size: 30px;
+  margin-left: 20px;
+  color: #FBA589;
+}
+
+.dislikePlaylist:focus {
+  color: #FBD6C8;
+}

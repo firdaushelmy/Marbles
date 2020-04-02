@@ -19,6 +19,13 @@
   border-radius: 5px;
   width: 140px;
   margin-left: 20px;
+  padding: 10px;
+}
+
+.addThoughtsPost:hover {
+  background-color: #F7BDA9;
+  border: 5px solid #FBD6C8;
+  padding: 5px;
 }
 
 .addThoughtsTextArea {
@@ -35,6 +42,7 @@
   font-family: 'Special Elite', cursive;
   line-height: 3.3;
   background-blend-mode: lighten;
+  margin-top: 20px;
 }
 
 @media screen and (max-width: 1000px) {

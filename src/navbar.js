@@ -26,7 +26,8 @@ function Nav() {
       <Navbar className="navbar">
         <Navbar.Brand>
           <div onClick={handleShow2} className="addButton">
-            +
+            {/* <i class="fas fa-plus"></i> */}
+            <Button className="actualAddButton">Add</Button>
           </div>
         </Navbar.Brand>
         <Navbar.Collapse className="justify-content-end">
