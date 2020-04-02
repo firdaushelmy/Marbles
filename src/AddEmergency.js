@@ -2,6 +2,8 @@ import React, {useState, useEffect} from "react";
 import "./AddEmergency.css";
 import { Link, useHistory } from "react-router-dom"
 import axios from "axios"
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function AddEmergency() {
   const [emergencyNumber, setEmergencyNumber] = useState("")
@@ -41,8 +43,8 @@ function AddEmergency() {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    axios.post(`https://marbles-backend.herokuapp.com/api/v1/emergencies/new/${currentUser}`, {
-      'user': currentUser,
+    axios.post(`https://marbles-backend.herokuapp.com/api/v1/emergencies/new/${currentUser.id}`, {
+      'user': currentUser.id,
       'contact_no' : emergencyNumber,
       'name' : emergencyName,
       'relation' : relation,
@@ -50,6 +52,7 @@ function AddEmergency() {
 
     }).then(response => {
       console.log(response)
+      toast.success("You have successfully added an emergency contact");
       history.push("/emergency")
     })
   }

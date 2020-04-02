@@ -13,7 +13,7 @@ function ThreadLikes({ threadID }) {
         )
             .then(response => {
                 console.log(response)
-                setTotalLikes(response.data.msg.length)
+                setTotalLikes(response.data.length)
             });
     }, [])
     const addLikes = e => {
