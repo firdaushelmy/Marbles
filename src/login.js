@@ -67,7 +67,7 @@ function Login() {
         <img className="Logo" src="./logo.png"></img>
         <form id="loginStuff">
           <input type="text" className="form-control" placeholder="email address" id="LogInInput" value={email} onChange={handleEmailInput} />
-          <input type="password" className="form-control" placeholder="password" id="LogInInput" alue={password} onChange={handlePassInput} />
+          <input type="password" className="form-control" placeholder="password" id="LogInInput" value={password} onChange={handlePassInput} />
           <Link className="LogInBtn" onClick={handleLogin}>log in</Link>
           <Link tag={Link} to="/" className="ChangedMeMind">changed my mind</Link>
         </form>
