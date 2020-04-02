@@ -16,7 +16,7 @@ function FAQ() {
               what is marbles?
             </Accordion.Toggle>
             <Accordion.Collapse eventKey="0" className="answerCard">
-              <Card.Body>Marbles was created by a team of coders leading a movement for mental health awareness. In Malaysia, mental disorders estimated to be responsible for about 8.6% of total DALYs. We hope that you continue to support us in our movement!</Card.Body>
+              <Card.Body>Marbles was created by a team of coders leading a movement for mental health awareness. 1 in 4 people are diagnosed with mental illness in their lives and in Malaysia, mental disorders estimated to be responsible for about 8.6% of total DALYs. We hope that you continue to support us in our movement!</Card.Body>
             </Accordion.Collapse>
           </div>
         </Accordion>
