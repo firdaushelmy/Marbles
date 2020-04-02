@@ -1,7 +1,9 @@
 import React from "react";
 import "./feelings.css";
 import { Link } from "react-router-dom";
-import DelayLink from "./DelayLink.js"
+import DelayLink from "./DelayLink.js";
+
+
 
 function Feelings() {
   return (

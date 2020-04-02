@@ -58,6 +58,12 @@ function Threads(userID) {
         setTemplate(imageFile)
     }
 
+    const previewImageShow = (e) => {
+        const preview = document.querySelector(".imagePreviewDiv");
+        preview.src = { previewImage };
+        preview.style.display = "block"
+    }
+
     // ------ Keeping the below just in case -----
 
     // const handleContentSubmit = () => {
@@ -72,24 +78,24 @@ function Threads(userID) {
 
 
     return (
-        <div className="container-fluid" id="addImageContainer">
-            <form className="addImageForm" onSubmit={handleUpload}>
+        <form className="addImageForm" onSubmit={handleUpload} onChange={previewImageShow}>
+            <div className="imagePreviewDivBorder">
                 <div className="imagePreviewDiv">
-                    <img className="imagePreview" src={previewImage} alt="preview" />
-                </div>
-                <div>
-                    <input className="commentText" value={content} onChange={handleContentChange} type="text" placeholder="click to write a caption"></input>
-                </div>
-                <div className="addImageWrapper">
-                    <input id="addImageInput" type="file" name="image-file" onChange={handleTemplateChange} multiple={false}></input>
-                    <div>
-                        <label for="addImageInput" className="chooseImageButton">choose
+                    <div className="addImageWrapper">
+                        <input id="addImageInput" type="file" name="image-file" onChange={handleTemplateChange} multiple={false}></input>
+                        <div>
+                            <label for="addImageInput" className="chooseImageButton">choose
                     file</label>
+                        </div>
                     </div>
+                    {/* <img className="imagePreview" src={previewImage} /> */}
                 </div>
-                <button className="addPostPostButton" >post</button>
-            </form>
-        </div>
+            </div>
+            <div>
+                <input className="commentText" value={content} onChange={handleContentChange} type="text" placeholder="click to write a caption"></input>
+            </div>
+            <button className="addPostPostButton" >post</button>
+        </form>
     )
 }
 

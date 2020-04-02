@@ -39,6 +39,7 @@
   background-color: #FBA589  !important;
   border: none !important;
   font-family: 'Open Sans', sans-serif !important;
+  box-shadow: 0 0px 12px -1px rgba(18, 22, 33, 0.08);
 }
 
 .actualAddButton:hover {
@@ -216,3 +217,12 @@
   background-color: coral;
 }
 
+.imagePreviewModal .modal-header {
+  border-bottom: none;
+  background-color: transparent;
+}
+
+.imagePreviewModal .modal-body {
+  border-top: none;
+  background-color: transparent;
+}

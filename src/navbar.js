@@ -5,6 +5,7 @@ import "./navbar.css";
 import { Navbar } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import DelayLink from "./DelayLink";
+import Threads from "./components/threads.js"
 
 function Nav() {
   const [show, setShow] = useState(false);
@@ -13,6 +14,9 @@ function Nav() {
   const [show2, setShow2] = useState(false);
   const handleClose2 = () => setShow2(false);
   const handleShow2 = () => setShow2(true);
+  const [show3, setShow3] = useState(false);
+  const handleClose3 = () => setShow3(false);
+  const handleShow3 = () => setShow3(true);
   const [loggedIn, setLoggedIn] = useState(
     localStorage.getItem("jwt") !== null
   );
@@ -55,14 +59,10 @@ function Nav() {
         </Modal.Header>
         <Modal.Body>
           <Modal.Title id="modalLinkDiv">
-            <div className="pinkHoverDiv"><Link
-              className="accountInfoLink"
-              tag={Link}
-              to="/threads"
-              onClick={handleClose2}
-            >
-              add post
-            </Link>
+            <div className="pinkHoverDiv">
+              <Link className="accountInfoLink" onClick={handleShow3}>
+                add post
+              </Link>
             </div>
 
             <div className="pinkHoverDiv"><Link
@@ -122,6 +122,19 @@ function Nav() {
             <div className="pinkHoverDiv">
               <Link className="accountInfoLink">privacy policy</Link>
             </div>
+          </Modal.Title>
+        </Modal.Body>
+      </Modal>
+
+      <Modal className="imagePreviewModal" show={show3}>
+        <Modal.Header>
+          <button onClick={handleClose3} className="modalButtonX">
+            X
+          </button>
+        </Modal.Header>
+        <Modal.Body>
+          <Modal.Title>
+            <Threads />
           </Modal.Title>
         </Modal.Body>
       </Modal>

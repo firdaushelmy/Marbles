@@ -26,12 +26,16 @@ import AddThoughts from "./AddThoughts";
 import Playlist from "./playlist";
 import CommentLikes from "./components/commentlikes";
 import SupportGroup from "./supportgroup.js";
+// import { createTheming } from '@callstack/react-theme-provider';
+
 
 function App() {
   const [threads, setThreads] = useState([]);
   const [userID, setUserID] = useState(null)
   const [isLoading, setIsLoading] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(true);
+  // const { ThemeProvider, withTheme, useTheme } = createTheming(defaultTheme);
+
 
   const setLogInStateToTrue = () => {
     if (localStorage.getItem("jwt")) {
