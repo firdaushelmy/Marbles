@@ -19,6 +19,15 @@ function Playlist() {
         view={view}
         theme={theme}
       />
+      <div className="votePlaylist">
+        <button className="likePlaylist">
+          <i className="fas fa-thumbs-up"></i>
+        </button>
+        <button className="dislikePlaylist">
+          <i className="fas fa-thumbs-down"></i>
+        </button>
+      </div>
+
     </div>
   )
 }

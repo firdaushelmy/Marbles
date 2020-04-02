@@ -45,7 +45,6 @@ function Volunteer() {
 
       <Modal show={show} className="volunteerModal">
         <div className="volunteerModalHeader">
-          <button onClick={handleClose} className="volunteerXButton">X</button>
           <h6>you are applying to befrienderskl</h6>
         </div>
 

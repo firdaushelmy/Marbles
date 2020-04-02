@@ -57,7 +57,6 @@ function Home({ threads, userID, isLoading, threadId }) {
   // }
 
   return (
-
     threads.map(thread => {
       return (
         <>
@@ -100,8 +99,6 @@ function Home({ threads, userID, isLoading, threadId }) {
         </>
       )
     })
-
-
   )
 }
 

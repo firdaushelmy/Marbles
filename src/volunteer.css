@@ -6,6 +6,7 @@
   justify-content: center;
   font-family: 'Open Sans', sans-serif;
   color: #584646;
+  margin-top: 30px;
 }
 
 .orgLogoImage {
@@ -101,21 +102,17 @@
 
 .volunteerModal .modal-content {
   width: 100vw;
-  height: 80vh;
-  margin-top: 10vh;
+  height: 100vh;
 }
 
 .volunteerModal .modal-dialog {
-  margin:0;
+  margin: 0;
 }
 
-.volunteerXButton {
-  border: none;
-  background-color: transparent;
-  /* width: 10px; */
-  position: absolute;
-  top: 10px;
-  right: 20px;
+@media screen and (max-width: 740px) {
+  .volunteer .modal-body {
+    height: 300px;
+  }
 }
 
 #volunteerInput {
