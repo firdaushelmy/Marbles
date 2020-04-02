@@ -12,7 +12,7 @@ function ThreadLikes({ threadID }) {
             `https://marbles-backend.herokuapp.com/api/v1/thread_likes/${threadID}`
         )
             .then(response => {
-                console.log(response)
+                console.log(response.data)
                 setTotalLikes(response.data.length)
             });
     }, [])
