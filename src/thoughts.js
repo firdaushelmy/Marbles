@@ -1,28 +1,41 @@
 import React, { useState, useEffect } from 'react'
 import axios from "axios";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
+
 
 function Thoughts() {
-    const [threads, setThreads] = useState([]);
+    const [contents, setContents] = useState([]);
+    const current_user = JSON.parse(localStorage.getItem('user'))
+
+
 
     useEffect(() => {
-        axios.get("https://marbles-backend.herokuapp.com/api/v1/threads/")
-            .then(result => {
+        axios.get(`https://marbles-backend.herokuapp.com/api/v1/diaries/${current_user.id}`)
+            .then((result) => {
                 console.log(result.data)
-                setThreads(result.data)
-            });
+                setContents(result.data)
+            })
+            .catch(err => console.log(err.response));
     }, [])
 
+    console.log(contents.length)
+
+    // If the user has not added any thoughts, return plain text. otherwise, show the previously made thoughts
 
     return (
-        threads.map(thread => {
-            return (
-                <>
-                    <div>
-                        {thread.content && thread.template ? <h6>{thread.content}</h6> : <h2>no content</h2>}
-                    </div>
-                </>
-            )
-        })
+        <>
+            {contents.length === 0 ? <h3>You have not made any entries yet</h3> :
+                contents.map(entry => {
+                    return (
+                        <div>
+                            <h3>{entry.content}</h3>
+                        </div>
+                    )
+                })
+            }
+        </>
     )
 }
 

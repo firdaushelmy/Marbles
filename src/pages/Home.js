@@ -60,47 +60,42 @@ function Home({ threads, userID, isLoading, threadId }) {
     threads.map(thread => {
       return (
         <>
-          <div>
-            {thread.content && thread.template ?
-              <>
-                <Container className="userContainer">
-                  {/* took out the stuff in col, and restored it without bells and whistles. added styling for three rows in the home.css */}
-                  <Col className="userContainerCol">
-                    <div classname="container" id="individCol">
-                      <div className="imageDiv">
-                        <Image id={thread.id} className="userImages" src={`https://marblesbackend.s3-ap-southeast-1.amazonaws.com/${thread.template}`} />
-                      </div>
-                      <div className="threadDiv" onClick={() => setShowModal(thread.id)}>
-                        <h6 className="threadContent"><span>{thread.content}</span>
-                          <div>
-                            <ThreadLikes threadID={thread.id} />
-                          </div>
-                        </h6>
-                      </div>
+          <Container className="userContainer">
+            {/* took out the stuff in col, and restored it without bells and whistles. added styling for three rows in the home.css */}
+            <Col className="userContainerCol">
+              <div classname="container" id="individCol">
+                <div className="imageDiv">
+                  <Image id={thread.id} className="userImages" src={`https://marblesbackend.s3-ap-southeast-1.amazonaws.com/${thread.template}`} />
+                </div>
+                <div className="threadDiv" onClick={() => setShowModal(thread.id)}>
+                  <h6 className="threadContent"><span>{thread.content}</span>
+                    <div>
+                      <ThreadLikes threadID={thread.id} />
                     </div>
-                  </Col>
-                </Container>
+                  </h6>
+                </div>
+              </div>
+            </Col>
+          </Container>
 
 
-                <Modal show={showModal == thread.id} className="imageModal">
-                  <Modal.Header>
-                    <Button className="returnToHome" onClick={handleCloseModal}>
-                      Return To Home
-            </Button>
-                  </Modal.Header>
-                  <Modal.Body>
-                    <Image id={thread[thread.id]} src={`https://marblesbackend.s3-ap-southeast-1.amazonaws.com/${thread.template}`} className="enlargedImage"></Image>
-                  </Modal.Body>
-                  <Modal.Footer>
+          <Modal show={showModal == thread.id} className="imageModal">
+            <Modal.Header>
+              <Button className="returnToHome" onClick={handleCloseModal}>
+                Return To Home
+          </Button>
+            </Modal.Header>
+            <Modal.Body>
+              <Image id={thread[thread.id]} src={`https://marblesbackend.s3-ap-southeast-1.amazonaws.com/${thread.template}`} className="enlargedImage"></Image>
+            </Modal.Body>
+            <Modal.Footer>
 
-                    <div className="commentWrapperHome">
-                      <Comments threads={threads} threadId={thread.id} userID={userID} />
-                    </div>
+              <div className="commentWrapperHome">
+                <Comments threads={threads} threadId={thread.id} userID={userID} />
+              </div>
 
-                  </Modal.Footer>
-                </Modal>
-              </> : <h2>no content</h2>}
-          </div>
+            </Modal.Footer>
+          </Modal>
         </>
       )
     })
@@ -108,5 +103,3 @@ function Home({ threads, userID, isLoading, threadId }) {
 }
 
 export default Home;
-
-
