@@ -16,8 +16,10 @@ function Profile() {
   const [profileImage, setProfileImage] = useState(null);
   const [template, setTemplate] = useState("")
   const jwt = localStorage.getItem("jwt")
+  const [cName, setCName] = useState("")
 
   const current_user = JSON.parse(localStorage.getItem('user'))
+  console.log(current_user.id)
   //to get name,id and email of current user, use:
   //current_user.name, current_user.id, current_user.email
 
@@ -45,7 +47,15 @@ function Profile() {
         setProfileImage(result.data.profile_picture)
       })
       .catch(err => console.log(err.response))
-  }, []);
+      
+    axios.get(`https://marbles-backend.herokuapp.com/api/v1/users/${current_user.id}`).then(res => {
+      
+      console.log(res.data) 
+      setCName(res.data.name) 
+      
+    }).catch(err => console.log(err.response))
+  
+    }, []);
 
   // ---- POST API TO UPLOAD PROFILE PIC ------
 
@@ -72,7 +82,7 @@ function Profile() {
         <div className="profilePicDisplay">
           {profileImage ? <img onClick={handleShowModal} className="profileImagePreview" src={`https://marblesbackend.s3-ap-southeast-1.amazonaws.com/${profileImage}`} alt="preview" /> : <h6 onClick={handleShowModal}>+profile</h6>}
         </div>
-        <h2>{current_user.name}</h2>
+        <h2>{cName}</h2>
         <div className="encouragementStarred">
           <div className="encouragements">
             <h6>{Math.floor(Math.random() * 1000)}</h6>
@@ -83,7 +93,7 @@ function Profile() {
             <h6>stars</h6>
           </div>
         </div>
-        <Link tag={Link} to="/mood" className="profileLink">edit profile</Link>
+        <Link tag={Link} to="/editprofile" className="profileLink">edit profile</Link>
         <Link tag={Link} to="/emergency" className="profileLink">emergency contact</Link>
         <Link tag={Link} to="/volunteer" className="profileLink">volunteer</Link>
         <Link tag={Link} to="/mood" className="profileLink">how to seek help</Link>

@@ -13,6 +13,7 @@ import Home from "./pages/Home"
 import AddEmergency from "./AddEmergency"
 import SignUpPage from "./signuppage"
 import Profile from "./profile"
+import EditProfile from "./editprofile"
 import Anonymous from "./anonymous"
 import Volunteer from "./volunteer"
 import FAQ from "./FAQ"
@@ -106,6 +107,9 @@ function App() {
         </Route>
         <PrivateRoute path="/profile" component={Profile} />
         {/* Change Route to the above PrivateRoute pattern if you want to require login first */}
+        <Route path="/editprofile">
+          <EditProfile />
+        </Route>
         <Route path="/volunteer">
           <Volunteer />
         </Route>
