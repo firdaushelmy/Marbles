@@ -3,6 +3,8 @@ import "./panic.css";
 import axios from "axios";
 import PanicSVG from "./panicSVG.js";
 import styled, { ThemeProvider, keyframes, withTheme } from 'styled-components';
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function Panic() {
   const [emerCont, setEmerCont] = useState([])
@@ -24,11 +26,20 @@ function Panic() {
       panicButtonContactDivBg: "#FBD6C8"
     }
   }
+  const cuID = JSON.parse(localStorage.getItem('user'))
+  const cID = cuID.id
+  const handleMailgun = (e) => {
+    e.preventDefault()
+    axios.post(`https://marbles-backend.herokuapp.com/api/v1/emergencies/panic/${cID}`).then(res => {
+      console.log(res.data)
+      toast.success("Please calm down! Emergency contact has been notify about the button press")
+    })
+  }
 
   return (
     <div className="container" id="panicSurrounding">
       <button className="panic" >
-        <PanicSVG />
+        <PanicSVG onClick={handleMailgun} />
       </button>
       <div className="container">
         <div className="panicDisclaimer">marbles will send an emergency sms to registered emergency contacts</div>
@@ -44,9 +55,7 @@ function Panic() {
 
               )
             }) : ""}
-      </div>
-    </div>
-  )
-}
-
+        )
+      }
+      
 export default Panic;
