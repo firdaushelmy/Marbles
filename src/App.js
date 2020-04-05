@@ -130,7 +130,8 @@ function App() {
     anonLinkHoverCol2: "coral",
     panicButtonContactDivBg: "#FBD6C8",
     circleFill: "#F48157",
-    circleFill2: "#F48157"
+    circleFill2: "#F48157",
+    thoughtsDisplayDivBg: "#FBD6C8"
   };
 
   const depressedTheme = {
@@ -192,7 +193,8 @@ function App() {
     anonLinkHoverCol2: "#007bff",
     panicButtonContactDivBg: "#b1cff7",
     circleFill: "#b1cff7",
-    circleFill2: "#bed4f1"
+    circleFill2: "#bed4f1",
+    thoughtsDisplayDivBg: "#b1cff7"
   };
 
   console.log(threads.user)
