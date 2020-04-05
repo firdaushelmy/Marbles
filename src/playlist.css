@@ -23,19 +23,23 @@
 .likePlaylist {
   font-size: 30px;
   margin-left: 10px;
-  color: #FBA589;
+  /* color: #FBA589; */
+  background-color: transparent;
+  border: none;
 }
 
-.likePlaylist:focus {
+/* .likePlaylist:focus {
   color: #FBD6C8;
-}
+} */
 
 .dislikePlaylist {
   font-size: 30px;
   margin-left: 20px;
-  color: #FBA589;
+  /* color: #FBA589; */
+  background-color: transparent;
+  border: none;
 }
 
-.dislikePlaylist:focus {
+/* .dislikePlaylist:focus {
   color: #FBD6C8;
-}
+} */

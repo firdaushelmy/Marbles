@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import "./AddThoughts.css";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
+import styled, { ThemeProvider, keyframes, withTheme } from 'styled-components';
+import { Button } from "react-bootstrap";
 
 function AddThoughts() {
   const [content, setContent] = useState("")
@@ -29,11 +31,47 @@ function AddThoughts() {
     console.log(content)
   }
 
+  const AddThoughtsDiv = styled.div`
+  background-color: ${props => props.theme.addThoughtsDivBg}
+  `;
+
+  AddThoughtsDiv.defaultProps = {
+    theme: {
+      addThoughtsDivBg: "#F7BDA9"
+    }
+  };
+
+  const AddThoughtsButton = styled(Button)`
+     background-color: ${props => props.theme.encBtnBg};
+     color: ${props => props.theme.encBtnCol};
+      border: 2px solid ${props => props.theme.encBtnBorder};
+     &:hover {
+      background-color: ${props => props.theme.encBtnBgHover};
+      color: ${props => props.theme.encBtnColHover};
+      border: 2px solid ${props => props.theme.encBtnBorderHover};
+      &:active {
+      background-color: ${props => props.theme.encBtnBgHover};
+      color: ${props => props.theme.encBtnColHover};
+      border: 2px solid ${props => props.theme.encBtnBorderHover};
+     }
+`;
+
+  AddThoughtsButton.defaultProps = {
+    theme: {
+      encBtnBg: "#FBD6C8",
+      encBtnCol: "black",
+      encBtnBorder: "#FBA589",
+      encBtnBgHover: "#FBA589",
+      encBtnColHover: "black",
+      encBtnBorderHover: "#FBA589"
+    }
+  };
+
   return (
     <div className="container" id="addThoughtsContainer">
-      <div className="addYourThoughts">write your thoughts
-      <button className="addThoughtsPost" onClick={handleUpload}>post</button>
-      </div>
+      <AddThoughtsDiv className="addYourThoughts">write your thoughts
+      <AddThoughtsButton className="addThoughtsPost" onClick={handleUpload}>post</AddThoughtsButton>
+      </AddThoughtsDiv>
       <textarea autoResize="true" placeholder="click me and start writing" className="addThoughtsTextArea" value={content} onChange={handleContentChange}></textarea>
     </div>
   )

@@ -1,20 +1,20 @@
 .encourageBtn {
   margin-top: 10px;
-  background-color: #FBD6C8;
-  color: black;
-  border: 2px solid #FBA589;
+  /* background-color: #FBD6C8; */
+  /* color: black; */
+  /* border: 2px solid #FBA589; */
   font-family: 'Open Sans', sans-serif;
   margin-bottom: 20px;
 }
 
-.encourageBtn:hover {
+/* .encourageBtn:hover {
   background-color: #FBA589;
   border: 2px solid #FBA589;
-}
+} */
 
 .encourageBtn:active {
-  background-color: #FBA589 !important;
-  border: 2px solid #FBA589 !important;
+  /* background-color: #FBA589 !important;
+  border: 2px solid #FBA589 !important; */
   outline: none !important;
 }
 

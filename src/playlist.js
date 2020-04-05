@@ -1,6 +1,7 @@
 import React from "react";
 import "./playlist.css";
 import SpotifyPlayer from 'react-spotify-player';
+import styled, { ThemeProvider, keyframes, withTheme } from 'styled-components';
 
 function Playlist() {
   const size = {
@@ -10,8 +11,33 @@ function Playlist() {
   const view = 'coverart';
   const theme = 'black';
 
+  const PlaylistContainer = styled.div`
+  color: ${props => props.theme.playlistContainerCol};
+  `;
+
+  PlaylistContainer.defaultProps = {
+    theme: {
+      playlistContainerCol: "coral"
+    }
+  }
+
+
+  const VotePlaylistButtons = styled.button`
+    color: ${props => props.theme.votePlaylistButtonsCol};
+    &: hover {
+      color: ${props => props.theme.votePlaylistButtonsFocusCol};
+    };
+  `
+
+  VotePlaylistButtons.defaultProps = {
+    theme: {
+      votePlaylistButtonsCol: "#FBA589",
+      votePlaylistButtonsFocusCol: "#FBD6C8"
+    }
+  }
+
   return (
-    <div className="container" id="playlistContainer">
+    <PlaylistContainer className="container" id="playlistContainer">
       <h1 className="playlistHeader">Playlist curated for you</h1>
       <SpotifyPlayer
         uri="spotify:playlist:35vz6hV0QQgSHeAT6stHnA"
@@ -20,15 +46,15 @@ function Playlist() {
         theme={theme}
       />
       <div className="votePlaylist">
-        <button className="likePlaylist">
+        <VotePlaylistButtons className="likePlaylist">
           <i className="fas fa-thumbs-up"></i>
-        </button>
-        <button className="dislikePlaylist">
+        </VotePlaylistButtons>
+        <VotePlaylistButtons className="dislikePlaylist">
           <i className="fas fa-thumbs-down"></i>
-        </button>
+        </VotePlaylistButtons>
       </div>
 
-    </div>
+    </PlaylistContainer>
   )
 }
 

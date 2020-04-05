@@ -5,6 +5,7 @@ import "./comments.css";
 import { Container, Col, Button } from "reactstrap";
 import CommentLikes from "./commentlikes";
 import Image from "react-graceful-image";
+import styled, { ThemeProvider, keyframes, withTheme } from 'styled-components';
 
 function Comments(threads, threadId, userID) {
   const [text, setText] = useState("")
@@ -75,7 +76,7 @@ function Comments(threads, threadId, userID) {
   const handleTextSubmit = (e) => {
     e.preventDefault()
 
-console.log(text)
+    console.log(text)
     console.log(localStorage.getItem("user"))
     console.log(threads.threadId)
 
@@ -104,7 +105,33 @@ console.log(text)
 
   }
 
-  const [tempText, setTempText] = useState("")
+  const [tempText, setTempText] = useState("");
+
+  const EncButton = styled(Button)`
+     background-color: ${props => props.theme.encBtnBg};
+     color: ${props => props.theme.encBtnCol};
+      border: 2px solid ${props => props.theme.encBtnBorder};
+     &:hover {
+      background-color: ${props => props.theme.encBtnBgHover};
+      color: ${props => props.theme.encBtnColHover};
+      border: 2px solid ${props => props.theme.encBtnBorderHover};
+      &:active {
+      background-color: ${props => props.theme.encBtnBgHover};
+      color: ${props => props.theme.encBtnColHover};
+      border: 2px solid ${props => props.theme.encBtnBorderHover};
+     }
+`;
+
+  EncButton.defaultProps = {
+    theme: {
+      encBtnBg: "#FBD6C8",
+      encBtnCol: "black",
+      encBtnBorder: "#FBA589",
+      encBtnBgHover: "#FBA589",
+      encBtnColHover: "black",
+      encBtnBorderHover: "#FBA589"
+    }
+  };
 
   return (
     <div className="container-fluid">
@@ -113,7 +140,7 @@ console.log(text)
           <div>
             <input id="commentText" value={tempText} onChange={handleTextChange} type="text" placeholder="Write some encouragement here"></input>
           </div>
-          <Button className="encourageBtn" type="submit">Encourage</Button>
+          <EncButton className="encourageBtn" type="submit">Encourage</EncButton>
         </form>
       </div>
 

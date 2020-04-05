@@ -143,14 +143,14 @@ h6 span {
 
 .imageModal .modal-header {
   border: none;
-  background-color: rgb(250, 228, 220);
+  /* background-color: rgb(250, 228, 220); */
 }
 
 .imageModal .modal-body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgb(250, 228, 220);
+  /* background-color: rgb(250, 228, 220); */
 }
 
 .imageModal .modal-content {
@@ -167,7 +167,7 @@ h6 span {
 .imageModal .modal-footer {
   border: none;
   padding: 0 auto;
-  background-color: rgb(250, 228, 220);
+  /* background-color: rgb(250, 228, 220); */
 }
 
 @media screen and (max-width: 740px) {
@@ -181,20 +181,20 @@ h6 span {
 }
 
 .returnToHome {
-  background-color: #FBD6C8;
+  /* background-color: #FBD6C8; */
   color: black;
-  border: 2px solid #FBA589;
+  /* border: 2px solid #FBA589; */
   font-family: 'Open Sans', sans-serif;
 }
 
-.returnToHome:hover {
+/* .returnToHome:hover {
   background-color: #FBA589;
   border: 2px solid #FBA589;
-}
+} */
 
 .returnToHome:active {
-  background-color: #FBA589 !important;
-  border: 2px solid #FBA589 !important;
+  /* background-color: #FBA589 !important;
+  border: 2px solid #FBA589 !important; */
   outline: none !important;
 }
 

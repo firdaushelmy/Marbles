@@ -1,26 +1,49 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./panic.css";
+import axios from "axios";
+import PanicSVG from "./panicSVG.js";
+import styled, { ThemeProvider, keyframes, withTheme } from 'styled-components';
 
 function Panic() {
-  function handleClick(e) {
-    e.preventDefault();
-    let Panic = document.querySelector("#PanicSurrounding")
-    // Panic.append("Okay")
-    // Panic.style.display = "";
-    Panic.style.position = "absolute";
-    Panic.style.left = Math.floor(Math.random() * 100) + "px";
-    Panic.style.top = Math.floor(Math.random() * 100) + "px";
-    Panic.style.right = Math.floor(Math.random() * 100) + "px";
+  const [emerCont, setEmerCont] = useState([])
+  const cUser = JSON.parse(localStorage.getItem("user"));
+  const currentID = cUser.id
+  useEffect(() => {
+    axios.get(`https://marbles-backend.herokuapp.com/api/v1/emergencies/${currentID}`).then(response => {
+      console.log(response.data)
+      setEmerCont(response.data)
+    });
+  }, []);
+
+  const PanicButtonContactDiv = styled.div`
+    background-color: ${props => props.theme.panicButtonContactDivBg}
+  `
+
+  PanicButtonContactDiv.defaultProps = {
+    theme: {
+      panicButtonContactDivBg: "#FBD6C8"
+    }
   }
 
   return (
     <div className="container" id="panicSurrounding">
-      <div className="panicSurround1">
-        <div className="panicSurround2">
-          <button className="panic">
-            PANIC
-           </button>
-        </div>
+      <button className="panic" >
+        <PanicSVG />
+      </button>
+      <div className="container">
+        <div className="panicDisclaimer">marbles will send an emergency sms to registered emergency contacts</div>
+        {
+          emerCont.length > 0
+            ? emerCont.map(cont => {
+              return (
+                <PanicButtonContactDiv className="panicButtonContact">
+                  <h3> {cont.name} </h3>
+                  <h3> {cont.contact_no} </h3>
+                  <h3> {cont.relation} </h3>
+                </PanicButtonContactDiv>
+
+              )
+            }) : ""}
       </div>
     </div>
   )

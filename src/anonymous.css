@@ -7,12 +7,12 @@
 
 .createAccount {
   margin-top: 20px;
-  background-color: #FBA589;
-  box-shadow: 0 0 1px 0px coral;
+  /* background-color: #FBA589; */
+  /* box-shadow: 0 0 1px 0px coral; */
   /* background: linear-gradient(105deg, rgb(76, 125, 231), rgb(207, 18, 207), rgb(243, 112, 151)); */
   border: none;
   border-radius: 10px;
-  width: 75%;
+  width: 80%;
   color: black;
   display: flex;
   align-items: center;
@@ -23,18 +23,18 @@
 
 .createAccount:hover {
   text-decoration: none;
-  color: white;
+  /* color: white; */
 }
 
 .createAccount:active {
   text-decoration: none;
-  color: white;
+  /* color: white; */
 }
 
 .anonymousLink {
   margin-top: 20px;
-  background-color: #FBD6C8;
-  box-shadow: 0 0 1px 0px coral;
+  /* background-color: #FBD6C8; */
+  /* box-shadow: 0 0 1px 0px coral; */
   /* background: linear-gradient(105deg, rgb(76, 125, 231), rgb(207, 18, 207), rgb(243, 112, 151)); */
   border: none;
   border-radius: 10px;
@@ -49,10 +49,10 @@
 
 .anonymousLink:hover {
   text-decoration: none;
-  color: coral;
+  /* color: coral; */
 }
 
 .anonymousLink:active {
   text-decoration: none;
-  color: coral;
+  /* color: coral; */
 }

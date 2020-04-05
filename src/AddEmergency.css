@@ -19,12 +19,12 @@
   margin-top: 10px;
   background-color: white;
   width: 100%;
-  box-shadow: 0 0 5px -1px#FBA589;
+  /* box-shadow: 0 0 5px -1px #FBA589; */
 }
 
-#emergencyInput:focus {
+/* #emergencyInput:focus {
   box-shadow: 0 0 7px -1px #FBA589;
-}
+} */
 
 #emergencyInput option {
   width: 200px;
@@ -47,4 +47,8 @@
   box-shadow: 0 4px 12px -1px rgba(18, 22, 33, 0.08);
   /* box-shadow: 0 0px 7px -1px rgb(248, 93, 131); */
   /* background: linear-gradient(105deg, rgb(76, 125, 231), rgb(207, 18, 207), rgb(243, 112, 151)); */
+}
+
+.addEmergency:hover {
+  color: #584646;
 }

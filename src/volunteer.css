@@ -10,7 +10,7 @@
 }
 
 .orgLogoImage {
-  background-color: #FBD6C8;
+  /* background-color: #FBD6C8; */
   margin-top: 10px;
   border-radius: 10px;
   height: 260px;
@@ -44,7 +44,7 @@
   align-items: center;
 }
 
-.facebookIcon {
+/* .facebookIcon {
   color: #FBA589;
 }
 
@@ -54,31 +54,29 @@
 
 .instagramIcon {
   color: #FBA589;
-}
+} */
 
 .socialName {
   font-weight: bold;
 }
 
 .volunteerButton {
-  background-color: #FBD6C8;
-  width: 200px;
-  height: 50px;
+  /* background-color: #FBD6C8; */
+  width: 150px;
   font-size: 20px;
   border: none;
   border-radius: 5px;
-  width: 100px;
   display: flex;
   justify-content: center;
 }
 
-.volunteerLink {
-  color: #584646;
-}
+/* .volunteerLink {
+  color: black;
+} */
 
 .volunteerLink:hover {
   text-decoration: none;
-  color: coral;
+  /* color: coral; */
 }
 
 .volunteerTitle {
@@ -93,7 +91,7 @@
 }
 
 .volunteerModalHeader {
-  background-color:#FBD6C8;
+  /* background-color:#FBD6C8; */
   display: flex;
   justify-content: center;
   align-items: center;

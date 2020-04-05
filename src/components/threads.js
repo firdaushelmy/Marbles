@@ -2,7 +2,9 @@ import React, { useState } from 'react'
 import "bootstrap/dist/css/bootstrap.min.css";
 import axios from "axios";
 import "./threads.css";
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
+import styled, { ThemeProvider, keyframes, withTheme } from 'styled-components';
+import { Button } from "react-bootstrap";
 // import Text2Image from '@xg4/text2image'
 
 function Threads(userID) {
@@ -57,6 +59,61 @@ function Threads(userID) {
         preview.style.display = "block"
     }
 
+    const ImagePreviewDiv = styled.div`
+        background-color: ${props => props.theme.imagePreviewDivBg};
+    `
+
+    ImagePreviewDiv.defaultProps = {
+        theme: {
+            imagePreviewDivBg: "#FBD6C8"
+        }
+    }
+
+    const CommentTextInput = styled.input`
+    color: ${props => props.theme.commentTextInputCol};
+    box-shadow: 0 0 5px -1px ${props => props.theme.emergencyInputBoxShadow};
+    &::placeholder {
+        color: ${props => props.theme.commentTextInputCol};
+    };
+    &:focus {
+      box-shadow: 0 0 7px -1px ${props => props.theme.emergencyInputBoxShadowFocus};
+    };
+    `
+
+    CommentTextInput.defaultProps = {
+        theme: {
+            commentTextInputCol: "#FBA589",
+            emergencyInputBoxShadow: "#FBA589",
+            emergencyInputBoxShadowFocus: "#FBD6C8"
+        }
+    }
+
+    const CommentPostButton = styled(Button)`
+     background-color: ${props => props.theme.encBtnBg};
+     color: ${props => props.theme.encBtnCol};
+      border: 2px solid ${props => props.theme.encBtnBorder};
+     &:hover {
+      background-color: ${props => props.theme.encBtnBgHover};
+      color: ${props => props.theme.encBtnColHover};
+      border: 2px solid ${props => props.theme.encBtnBorderHover};
+      &:active {
+      background-color: ${props => props.theme.encBtnBgHover};
+      color: ${props => props.theme.encBtnColHover};
+      border: 2px solid ${props => props.theme.encBtnBorderHover};
+     }
+`;
+
+    CommentPostButton.defaultProps = {
+        theme: {
+            encBtnBg: "#FBD6C8",
+            encBtnCol: "black",
+            encBtnBorder: "#FBA589",
+            encBtnBgHover: "#FBA589",
+            encBtnColHover: "black",
+            encBtnBorderHover: "#FBA589"
+        }
+    };
+
     // ------ Keeping the below just in case -----
 
     // const handleContentSubmit = () => {
@@ -73,7 +130,7 @@ function Threads(userID) {
     return (
         <form className="addImageForm" onSubmit={handleUpload} onChange={previewImageShow}>
             <div className="imagePreviewDivBorder">
-                <div className="imagePreviewDiv">
+                <ImagePreviewDiv className="imagePreviewDiv">
                     <div className="addImageWrapper">
                         <input id="addImageInput" type="file" name="image-file" onChange={handleTemplateChange} multiple={false}></input>
                         <div>
@@ -82,12 +139,12 @@ function Threads(userID) {
                         </div>
                     </div>
                     {/* <img className="imagePreview" src={previewImage} /> */}
-                </div>
+                </ImagePreviewDiv>
             </div>
             <div>
-                <input className="commentText" value={content} onChange={handleContentChange} type="text" placeholder="click to write a caption"></input>
+                <CommentTextInput className="commentText" value={content} onChange={handleContentChange} type="text" placeholder="click to write a caption"></CommentTextInput>
             </div>
-            <button className="addPostPostButton" >post</button>
+            <CommentPostButton className="addPostPostButton" >post</CommentPostButton>
         </form>
     )
 }
