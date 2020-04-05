@@ -41,21 +41,21 @@ function Panic() {
       <button className="panic" >
         <PanicSVG onClick={handleMailgun} />
       </button>
-      <div className="container">
-        <div className="panicDisclaimer">marbles will send an emergency sms to registered emergency contacts</div>
-        {
-          emerCont.length > 0
-            ? emerCont.map(cont => {
-              return (
-                <PanicButtonContactDiv className="panicButtonContact">
-                  <h3> {cont.name} </h3>
-                  <h3> {cont.contact_no} </h3>
-                  <h3> {cont.relation} </h3>
-                </PanicButtonContactDiv>
+      <div className="panicDisclaimer">marbles will send an emergency sms to registered emergency contacts</div>
+      {
+        emerCont.length > 0
+          ? emerCont.map(cont => {
+            return (
+              <PanicButtonContactDiv className="panicButtonContact">
+                <h3> {cont.name} </h3>
+                <h3> {cont.contact_no} </h3>
+                <h3> {cont.relation} </h3>
+              </PanicButtonContactDiv>
 
-              )
-            }) : ""}
-        )
-      }
-      
+            )
+          }) : ""}
+    </div>
+  )
+}
+
 export default Panic;
