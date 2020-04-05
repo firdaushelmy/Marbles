@@ -1,5 +1,5 @@
 .navbar {
-  background-color: rgb(250, 229, 223);
+  /* background-color: rgb(250, 229, 223); */
   display: flex;
   justify-content: center;
   height: 60px;
@@ -36,14 +36,16 @@
 }
 
 .actualAddButton {
-  background-color: #FBA589  !important;
+  /* background-color: #FBA589  !important; */
   border: none !important;
   font-family: 'Open Sans', sans-serif !important;
+  box-shadow: 0 0px 12px -1px rgba(18, 22, 33, 0.08);
+  /* color: white; */
 }
 
 .actualAddButton:hover {
-  background-color: #FBD6C8!important;
-  color: black !important;
+  /* background-color: #FBD6C8!important;
+  color: black !important; */
   outline: none !important;
 }
 
@@ -61,7 +63,7 @@
   background-color:transparent;
   border-radius:50%;
   border:none;
-  color: #747779;
+  /* color: #747779; */
   transition: 1s;
   display: flex;
   justify-content: center;
@@ -159,12 +161,12 @@
 }
 
 .pinkHoverDiv:hover {
-  background-color: #FBD6C8;
+  /* background-color: #FBD6C8; */
   color: black;
 }
 
 .pinkHoverDiv:active {
-  background-color: rgb(247, 197, 179);
+  /* background-color: rgb(247, 197, 179); */
   color: black;
 }
 
@@ -172,7 +174,7 @@
   text-decoration: none;
   font-size: 40px;
   font-family: 'Raleway';
-  color: coral;
+  /* color: coral; */
 }
 
 .accountInfoLink:hover {
@@ -199,7 +201,7 @@
   background-color: transparent;
   border-radius:50%;
   border:none;
-  color:coral;
+  /* color:coral; */
   margin-right:2vw;
   transition: 1s;
   font-size: 15px;
@@ -213,6 +215,14 @@
 
 .modalButtonX:active {
   transform: rotate(360deg);
-  background-color: coral;
 }
 
+.imagePreviewModal .modal-header {
+  border-bottom: none;
+  background-color: transparent;
+}
+
+.imagePreviewModal .modal-body {
+  border-top: none;
+  background-color: transparent;
+}

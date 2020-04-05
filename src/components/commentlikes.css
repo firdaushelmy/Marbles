@@ -5,17 +5,13 @@
 }
 
 .commentLikeButton {
-  background-color: #FBD6C8;
-  border: 2px solid pink;
+  /* background-color: #FBD6C8;
+  border: 2px solid pink; */
   border-radius: 50%;
   margin-right: 10px;
 }
 
-.commentLikeButton:active {
-  background-color: pink;
-}
-
 .commentLikeButton:focus {
-  background-color: pink;
+  /* background-color: pink; */
   outline: none;
 }

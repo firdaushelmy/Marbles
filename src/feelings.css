@@ -1,4 +1,3 @@
-
 @keyframes slideFromTop {
   0% {
     transform: translateY(-100%)
@@ -15,8 +14,7 @@
 .howYouDoin {
   display: flex;
   justify-content: center;
-  /* color: rgb(4, 63, 100); */
-  color: rgb(241, 93, 38);
+  /* color: rgb(241, 93, 38); */
   font-family: 'Courgette', cursive;;
   font-size: 5vw;
   animation: 3s ease-out 0s 1 slideFromTop;
@@ -63,7 +61,7 @@
   border-style: double;
   border-width: 10px;
   background-color: #fff;
-  border-color: rgb(247, 154, 120);
+  /* border-color: rgb(247, 154, 120); */
   overflow: hidden;
 }
 
@@ -78,7 +76,7 @@
 
 .feelingType  {
   position: relative;
-  color: coral;
+  /* color: coral; */
   transition: 1s;
   z-index: 3;
 }

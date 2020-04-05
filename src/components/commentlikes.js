@@ -3,7 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import axios from "axios";
 import "./comments.css";
 import "./commentlikes.css"
-
+import styled, { ThemeProvider, keyframes, withTheme } from 'styled-components';
 
 
 
@@ -45,13 +45,28 @@ function CommentLikes({ comID }) {
             });
     };
 
+    const CommentLikeButton = styled.button`
+    background-color: ${props => props.theme.commentLikeButtonBg};
+    border: ${props => props.theme.commentLikeButtonBorder};
+    &:focus {
+background-color: ${props => props.theme.commentLikeButtonBgFocus};
+    }
+    `
+
+    CommentLikeButton.defaultProps = {
+        theme: {
+            commentLikeButtonBg: "#FBD6C8",
+            commentLikeButtonBorder: "2px solid pink",
+            commentLikeButtonBgFocus: "pink"
+        }
+    }
 
     return (
         <div className="commentLikeDiv">
             <form onSubmit={addLikes}>
-                <button className="commentLikeButton">
+                <CommentLikeButton className="commentLikeButton">
                     <i className="far fa-thumbs-up"></i><span></span>
-                </button>
+                </CommentLikeButton>
             </form>
             <div>
                 {totalLikes}

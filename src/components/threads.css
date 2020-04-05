@@ -1,27 +1,26 @@
-#addImageContainer {
-  display: flex;
-  justify-content: center;
-  margin-top: 30px;
-  width: 100vw;
-  height: 100vh;
-}
-
 .addImageForm {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
+.imagePreviewDivBorder {
+  width: 100%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-bottom: 30px;
+}
+
 .imagePreviewDiv {
   width: 300px;
   height: 300px;
   margin: 0 auto;
-  background-color: #FBD6C8;
-  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  /* background-color: #FBD6C8; */
+  /* clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%); */
+  border: 2px dotted grey;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 30px;
 }
 
 .imagePreview {
@@ -30,17 +29,21 @@
   object-fit: cover;
 }
 
+.imagePreview:hover {
+  opacity: 0.5;
+}
+
 .commentText {
-  background-color: pink;
+  background-color: white;
   border: none;
-  color: white;
+  /* color: #FBA589; */
   width: 300px;
-  border-radius: 10px;
   padding: 5px;
+  /* box-shadow: 0 0 5px -1px #FBA589; */
 }
 
 .commentText::placeholder {
-  color: white;
+  /* color: #FBA589; */
   text-align: center;
 }
 
@@ -60,14 +63,15 @@
 #addImageInput{
   opacity: 0;
   position: absolute;
-  z-index: -1;
+  /* z-index: 2; */
+  cursor: pointer;
 }
 
 .chooseImageButton {
-  background-color: #FBD6C8;
+  background-color: transparent;
   padding: 10px;
   border-radius: 10px;
-  width: 300px;
+  width: 100%;
   text-align: center;
   cursor: pointer;
 }

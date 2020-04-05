@@ -40,7 +40,7 @@
 
 .questionCardHeader {
   background-color: white !important;
-  border: 2px solid #FBD6C8;
+  /* border: 2px solid #FBD6C8; */
 }
 
 .questionCard {
@@ -56,14 +56,14 @@
 
 .questionCard:hover {
   text-decoration: none !important;
-  color: coral !important;
+  /* color: coral !important; */
 }
 
 .questionCard:active {
   text-decoration: none !important;
-  color: coral !important;
+  /* color: coral !important; */
 }
 
-.answerCard {
+/* .answerCard {
   background-color: #FBD6C8;
-}
+} */

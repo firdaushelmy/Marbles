@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import { Button, Modal } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "./navbar.css";
-import { Navbar } from "react-bootstrap";
+import { Navbar, Button, Modal } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import DelayLink from "./DelayLink";
+import Threads from "./components/threads.js";
+import styled, { ThemeProvider, keyframes, withTheme } from 'styled-components';
 
 function Nav() {
   const [show, setShow] = useState(false);
@@ -13,6 +14,9 @@ function Nav() {
   const [show2, setShow2] = useState(false);
   const handleClose2 = () => setShow2(false);
   const handleShow2 = () => setShow2(true);
+  const [show3, setShow3] = useState(false);
+  const handleClose3 = () => setShow3(false);
+  const handleShow3 = () => setShow3(true);
   const [loggedIn, setLoggedIn] = useState(
     localStorage.getItem("jwt") !== null
   );
@@ -21,109 +25,207 @@ function Nav() {
     setLoggedIn(false);
   }
 
+  const StyledNavbar = styled(Navbar)`
+  background-color: ${props => props.theme.navBg};
+`;
+
+  StyledNavbar.defaultProps = {
+    theme: {
+      navBg: "#87CEFA",
+    }
+  };
+
+  const AddButton = styled(Button)`
+     background-color: ${props => props.theme.btnBg};
+     color: ${props => props.theme.btnCol};
+     &:hover {
+      background-color: ${props => props.theme.btnBgHover};
+      color: ${props => props.theme.btnColHover};
+     }
+`;
+
+  AddButton.defaultProps = {
+    theme: {
+      btnBg: "#FBA589",
+      btnCol: "white"
+    }
+  };
+
+  const AccountInfoLink = styled(Link)`
+    color: ${props => props.theme.linkCol}
+  `;
+
+  AccountInfoLink.defaultProps = {
+    theme: {
+      linkCol: "coral"
+    }
+  };
+
+  const PinkHoverDiv = styled.div`
+    &:hover{
+    background-color: ${props => props.theme.phdBg}};
+    &:active {
+    background-color: ${props => props.theme.phdBg}
+    };
+  `;
+
+  PinkHoverDiv.defaultProps = {
+    theme: {
+      phdBg: "#FBD6C8"
+    }
+  };
+
+  const XButton = styled.button`
+    color: ${props => props.theme.xBtnCol}
+  `;
+
+  XButton.defaultProps = {
+    theme: {
+      xBtnCol: "coral"
+    }
+  };
+
+  const BarsModalDiv = styled.div`
+    color: ${props => props.theme.barsModalDivCol}
+  `;
+
+  BarsModalDiv.defaultProps = {
+    theme: {
+      barsModalDivCol: "#747779"
+    }
+  };
+
+  const AddPostModalHeader = styled(Modal.Header)`
+  background-color: ${props => props.theme.homeModalBg};
+  `
+
+  AddPostModalHeader.defaultProps = {
+    theme: {
+      homeModalBg: "rgb(250, 228, 220)"
+    }
+  }
+
+  const AddPostModalBody = styled(Modal.Body)`
+  background-color: ${props => props.theme.homeModalBg};
+  `
+
+  AddPostModalBody.defaultProps = {
+    theme: {
+      homeModalBg: "rgb(250, 228, 220)"
+    }
+  }
+
   return (
     <>
-      <Navbar className="navbar">
+      <StyledNavbar className="navbar">
         <Navbar.Brand>
           <div onClick={handleShow2} className="addButton">
-            {/* <i class="fas fa-plus"></i> */}
-            <Button className="actualAddButton">Add</Button>
+            <AddButton className="actualAddButton">Add</AddButton>
           </div>
         </Navbar.Brand>
         <Navbar.Collapse className="justify-content-end">
           <Navbar.Text>
-            <Link tag={Link} to="/home">
+            <AccountInfoLink tag={Link} to="/home">
               <img className="logoNoMarbles" src="./logo_no_marbles.png" />
-            </Link>
+            </AccountInfoLink>
           </Navbar.Text>
         </Navbar.Collapse>
         <Navbar.Collapse className="justify-content-end">
           <Navbar.Text>
-            <div onClick={handleShow} className="barsModalButton">
+            <BarsModalDiv onClick={handleShow} className="barsModalButton">
               <i className="fa fa-bars" id="barsModalButtonIcon"></i>
               <span></span>
-            </div>
+            </BarsModalDiv>
           </Navbar.Text>
         </Navbar.Collapse>
-      </Navbar>
+      </StyledNavbar>
 
       <Modal className="navModal" show={show2}>
         <Modal.Header>
-          <button onClick={handleClose2} className="barsModalButton2">
+          <XButton onClick={handleClose2} className="barsModalButton2">
             X
-          </button>
+          </XButton>
         </Modal.Header>
         <Modal.Body>
           <Modal.Title id="modalLinkDiv">
-            <div className="pinkHoverDiv"><Link
-              className="accountInfoLink"
-              tag={Link}
-              to="/threads"
-              onClick={handleClose2}
-            >
-              add post
-            </Link>
-            </div>
+            <PinkHoverDiv className="pinkHoverDiv">
+              <AccountInfoLink className="accountInfoLink" onClick={handleShow3}>
+                add post
+              </AccountInfoLink>
+            </PinkHoverDiv>
 
-            <div className="pinkHoverDiv"><Link
+            <PinkHoverDiv className="pinkHoverDiv"><AccountInfoLink
               className="accountInfoLink"
               tag={Link}
               to="/addthoughts"
               onClick={handleClose2}
             >
               add thoughts
-            </Link>
-            </div>
-            <div className="pinkHoverDiv"><Link
+            </AccountInfoLink>
+            </PinkHoverDiv>
+            <PinkHoverDiv className="pinkHoverDiv"><AccountInfoLink
               className="accountInfoLink"
               tag={Link}
               to="/playlist"
               onClick={handleClose2}
             >
               playlist
-            </Link>
-            </div>
+            </AccountInfoLink>
+            </PinkHoverDiv>
           </Modal.Title>
         </Modal.Body>
       </Modal>
 
       <Modal className="navModal" show={show}>
         <Modal.Header>
-          <button onClick={handleClose} className="modalButtonX">
+          <XButton onClick={handleClose} className="modalButtonX">
             X
-          </button>
+          </XButton>
         </Modal.Header>
         <Modal.Body>
           <Modal.Title id="modalLinkDiv">
-            <div className="pinkHoverDiv">
-              <Link className="accountInfoLink" tag={Link} to="/mood" onClick={handleClose}>change emotion</Link>
-            </div>
-            <div className="pinkHoverDiv">
-              <Link className="accountInfoLink" tag={Link} to="/panic" onClick={handleClose}>panic button</Link>
-            </div>
-            <div className="pinkHoverDiv">
-              <Link className="accountInfoLink" tag={Link} to="/emergency" onClick={handleClose}>emergency</Link>
-            </div>
-            <div className="pinkHoverDiv">
-              <Link className="accountInfoLink" tag={Link} to="/clicker" onClick={handleClose}>marble clicker</Link>
-            </div>
-            <div className="pinkHoverDiv">
-              <Link className="accountInfoLink" tag={Link} to="/profile" onClick={handleClose}>profile</Link>
-            </div>
-            <div className="pinkHoverDiv">
-              <Link className="accountInfoLink" tag={Link} to="/volunteer" onClick={handleClose}>volunteer</Link>
-            </div>
-            <div className="pinkHoverDiv">
-              <Link className="accountInfoLink" tag={Link} to="/supportgroup" onClick={handleClose}>support group</Link>
-            </div>
-            <div className="pinkHoverDiv">
-              <Link className="accountInfoLink" tag={Link} to="/faq" onClick={handleClose}>f.a.q.</Link>
-            </div>
-            <div className="pinkHoverDiv">
-              <Link className="accountInfoLink">privacy policy</Link>
-            </div>
+            <PinkHoverDiv className="pinkHoverDiv">
+              <AccountInfoLink className="accountInfoLink" tag={Link} to="/mood" onClick={handleClose}>change emotion</AccountInfoLink>
+            </PinkHoverDiv>
+            <PinkHoverDiv className="pinkHoverDiv">
+              <AccountInfoLink className="accountInfoLink" tag={Link} to="/panic" onClick={handleClose}>panic button</AccountInfoLink>
+            </PinkHoverDiv>
+            <PinkHoverDiv className="pinkHoverDiv">
+              <AccountInfoLink className="accountInfoLink" tag={Link} to="/emergency" onClick={handleClose}>emergency</AccountInfoLink>
+            </PinkHoverDiv>
+            <PinkHoverDiv className="pinkHoverDiv">
+              <AccountInfoLink className="accountInfoLink" tag={Link} to="/clicker" onClick={handleClose}>marble clicker</AccountInfoLink>
+            </PinkHoverDiv>
+            <PinkHoverDiv className="pinkHoverDiv">
+              <AccountInfoLink className="accountInfoLink" tag={Link} to="/profile" onClick={handleClose}>profile</AccountInfoLink>
+            </PinkHoverDiv>
+            <PinkHoverDiv className="pinkHoverDiv">
+              <AccountInfoLink className="accountInfoLink" tag={Link} to="/volunteer" onClick={handleClose}>volunteer</AccountInfoLink>
+            </PinkHoverDiv>
+            <PinkHoverDiv className="pinkHoverDiv">
+              <AccountInfoLink className="accountInfoLink" tag={Link} to="/supportgroup" onClick={handleClose}>support group</AccountInfoLink>
+            </PinkHoverDiv>
+            <PinkHoverDiv className="pinkHoverDiv">
+              <AccountInfoLink className="accountInfoLink" tag={Link} to="/faq" onClick={handleClose}>f.a.q.</AccountInfoLink>
+            </PinkHoverDiv>
+            <PinkHoverDiv className="pinkHoverDiv">
+              <AccountInfoLink className="accountInfoLink">privacy policy</AccountInfoLink>
+            </PinkHoverDiv>
           </Modal.Title>
         </Modal.Body>
+      </Modal>
+
+      <Modal className="imagePreviewModal" show={show3}>
+        <AddPostModalHeader>
+          <button onClick={handleClose3} className="modalButtonX">
+            X
+          </button>
+        </AddPostModalHeader>
+        <AddPostModalBody>
+          <Modal.Title>
+            <Threads />
+          </Modal.Title>
+        </AddPostModalBody>
       </Modal>
     </>
   );
