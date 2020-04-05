@@ -53,6 +53,10 @@ function AddThoughts() {
       background-color: ${props => props.theme.encBtnBgHover};
       color: ${props => props.theme.encBtnColHover};
       border: 2px solid ${props => props.theme.encBtnBorderHover};
+      &:focus {
+      background-color: ${props => props.theme.encBtnBgHover};
+      color: ${props => props.theme.encBtnColHover};
+      border: 2px solid ${props => props.theme.encBtnBorderHover};
      }
 `;
 

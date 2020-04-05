@@ -204,7 +204,7 @@ function App() {
   } else {
     return (
       <>
-        <ThemeProvider theme={depressedTheme}>
+        <ThemeProvider theme={defaultTheme}>
           <Nav />
           <ToastContainer />
           <Route exact path="/">
