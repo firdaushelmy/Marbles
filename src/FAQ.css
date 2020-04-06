@@ -13,11 +13,12 @@
   background-color: #FBD6C8;
   margin-top: 10px;
   height: 160px;
-  width: 77.5%;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 10px;
+  box-shadow: 0 4px 12px -1px rgba(0, 0, 0, 0.1);
 }
 
 @media screen and (max-width: 740px) {
@@ -52,6 +53,7 @@
   display: flex;
   align-items:center;
   cursor: pointer;
+  box-shadow: 0 4px 12px -1px rgba(0, 0, 0, 0.1);
 }
 
 .questionCard:hover {
@@ -64,6 +66,7 @@
   /* color: coral !important; */
 }
 
-/* .answerCard {
-  background-color: #FBD6C8;
-} */
+.answerCard {
+  /* background-color: #FBD6C8; */
+  box-shadow: 0 4px 12px -1px rgba(0, 0, 0, 0.1);
+}

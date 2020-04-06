@@ -37,10 +37,10 @@ function Emergency() {
 
   return (
     <div className="emergencyDiv">
-      <EmergencyPinkDiv className="emergencyPinkDiv">
-        <h6>emergency contacts</h6>
-      </EmergencyPinkDiv>
       <div className="container" id="emergencyStuffContainer">
+        <EmergencyPinkDiv className="emergencyPinkDiv">
+          <h6>emergency contacts</h6>
+        </EmergencyPinkDiv>
         {
           emerCont.length > 0
             ? emerCont.map(cont => {
