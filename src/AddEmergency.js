@@ -6,6 +6,13 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import styled, { ThemeProvider, keyframes, withTheme } from 'styled-components';
 
+const EmergencyInput = styled.input`
+    box-shadow: 0 0 5px -1px ${props => props.theme.emergencyInputBoxShadow};
+    &:focus {
+      box-shadow: 0 0 7px -1px ${props => props.theme.emergencyInputBoxShadowFocus};
+    };
+`
+
 function AddEmergency() {
   const [emergencyNumber, setEmergencyNumber] = useState("")
   const [emergencyName, setEmergencyName] = useState("")
@@ -68,13 +75,6 @@ function AddEmergency() {
     }
   };
 
-  const EmergencyInput = styled.input`
-    box-shadow: 0 0 5px -1px ${props => props.theme.emergencyInputBoxShadow};
-    &:focus {
-      box-shadow: 0 0 7px -1px ${props => props.theme.emergencyInputBoxShadowFocus};
-    };
-`
-
   EmergencyInput.defaultProps = {
     theme: {
       emergencyInputBoxShadow: "#FBA589",
@@ -100,9 +100,9 @@ function AddEmergency() {
     <div className="container d-flex flex-column align-items-center" id="emergencyContainer">
       <h1>Emergency</h1>
       <form className="emergencyForm" onSubmit={handleSubmit}>
-        <input type="text" placeholder="Emergency phone number" className="form-control" id="emergencyInput" onChange={handleNumberChange} value={tempNumber}></input>
-        <input type="text" placeholder="Emergency contact name" className="form-control" id="emergencyInput" onChange={handleNameChange} value={tempName}  ></input>
-        <input type="text" placeholder="Emergency email" className="form-control" id="emergencyInput" onChange={handleEmailChange} value={tempEmail}  ></input>
+        <EmergencyInput type="text" placeholder="Emergency phone number" className="form-control" id="emergencyInput" onChange={handleNumberChange} value={tempNumber}></EmergencyInput>
+        <EmergencyInput type="text" placeholder="Emergency contact name" className="form-control" id="emergencyInput" onChange={handleNameChange} value={tempName}  ></EmergencyInput>
+        <EmergencyInput type="text" placeholder="Emergency email" className="form-control" id="emergencyInput" onChange={handleEmailChange} value={tempEmail}  ></EmergencyInput>
         <h6 className="emergencyField">Relation:</h6>
         <EmergencySelect className="form-control" id="emergencyInput" onChange={handleRelationChange} value={tempRelation}>
           <option>--Choose an option--</option>

@@ -19,12 +19,12 @@
   margin-top: 10px;
   background-color: white;
   width: 100%;
-  box-shadow: 0 0 5px -1px #FBA589;
+  /* box-shadow: 0 0 5px -1px #FBA589; */
 }
 
-#emergencyInput:focus {
+/* #emergencyInput:focus {
   box-shadow: 0 0 7px -1px #FBA589;
-}
+} */
 
 #emergencyInput option {
   width: 200px;
