@@ -1,12 +1,19 @@
-import React from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import "./feelings.css";
 import { Link } from "react-router-dom";
 import DelayLink from "./DelayLink.js";
 import styled, { ThemeProvider, keyframes, withTheme } from 'styled-components';
 
 
+function Feelings(theme, setTheme, depressedTheme) {
+  // function DepressedColorScheme() {
+  //   setTheme(depressedTheme);
+  // }
+  const DepressedColorScheme = () => {
+    setTheme(depressedTheme)
+  };
+  console.log(DepressedColorScheme);
 
-function Feelings() {
   const HowYouDoinDiv = styled.div`
     color: ${props => props.theme.howYouDoinDivCol};
   `
@@ -37,6 +44,7 @@ function Feelings() {
     }
   }
 
+
   return (
     <>
       <HowYouDoinDiv className="howYouDoin">
@@ -47,7 +55,7 @@ function Feelings() {
           {/* <div className="col-lg-6 col-md-12 col-sm-12 d-flex"> */}
           <div className="col-md-4 col-sm-6 col-xs-6">
             <EmotionDiv className="emotion" id="depressed">
-              <FeelingDelayLink delay="1000" tag={Link} to="/home" className="feelingType">
+              <FeelingDelayLink delay="1000" tag={Link} to="/home" className="feelingType" onClick={DepressedColorScheme}>
                 Depressed</FeelingDelayLink>
             </EmotionDiv>
           </div>
