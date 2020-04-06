@@ -132,6 +132,7 @@ function App() {
     circleFill: "#F48157",
     circleFill2: "#F48157",
     thoughtsDisplayDivBg: "#FBD6C8",
+    InputBoxShadow: "#FBA589"
   };
 
   const depressedTheme = {
@@ -195,6 +196,7 @@ function App() {
     circleFill: "#b1cff7",
     circleFill2: "#bed4f1",
     thoughtsDisplayDivBg: "#b1cff7",
+    InputBoxShadow: "blue"
   };
 
   const [theme, setTheme] = useState(defaultTheme);
