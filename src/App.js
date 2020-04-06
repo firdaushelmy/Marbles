@@ -225,8 +225,8 @@ function App() {
           <Route path="/signup">
             <SignUp />
           </Route>
-          <Route path="/mood" theme={theme} setTheme={setTheme} depressedTheme={depressedTheme}>
-            <Feelings />
+          <Route path="/mood">
+            <Feelings theme={theme} setTheme={setTheme} depressedTheme={depressedTheme} />
           </Route>
           <Route path="/addthoughts">
             <AddThoughts />
