@@ -269,6 +269,9 @@ function App() {
           <Route path="/thoughts">
             <Thoughts />
           </Route>
+          <Route path="/editprofile">
+            <EditProfile />
+          </Route>
         </ThemeProvider>
       </>
     );

@@ -28,8 +28,8 @@ function Panic() {
   }
   const cuID = JSON.parse(localStorage.getItem('user'))
   const cID = cuID.id
-  const handleMailgun = (e) => {
-    e.preventDefault()
+  const handleMailgun = () => {
+    
     axios.post(`https://marbles-backend.herokuapp.com/api/v1/emergencies/panic/${cID}`).then(res => {
       console.log(res.data)
       toast.success("Please calm down! Emergency contact has been notify about the button press")
@@ -38,24 +38,25 @@ function Panic() {
 
   return (
     <div className="container" id="panicSurrounding">
-      <button className="panic" >
-        <PanicSVG onClick={handleMailgun} />
+      <button className="panic" onClick={handleMailgun}>
+        <PanicSVG />
       </button>
-      <div className="panicDisclaimer">marbles will send an emergency sms to registered emergency contacts</div>
-      {
-        emerCont.length > 0
-          ? emerCont.map(cont => {
+      <div className="panicDisclaimer">
+        marbles will send an emergency sms to registered emergency contacts
+      </div>
+      {emerCont.length > 0
+        ? emerCont.map((cont) => {
             return (
               <PanicButtonContactDiv className="panicButtonContact">
                 <h3> {cont.name} </h3>
                 <h3> {cont.contact_no} </h3>
                 <h3> {cont.relation} </h3>
               </PanicButtonContactDiv>
-
-            )
-          }) : ""}
+            );
+          })
+        : ""}
     </div>
-  )
+  );
 }
 
 export default Panic;
