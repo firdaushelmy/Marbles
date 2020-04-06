@@ -23,6 +23,7 @@
   font-weight: bold;
   height: 160px;
   border-bottom: transparent;
+  box-shadow: 0 4px 12px -1px rgba(0, 0, 0, 0.1);
 }
 
 .miasaOpen {
@@ -33,12 +34,14 @@
   justify-content: center;
   /* border: 2px solid #FBA589; */
   border-top: transparent;
+  box-shadow: 0 4px 12px -1px rgba(0, 0, 0, 0.1);
 }
 
 .googleMap {
   /* border: 2px solid #FBA589; */
   border-radius: 10px;
   margin-right: 30px;
+  box-shadow: 0 4px 12px -1px rgba(0, 0, 0, 0.1);
 }
 
 .address {

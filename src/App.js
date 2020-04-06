@@ -37,7 +37,6 @@ function App() {
   const [isLoading, setIsLoading] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(true);
 
-
   const setLogInStateToTrue = () => {
     if (localStorage.getItem("jwt")) {
       setIsLoggedIn(true);
@@ -132,7 +131,7 @@ function App() {
     panicButtonContactDivBg: "#FBD6C8",
     circleFill: "#F48157",
     circleFill2: "#F48157",
-    thoughtsDisplayDivBg: "#FBD6C8"
+    thoughtsDisplayDivBg: "#FBD6C8",
   };
 
   const depressedTheme = {
@@ -195,8 +194,11 @@ function App() {
     panicButtonContactDivBg: "#b1cff7",
     circleFill: "#b1cff7",
     circleFill2: "#bed4f1",
-    thoughtsDisplayDivBg: "#b1cff7"
+    thoughtsDisplayDivBg: "#b1cff7",
   };
+
+  const [theme, setTheme] = useState(defaultTheme);
+  console.log(theme)
 
   console.log(threads.user)
   if (isLoading) {
@@ -204,7 +206,7 @@ function App() {
   } else {
     return (
       <>
-        <ThemeProvider theme={defaultTheme}>
+        <ThemeProvider theme={theme} setTheme={setTheme}>
           <Nav />
           <ToastContainer />
           <Route exact path="/">
@@ -223,7 +225,7 @@ function App() {
           <Route path="/signup">
             <SignUp />
           </Route>
-          <Route path="/mood">
+          <Route path="/mood" theme={theme} setTheme={setTheme} depressedTheme={depressedTheme}>
             <Feelings />
           </Route>
           <Route path="/addthoughts">

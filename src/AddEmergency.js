@@ -100,9 +100,9 @@ function AddEmergency() {
     <div className="container d-flex flex-column align-items-center" id="emergencyContainer">
       <h1>Emergency</h1>
       <form className="emergencyForm" onSubmit={handleSubmit}>
-        <EmergencyInput type="text" placeholder="Emergency phone number" className="form-control" id="emergencyInput" onChange={handleNumberChange} value={tempNumber}></EmergencyInput>
-        <EmergencyInput type="text" placeholder="Emergency contact name" className="form-control" id="emergencyInput" onChange={handleNameChange} value={tempName}  ></EmergencyInput>
-        <EmergencyInput type="text" placeholder="Emergency email" className="form-control" id="emergencyInput" onChange={handleEmailChange} value={tempEmail}  ></EmergencyInput>
+        <input type="text" placeholder="Emergency phone number" className="form-control" id="emergencyInput" onChange={handleNumberChange} value={tempNumber}></input>
+        <input type="text" placeholder="Emergency contact name" className="form-control" id="emergencyInput" onChange={handleNameChange} value={tempName}  ></input>
+        <input type="text" placeholder="Emergency email" className="form-control" id="emergencyInput" onChange={handleEmailChange} value={tempEmail}  ></input>
         <h6 className="emergencyField">Relation:</h6>
         <EmergencySelect className="form-control" id="emergencyInput" onChange={handleRelationChange} value={tempRelation}>
           <option>--Choose an option--</option>

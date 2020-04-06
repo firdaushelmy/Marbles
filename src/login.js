@@ -66,10 +66,10 @@ function Login() {
       <div className="container d-flex flex-column align-items-center" id="logInContainer">
         <img className="logInLogo" src="./logo.png"></img>
         <form id="loginStuff">
-          <input type="text" className="form-control" placeholder="email address" id="LogInInput" value={email} onChange={handleEmailInput} />
-          <input type="password" className="form-control" placeholder="password" id="LogInInput" value={password} onChange={handlePassInput} />
-          <Link className="LogInBtn" onClick={handleLogin}>log in</Link>
-          <Link tag={Link} to="/" className="ChangedMeMind">changed my mind</Link>
+          <input type="text" className="form-control" placeholder="email address" id="logInInput" value={email} onChange={handleEmailInput} />
+          <input type="password" className="form-control" placeholder="password" id="logInInput" value={password} onChange={handlePassInput} />
+          <Link className="logInBtn" onClick={handleLogin}>log in</Link>
+          <Link tag={Link} to="/" className="loginChangedMeMind">changed my mind</Link>
         </form>
       </div>
     </>
