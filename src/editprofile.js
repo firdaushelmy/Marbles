@@ -5,9 +5,10 @@ import { Form, Button, Modal } from "react-bootstrap"
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "bootstrap/dist/css/bootstrap.min.css";
+import styled, { ThemeProvider, keyframes, withTheme } from 'styled-components';
 
-function EditProfile () {
-    const [name , setName] = useState("")
+function EditProfile() {
+    const [name, setName] = useState("")
     const [tName, setTName] = useState("")
     const [email, setEmail] = useState("")
     const [tEmail, setTEmail] = useState("")
@@ -53,30 +54,39 @@ function EditProfile () {
         })
     }
 
+    const EditProfileDiv = styled.div`
+    background-color: ${props => props.theme.emergencyPinkDivBg};
+  `;
+
+    EditProfileDiv.defaultProps = {
+        theme: {
+            emergencyPinkDivBg: "rgb(250, 229, 223)"
+        }
+    };
+
+    const SubmitButton = styled.button`
+    background-color: ${props => props.theme.emergencyPinkDivBg};
+  `;
+
+    SubmitButton.defaultProps = {
+        theme: {
+            emergencyPinkDivBg: "rgb(250, 229, 223)"
+        }
+    };
+
     return (
-        <div className="d-flex justify-content-center mx-auto">
+        <div className="container" id="editProfileContainer">
+            <EditProfileDiv className="editProfileDiv">edit details</EditProfileDiv>
             <form onSubmit={handleSubmit}>
-            <div>
+                <input className="editProfileInput" onChange={handleNameChange} type="text" placeholder="change your name here" value={tName} />
 
-            <input onChange={handleNameChange} type="text" placeholder="Change your name here" value={tName}>
-            
-            </input>
-            </div>
-            <div>
+                <input className="editProfileInput" onChange={handleEmailChange} type="text" placeholder="change your email here" value={tEmail}></input>
 
-            <input onChange={handleEmailChange} type="text" placeholder="Change your email here" value={tEmail}></input>
-            </div>
-            <div>
+                <input className="editProfileInput" onChange={handlePasswordChange} type="text" placeholder="change your password here" value={tPassword}></input>
 
-            <input onChange={handlePasswordChange} type="text" placeholder="Change your password here" value={tPassword}></input>
-            </div>
-            <div>
-
-            <input onChange={handleGenderChange} type="text" placeholder="Change your gender here" value={tGender}></input>
-            </div>
-            <button className="btn btn-outline-primary outline-0"type="button submit">
-                Submit
-            </button>
+                <input className="editProfileInput" onChange={handleGenderChange} type="text" placeholder="change your gender here" value={tGender}></input>
+                <SubmitButton className="editProfileSubmitButton" type="button submit">submit
+            </SubmitButton>
             </form>
         </div>
     )

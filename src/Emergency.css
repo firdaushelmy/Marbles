@@ -11,9 +11,9 @@
 
 .emergencyPinkDiv {
   /* background-color: rgb(250, 229, 223); */
-  margin-top: 30px;
+  margin-bottom: 30px;
   height: 100px;
-  width: 77.5%;
+  width: 100%;
   border-radius: 10px;
   display: flex;
   justify-content: center;

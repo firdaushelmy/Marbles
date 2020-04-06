@@ -37,10 +37,10 @@ function FAQ() {
 
   return (
     <div className="faqDiv">
-      <FaqPinkDiv className="faqPinkDiv">
-        <h6>frequently asked questions</h6>
-      </FaqPinkDiv>
       <div className="container" id="faqAccordionDiv">
+        <FaqPinkDiv className="faqPinkDiv">
+          <h6>frequently asked questions</h6>
+        </FaqPinkDiv>
         <Accordion className="accordion">
           <QuestionCardHeader className="questionCardHeader">
             <Accordion.Toggle as={Card.Header} variant="link" eventKey="0" className="questionCard">

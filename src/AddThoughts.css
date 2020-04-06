@@ -18,7 +18,7 @@
   width: 140px;
   border: none !important;
   font-family: 'Open Sans', sans-serif !important;
-  box-shadow: 0 0px 12px -1px rgba(18, 22, 33, 0.08);
+  box-shadow: 0 4px 12px -1px rgba(0, 0, 0, 0.1);
   margin-left: 20px;
   padding: 10px;
 }

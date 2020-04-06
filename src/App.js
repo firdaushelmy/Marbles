@@ -132,7 +132,7 @@ function App() {
     panicButtonContactDivBg: "#FBD6C8",
     circleFill: "#F48157",
     circleFill2: "#F48157",
-    thoughtsDisplayDivBg: "#FBD6C8"
+    thoughtsDisplayDivBg: "#FBD6C8",
   };
 
   const depressedTheme = {
@@ -195,7 +195,7 @@ function App() {
     panicButtonContactDivBg: "#b1cff7",
     circleFill: "#b1cff7",
     circleFill2: "#bed4f1",
-    thoughtsDisplayDivBg: "#b1cff7"
+    thoughtsDisplayDivBg: "#b1cff7",
   };
 
   console.log(threads.user)
