@@ -37,7 +37,6 @@ function App() {
   const [isLoading, setIsLoading] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(true);
 
-
   const setLogInStateToTrue = () => {
     if (localStorage.getItem("jwt")) {
       setIsLoggedIn(true);
@@ -198,13 +197,16 @@ function App() {
     thoughtsDisplayDivBg: "#b1cff7",
   };
 
+  const [theme, setTheme] = useState(defaultTheme);
+  console.log(theme)
+
   console.log(threads.user)
   if (isLoading) {
     return <LoadingIndicator />;
   } else {
     return (
       <>
-        <ThemeProvider theme={defaultTheme}>
+        <ThemeProvider theme={theme} setTheme={setTheme}>
           <Nav />
           <ToastContainer />
           <Route exact path="/">
@@ -224,7 +226,7 @@ function App() {
             <SignUp />
           </Route>
           <Route path="/mood">
-            <Feelings />
+            <Feelings theme={theme} setTheme={setTheme} depressedTheme={depressedTheme} />
           </Route>
           <Route path="/addthoughts">
             <AddThoughts />
