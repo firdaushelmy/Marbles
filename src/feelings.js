@@ -5,6 +5,7 @@ import DelayLink from "./DelayLink.js";
 import styled, { ThemeProvider, keyframes, withTheme } from 'styled-components';
 
 
+
 function Feelings(props) {
   const { theme, setTheme, depressedTheme, defaultTheme, angryTheme, worriedTheme, reflectiveTheme, otherTheme, DepressedColorScheme } = props
 
@@ -73,31 +74,31 @@ function Feelings(props) {
             </EmotionDiv>
           </div>
           <div className="col-md-4 col-sm-6 col-xs-6">
-            <EmotionDiv className="emotion" id="angry" onClick={AngryColorScheme}>
-              <FeelingDelayLink delay="1000" tag={Link} to="/home" className="feelingType">Angry</FeelingDelayLink>
+            <EmotionDiv className="emotion" id="angry">
+              <FeelingDelayLink delay="1000" tag={Link} to="/home" className="feelingType" onClick={AngryColorScheme}>Angry</FeelingDelayLink>
             </EmotionDiv>
           </div>
           <div className="col-md-4 col-sm-6 col-xs-6">
-            <EmotionDiv className="emotion" id="heartbroken" onClick={DefaultColorScheme}>
-              <FeelingDelayLink delay="1000" tag={Link} to="/home" className="feelingType">Heartbroken</FeelingDelayLink>
+            <EmotionDiv className="emotion" id="heartbroken">
+              <FeelingDelayLink delay="1000" tag={Link} to="/home" className="feelingType" onClick={DefaultColorScheme}>Heartbroken</FeelingDelayLink>
             </EmotionDiv>
           </div>
         </div>
         {/* <div className="col-lg-6 col-md-12 col-sm-12 d-flex"> */}
         <div className="container-fluid row justify-content-center align-items-center">
           <div className="col-md-4 col-sm-6 col-xs-6">
-            <EmotionDiv className="emotion" id="worried" onClick={WorriedColorScheme}>
-              <FeelingDelayLink delay="1000" tag={Link} to="/home" className="feelingType">Worried</FeelingDelayLink>
+            <EmotionDiv className="emotion" id="worried">
+              <FeelingDelayLink delay="1000" tag={Link} to="/home" className="feelingType" onClick={WorriedColorScheme}>Worried</FeelingDelayLink>
             </EmotionDiv>
           </div>
           <div className="col-md-4 col-sm-6 col-xs-6">
-            <EmotionDiv className="emotion" id="reflective" onClick={ReflectiveColorScheme}>
-              <FeelingDelayLink delay="1000" tag={Link} to="/home" className="feelingType">Reflective</FeelingDelayLink>
+            <EmotionDiv className="emotion" id="reflective">
+              <FeelingDelayLink delay="1000" tag={Link} to="/home" className="feelingType" onClick={ReflectiveColorScheme}>Reflective</FeelingDelayLink>
             </EmotionDiv>
           </div>
           <div className="col-md-4 col-sm-6 col-xs-6">
-            <EmotionDiv className="emotion" id="other" onClick={OtherColorScheme}>
-              <FeelingDelayLink delay="1000" tag={Link} to="/home" className="feelingType">Other</FeelingDelayLink>
+            <EmotionDiv className="emotion" id="other">
+              <FeelingDelayLink delay="1000" tag={Link} to="/home" className="feelingType" onClick={OtherColorScheme}>Other</FeelingDelayLink>
             </EmotionDiv>
           </div>
         </div>

@@ -491,6 +491,7 @@ function App() {
           <Route path="/signup">
             <SignUp />
           </Route>
+
           <Route path="/mood">
             <Feelings theme={theme} setTheme={setTheme} depressedTheme={depressedTheme} defaultTheme={defaultTheme} angryTheme={angryTheme} worriedTheme={worriedTheme} reflectiveTheme={reflectiveTheme} otherTheme={otherTheme} DepressedColorScheme={DepressedColorScheme} />
           </Route>
