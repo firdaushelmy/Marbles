@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
 import Feelings from "./feelings";
-import { Route, Redirect } from "react-router-dom";
+import { Route, Redirect, useHistory } from "react-router-dom";
 import LoadingIndicator from "./components/LoadingIndicator";
 import axios from "axios"
 import Panic from "./panic"
@@ -135,7 +135,7 @@ function App() {
     InputBoxShadow: "#FBA589"
   };
 
-  const depressedTheme =  {
+  const depressedTheme = {
     navBg: "#b1cff7",
     btnBg: "#1d73d0",
     btnBgHover: "#87CEFA",
@@ -199,15 +199,274 @@ function App() {
     InputBoxShadow: "blue"
   };
 
-  function setToDepressedTheme() {
-    setTheme(depressedTheme)
-    
-  }
+  const angryTheme = {
+    navBg: "lightpink",
+    btnBg: "crimson",
+    btnBgHover: "tomato",
+    btnCol: "white",
+    btnColHover: "black",
+    linkCol: "crimson",
+    phdBg: "lightpink",
+    xBtnCol: "crimson",
+    barsModalDivCol: "crimson",
+    commentLikeButtonBg: "tomato",
+    commentLikeButtonBorder: "2px solid crimson",
+    commentLikeButtonBgFocus: "crimson",
+    encBtnBg: "lightpink",
+    encBtnCol: "black",
+    encBtnBorder: "crimson",
+    encBtnBgHover: "crimson",
+    encBtnColHover: "white",
+    encBtnBorderHover: "crimson",
+    homeModalBg: "lightpink",
+    emergencyPinkDivBg: "lightpink",
+    emergencyInputBoxShadow: "crimson",
+    emergencyInputBoxShadowFocus: "crimson",
+    addThoughtsDivBg: "lightpink",
+    questionCardHeaderBorder: "lightpink",
+    questionCardColHover: "crimson",
+    answerCardBg: "lightpink",
+    howYouDoinDivCol: "crimson",
+    delayLinkCol: "crimson",
+    emotionDivBorderCol: "crimson",
+    votePlaylistButtonsCol: "crimson",
+    playlistContainerCol: "crimson",
+    votePlaylistButtonsFocusCol: "crimson",
+    profileLinkBg: "lightpink",
+    profileLinkBoxShadow: "crimson",
+    profileLinkHoverCol: "crimson",
+    profilePicDisplayDivBg: "lightpink",
+    profileModalBg: "lightpink",
+    chooseFileLabelBg: "tomato",
+    supportGroupDivBg: "lightpink",
+    border: "black",
+    supportGroupAnswerCardBg: "lightpink",
+    googleMapBorder: "crimson",
+    orgLogoDivBg: "lightpink",
+    volunteerH1Col: "crimson",
+    volunteerLinkCol: "black",
+    volunteerLinkHoverCol: "white",
+    volunteerModalDivBg: "lightpink",
+    volunteerModalDivCol: "black",
+    imagePreviewDivBg: "lightpink",
+    commentTextInputCol: "crimson",
+    anonLinkBg: "lightcoral",
+    anonLinkBoxShadow: "crimson",
+    anonLinkHoverCol: "white",
+    anonLinkBg2: "lightpink",
+    anonLinkBoxShadow2: "crimson",
+    anonLinkHoverCol2: "crimson",
+    panicButtonContactDivBg: "lightpink",
+    circleFill: "lightpink",
+    circleFill2: "lightcoral",
+    thoughtsDisplayDivBg: "lightpink",
+    InputBoxShadow: "tomato"
+  };
+
+  const worriedTheme = {
+    navBg: "#f7ce91",
+    btnBg: "#ee8236",
+    btnBgHover: "#f96a05",
+    btnCol: "black",
+    btnColHover: "white",
+    linkCol: "#ee8236",
+    phdBg: "#f7ce91",
+    xBtnCol: "#ee8236",
+    barsModalDivCol: "#ee8236",
+    commentLikeButtonBg: "#f96a05",
+    commentLikeButtonBorder: "2px solid #ee8236",
+    commentLikeButtonBgFocus: "#ee8236",
+    encBtnBg: "#f7ce91",
+    encBtnCol: "black",
+    encBtnBorder: "#ee8236",
+    encBtnBgHover: "#ee8236",
+    encBtnColHover: "white",
+    encBtnBorderHover: "#ee8236",
+    homeModalBg: "#f7ce91",
+    emergencyPinkDivBg: "#f7ce91",
+    emergencyInputBoxShadow: "#ee8236",
+    emergencyInputBoxShadowFocus: "#ee8236",
+    addThoughtsDivBg: "#f7ce91",
+    questionCardHeaderBorder: "#f7ce91",
+    questionCardColHover: "#ee8236",
+    answerCardBg: "#f7ce91",
+    howYouDoinDivCol: "#ee8236",
+    delayLinkCol: "#ee8236",
+    emotionDivBorderCol: "#ee8236",
+    votePlaylistButtonsCol: "#ee8236",
+    playlistContainerCol: "#ee8236",
+    votePlaylistButtonsFocusCol: "#ee8236",
+    profileLinkBg: "#f7ce91",
+    profileLinkBoxShadow: "#ee8236",
+    profileLinkHoverCol: "#ee8236",
+    profilePicDisplayDivBg: "#f7ce91",
+    profileModalBg: "#f7ce91",
+    chooseFileLabelBg: "#f96a05",
+    supportGroupDivBg: "#f7ce91",
+    border: "black",
+    supportGroupAnswerCardBg: "#f7ce91",
+    googleMapBorder: "#ee8236",
+    orgLogoDivBg: "#f7ce91",
+    volunteerH1Col: "#ee8236",
+    volunteerLinkCol: "black",
+    volunteerLinkHoverCol: "white",
+    volunteerModalDivBg: "#f7ce91",
+    volunteerModalDivCol: "black",
+    imagePreviewDivBg: "#f7ce91",
+    commentTextInputCol: "#ee8236",
+    anonLinkBg: "orange",
+    anonLinkBoxShadow: "#ee8236",
+    anonLinkHoverCol: "white",
+    anonLinkBg2: "#f7ce91",
+    anonLinkBoxShadow2: "#ee8236",
+    anonLinkHoverCol2: "#ee8236",
+    panicButtonContactDivBg: "#f7ce91",
+    circleFill: "#f7ce91",
+    circleFill2: "orange",
+    thoughtsDisplayDivBg: "#f7ce91",
+    InputBoxShadow: "#f96a05"
+  };
+
+  const reflectiveTheme = {
+    navBg: "lightblue",
+    btnBg: "paleturquoise",
+    btnBgHover: "turquoise",
+    btnCol: "black",
+    btnColHover: "white",
+    linkCol: "cadetblue",
+    phdBg: "paleturquoise",
+    xBtnCol: "cadetblue",
+    barsModalDivCol: "paleturqouise",
+    commentLikeButtonBg: "paleturquoise",
+    commentLikeButtonBorder: "2px solid turquoise",
+    commentLikeButtonBgFocus: "turquoise",
+    encBtnBg: "paleturquoise",
+    encBtnCol: "black",
+    encBtnBorder: "turquoise",
+    encBtnBgHover: "turquoise",
+    encBtnColHover: "black",
+    encBtnBorderHover: "turquoise",
+    homeModalBg: "lightblue",
+    emergencyPinkDivBg: "lightblue",
+    emergencyInputBoxShadow: "turquoise",
+    emergencyInputBoxShadowFocus: "paleturquoise",
+    addThoughtsDivBg: "lightblue",
+    questionCardHeaderBorder: "paleturquoise",
+    questionCardColHover: "cadetblue",
+    answerCardBg: "paleturquoise",
+    howYouDoinDivCol: "cadetblue",
+    delayLinkCol: "cadetblue",
+    emotionDivBorderCol: "cadetblue",
+    votePlaylistButtonsCol: "turquoise",
+    playlistContainerCol: "cadetblue",
+    votePlaylistButtonsFocusCol: "paleturquoise",
+    profileLinkBg: "paleturquoise",
+    profileLinkBoxShadow: "cadetblue",
+    profileLinkHoverCol: "cadetblue",
+    profilePicDisplayDivBg: "paleturquoise",
+    profileModalBg: "lavenderblush",
+    chooseFileLabelBg: "paleturquoise",
+    supportGroupDivBg: "paleturquoise",
+    border: "turquoise",
+    supportGroupAnswerCardBg: "#c5eaf7",
+    googleMapBorder: "turquoise",
+    orgLogoDivBg: "paleturquoise",
+    volunteerH1Col: "turquoise",
+    volunteerLinkCol: "black",
+    volunteerLinkHoverCol: "cadetblue",
+    volunteerModalDivBg: "paleturquoise",
+    volunteerModalDivCol: "cadetblue",
+    imagePreviewDivBg: "paleturquoise",
+    commentTextInputCol: "turquoise",
+    anonLinkBg: "turquoise",
+    anonLinkBoxShadow: "cadetblue",
+    anonLinkHoverCol: "white",
+    anonLinkBg2: "paleturquoise",
+    anonLinkBoxShadow2: "cadetblue",
+    anonLinkHoverCol2: "cadetblue",
+    panicButtonContactDivBg: "paleturquoise",
+    circleFill: "paleturquoise",
+    circleFill2: "lightblue",
+    thoughtsDisplayDivBg: "paleturquoise",
+    InputBoxShadow: "turquoise"
+  };
+
+  const otherTheme = {
+    navBg: "lavender",
+    btnBg: "#dcb0dc",
+    btnBgHover: "plum",
+    btnCol: "black",
+    btnColHover: "white",
+    linkCol: "mediumpurple",
+    phdBg: "#dcb0dc",
+    xBtnCol: "mediumpurple",
+    barsModalDivCol: "#dcb0dc",
+    commentLikeButtonBg: "#dcb0dc",
+    commentLikeButtonBorder: "2px solid plum",
+    commentLikeButtonBgFocus: "plum",
+    encBtnBg: "#dcb0dc",
+    encBtnCol: "black",
+    encBtnBorder: "plum",
+    encBtnBgHover: "plum",
+    encBtnColHover: "black",
+    encBtnBorderHover: "plum",
+    homeModalBg: "lavender",
+    emergencyPinkDivBg: "lavender",
+    emergencyInputBoxShadow: "plum",
+    emergencyInputBoxShadowFocus: "#dcb0dc",
+    addThoughtsDivBg: "lavender",
+    questionCardHeaderBorder: "#dcb0dc",
+    questionCardColHover: "mediumpurple",
+    answerCardBg: "#dcb0dc",
+    howYouDoinDivCol: "mediumpurple",
+    delayLinkCol: "mediumpurple",
+    emotionDivBorderCol: "mediumpurple",
+    votePlaylistButtonsCol: "plum",
+    playlistContainerCol: "mediumpurple",
+    votePlaylistButtonsFocusCol: "#dcb0dc",
+    profileLinkBg: "#dcb0dc",
+    profileLinkBoxShadow: "mediumpurple",
+    profileLinkHoverCol: "mediumpurple",
+    profilePicDisplayDivBg: "#dcb0dc",
+    profileModalBg: "lavenderblush",
+    chooseFileLabelBg: "#dcb0dc",
+    supportGroupDivBg: "#dcb0dc",
+    border: "plum",
+    supportGroupAnswerCardBg: "lavender",
+    googleMapBorder: "plum",
+    orgLogoDivBg: "#dcb0dc",
+    volunteerH1Col: "plum",
+    volunteerLinkCol: "black",
+    volunteerLinkHoverCol: "mediumpurple",
+    volunteerModalDivBg: "#dcb0dc",
+    volunteerModalDivCol: "mediumpurple",
+    imagePreviewDivBg: "#dcb0dc",
+    commentTextInputCol: "plum",
+    anonLinkBg: "plum",
+    anonLinkBoxShadow: "mediumpurple",
+    anonLinkHoverCol: "white",
+    anonLinkBg2: "#dcb0dc",
+    anonLinkBoxShadow2: "mediumpurple",
+    anonLinkHoverCol2: "mediumpurple",
+    panicButtonContactDivBg: "#dcb0dc",
+    circleFill: "lavender",
+    circleFill2: "#dcb0dc",
+    thoughtsDisplayDivBg: "#dcb0dc",
+    InputBoxShadow: "plum"
+  };
 
   const [theme, setTheme] = useState(defaultTheme);
   console.log(theme)
 
-  
+  let history = useHistory();
+
+  const DepressedColorScheme = (e) => {
+    e.preventDefault();
+    setTheme(depressedTheme);
+    history.push("/home");
+  }
+
+  console.log(threads.user)
   if (isLoading) {
     return <LoadingIndicator />;
   } else {
@@ -234,7 +493,7 @@ function App() {
           </Route>
 
           <Route path="/mood">
-            <Feelings theme={theme} setTheme={setTheme} depressedTheme={depressedTheme} />
+            <Feelings theme={theme} setTheme={setTheme} depressedTheme={depressedTheme} defaultTheme={defaultTheme} angryTheme={angryTheme} worriedTheme={worriedTheme} reflectiveTheme={reflectiveTheme} otherTheme={otherTheme} DepressedColorScheme={DepressedColorScheme} />
           </Route>
           <Route path="/addthoughts">
             <AddThoughts />

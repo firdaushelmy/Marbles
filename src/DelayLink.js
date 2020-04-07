@@ -19,9 +19,9 @@ const DelayLink = props => {
 
   const handleClick = e => {
     // if trying to navigate to current page stop everything
-    if (location?.pathname === to) return;
+    if (location?.pathname === "/home") return;
 
-    onDelayStart(e, to);
+    onDelayStart(e);
     if (e.defaultPrevented) {
       return;
     }
@@ -30,15 +30,16 @@ const DelayLink = props => {
 
     timeout = setTimeout(() => {
       if (replace) {
-        history.replace(to);
+        history.replace("/home");
       } else {
-        history.push(to);
+        history.push("/home");
       }
-      onDelayEnd(e, to);
+      onDelayEnd(e);
     }, delay);
   };
 
-  return <Link {...rest} to={to} onClick={handleClick} />;
+  // return <Link {...rest} to={to} onClick={handleClick} />;
+  return <a {...rest} href="/home" onClick={handleClick} />;
 };
 
 DelayLink.propTypes = {
