@@ -5,6 +5,13 @@ import { Modal, Button } from "react-bootstrap";
 import Image from "react-graceful-image";
 import styled, { ThemeProvider, keyframes, withTheme } from 'styled-components';
 
+const VolunteerInput = styled.input`
+    box-shadow: 0 0 5px -1px ${props => props.theme.emergencyInputBoxShadow};
+    &:focus {
+      box-shadow: 0 0 7px -1px ${props => props.theme.emergencyInputBoxShadowFocus};
+    };
+`
+
 function Volunteer() {
   const [show, setShow] = useState(false);
   function handleShow() { setShow(true) };
@@ -83,13 +90,6 @@ function Volunteer() {
       volunteerModalDivCol: "#584646"
     }
   }
-
-  const VolunteerInput = styled.input`
-    box-shadow: 0 0 5px -1px ${props => props.theme.emergencyInputBoxShadow};
-    &:focus {
-      box-shadow: 0 0 7px -1px ${props => props.theme.emergencyInputBoxShadowFocus};
-    };
-`
 
   VolunteerInput.defaultProps = {
     theme: {
