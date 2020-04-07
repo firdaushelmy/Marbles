@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
 import Feelings from "./feelings";
-import { Route, Redirect } from "react-router-dom";
+import { Route, Redirect, useHistory } from "react-router-dom";
 import LoadingIndicator from "./components/LoadingIndicator";
 import axios from "axios"
 import Panic from "./panic"
@@ -458,6 +458,14 @@ function App() {
   const [theme, setTheme] = useState(defaultTheme);
   console.log(theme)
 
+  let history = useHistory();
+
+  const DepressedColorScheme = (e) => {
+    e.preventDefault();
+    setTheme(depressedTheme);
+    history.push("/home");
+  }
+
   console.log(threads.user)
   if (isLoading) {
     return <LoadingIndicator />;
@@ -484,7 +492,7 @@ function App() {
             <SignUp />
           </Route>
           <Route path="/mood">
-            <Feelings theme={theme} setTheme={setTheme} depressedTheme={depressedTheme} defaultTheme={defaultTheme} angryTheme={angryTheme} worriedTheme={worriedTheme} reflectiveTheme={reflectiveTheme} otherTheme={otherTheme} />
+            <Feelings theme={theme} setTheme={setTheme} depressedTheme={depressedTheme} defaultTheme={defaultTheme} angryTheme={angryTheme} worriedTheme={worriedTheme} reflectiveTheme={reflectiveTheme} otherTheme={otherTheme} DepressedColorScheme={DepressedColorScheme} />
           </Route>
           <Route path="/addthoughts">
             <AddThoughts />

@@ -6,11 +6,8 @@ import styled, { ThemeProvider, keyframes, withTheme } from 'styled-components';
 
 
 function Feelings(props) {
-  const { theme, setTheme, depressedTheme, defaultTheme, angryTheme, worriedTheme, reflectiveTheme, otherTheme } = props
-  const DepressedColorScheme = (e) => {
-    e.preventDefault();
-    setTheme(depressedTheme);
-  };
+  const { theme, setTheme, depressedTheme, defaultTheme, angryTheme, worriedTheme, reflectiveTheme, otherTheme, DepressedColorScheme } = props
+
   const DefaultColorScheme = () => {
     setTheme(defaultTheme)
   };
@@ -40,7 +37,7 @@ function Feelings(props) {
     }
   }
 
-  const FeelingDelayLink = styled(DelayLink)`
+  const FeelingDelayLink = styled(Link)`
   color: ${props => props.theme.delayLinkCol}
   `;
 
@@ -70,8 +67,8 @@ function Feelings(props) {
         <div className="container-fluid row justify-content-center align-items-center">
           {/* <div className="col-lg-6 col-md-12 col-sm-12 d-flex"> */}
           <div className="col-md-4 col-sm-6 col-xs-6">
-            <EmotionDiv className="emotion" id="depressed" onClick={DepressedColorScheme}>
-              <FeelingDelayLink delay="1000" tag={Link} to="/home" className="feelingType" >
+            <EmotionDiv className="emotion" id="depressed">
+              <FeelingDelayLink tag={Link} to="" className="feelingType" onClick={DepressedColorScheme}>
                 Depressed</FeelingDelayLink>
             </EmotionDiv>
           </div>

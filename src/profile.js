@@ -48,15 +48,15 @@ function Profile() {
         setProfileImage(result.data.profile_picture)
       })
       .catch(err => console.log(err.response))
-      
+
     axios.get(`https://marbles-backend.herokuapp.com/api/v1/users/${current_user.id}`).then(res => {
-      
-      console.log(res.data) 
-      setCName(res.data.name) 
-      
+
+      console.log(res.data)
+      setCName(res.data.name)
+
     }).catch(err => console.log(err.response))
-  
-    }, []);
+
+  }, []);
 
   // ---- POST API TO UPLOAD PROFILE PIC ------
 
@@ -200,7 +200,7 @@ function Profile() {
         <ProfileLink tag={Link} to="/editprofile" className="profileLink">edit profile</ProfileLink>
         <ProfileLink tag={Link} to="/emergency" className="profileLink">emergency contact</ProfileLink>
         <ProfileLink tag={Link} to="/volunteer" className="profileLink">volunteer</ProfileLink>
-        <ProfileLink tag={Link} to="/mood" className="profileLink">how to seek help</ProfileLink>
+        <ProfileLink tag={Link} to="/supportgroup" className="profileLink">how to seek help</ProfileLink>
         <ProfileLink tag={Link} to="/faq" className="profileLink">f.a.q.</ProfileLink>
         <ProfileLink tag={Link} to="/supportgroup" className="profileLink">support group</ProfileLink>
       </div>
