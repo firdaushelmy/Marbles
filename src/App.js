@@ -135,7 +135,7 @@ function App() {
     InputBoxShadow: "#FBA589"
   };
 
-  const depressedTheme = {
+  const depressedTheme =  {
     navBg: "#b1cff7",
     btnBg: "#1d73d0",
     btnBgHover: "#87CEFA",
@@ -199,10 +199,15 @@ function App() {
     InputBoxShadow: "blue"
   };
 
+  function setToDepressedTheme() {
+    setTheme(depressedTheme)
+    
+  }
+
   const [theme, setTheme] = useState(defaultTheme);
   console.log(theme)
 
-  console.log(threads.user)
+  
   if (isLoading) {
     return <LoadingIndicator />;
   } else {
@@ -227,6 +232,7 @@ function App() {
           <Route path="/signup">
             <SignUp />
           </Route>
+
           <Route path="/mood">
             <Feelings theme={theme} setTheme={setTheme} depressedTheme={depressedTheme} />
           </Route>

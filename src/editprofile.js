@@ -12,16 +12,20 @@ const Input = styled.input`
     `
 
 function EditProfile() {
-    const [name, setName] = useState("")
-    const [tName, setTName] = useState("")
-    const [email, setEmail] = useState("")
-    const [tEmail, setTEmail] = useState("")
-    const [password, setPassword] = useState("")
-    const [tPassword, setTPassword] = useState("")
-    const [gender, setGender] = useState("")
-    const [tGender, setTGender] = useState("")
     const cID = JSON.parse(localStorage.getItem('user'))
     const currentID = cID.id
+    const currentEmail = cID.email
+    const currentPassword = cID.password
+    const currentName = cID.name
+    const currentGender = cID.gender
+    const [name, setName] = useState(currentName)
+    const [tName, setTName] = useState("")
+    const [email, setEmail] = useState(currentEmail)
+    const [tEmail, setTEmail] = useState("")
+    const [password, setPassword] = useState(currentPassword)
+    const [tPassword, setTPassword] = useState("")
+    const [gender, setGender] = useState(currentGender)
+    const [tGender, setTGender] = useState("")
     let history = useHistory()
 
     const handleNameChange = e => {
@@ -45,6 +49,7 @@ function EditProfile() {
     }
 
     const handleSubmit = e => {
+        
         e.preventDefault()
         axios.post(`https://marbles-backend.herokuapp.com/api/v1/users/${currentID}`, {
             'name': name,
@@ -90,13 +95,15 @@ function EditProfile() {
         <div className="container" id="editProfileContainer">
             <EditProfileDiv className="editProfileDiv">edit details</EditProfileDiv>
             <form onSubmit={handleSubmit}>
-                <Input className="editProfileInput" onChange={handleNameChange} type="text" placeholder="change your name here" value={tName} />
 
-                <Input className="editProfileInput" onChange={handleEmailChange} type="text" placeholder="change your email here" value={tEmail}></Input>
+                <input className="editProfileInput" onChange={handleNameChange} type="text" placeholder={"change your name here"} value={tName} />
 
-                <Input className="editProfileInput" onChange={handlePasswordChange} type="text" placeholder="change your password here" value={tPassword}></Input>
+                <input className="editProfileInput" onChange={handleEmailChange} type="text" placeholder="change your email here" value={tEmail} />
 
-                <Input className="editProfileInput" onChange={handleGenderChange} type="text" placeholder="change your gender here" value={tGender}></Input>
+                <input className="editProfileInput" onChange={handlePasswordChange} type="text" placeholder="change your password here" value={tPassword}/>
+
+                <input className="editProfileInput" onChange={handleGenderChange} type="text" placeholder="change your gender here" value={tGender}/>
+
                 <SubmitButton className="editProfileSubmitButton" type="button submit">submit
             </SubmitButton>
             </form>

@@ -5,15 +5,21 @@ import DelayLink from "./DelayLink.js";
 import styled, { ThemeProvider, keyframes, withTheme } from 'styled-components';
 
 
+
 function Feelings(props) {
   const { theme, setTheme, depressedTheme } = props
+
   // function DepressedColorScheme() {
   //   setTheme(depressedTheme);
   // }
+  
   const DepressedColorScheme = () => {
     setTheme(depressedTheme)
+    // setToDepressedTheme()
+    
   };
-  console.log(DepressedColorScheme);
+  console.log(theme);
+  console.log(depressedTheme);
 
   const HowYouDoinDiv = styled.div`
     color: ${props => props.theme.howYouDoinDivCol};
@@ -56,7 +62,9 @@ function Feelings(props) {
           {/* <div className="col-lg-6 col-md-12 col-sm-12 d-flex"> */}
           <div className="col-md-4 col-sm-6 col-xs-6">
             <EmotionDiv className="emotion" id="depressed" onClick={DepressedColorScheme}>
+
               <FeelingDelayLink delay="1000" tag={Link} to="/home" className="feelingType">
+
                 Depressed</FeelingDelayLink>
             </EmotionDiv>
           </div>
