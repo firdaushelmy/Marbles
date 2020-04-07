@@ -134,7 +134,7 @@ function App() {
     thoughtsDisplayDivBg: "#FBD6C8",
   };
 
-  const depressedTheme = {
+  const depressedTheme =  {
     navBg: "#b1cff7",
     btnBg: "#1d73d0",
     btnBgHover: "#87CEFA",
@@ -197,10 +197,15 @@ function App() {
     thoughtsDisplayDivBg: "#b1cff7",
   };
 
+  function setToDepressedTheme() {
+    setTheme(depressedTheme)
+    
+  }
+
   const [theme, setTheme] = useState(defaultTheme);
   console.log(theme)
 
-  console.log(threads.user)
+  
   if (isLoading) {
     return <LoadingIndicator />;
   } else {
@@ -225,8 +230,8 @@ function App() {
           <Route path="/signup">
             <SignUp />
           </Route>
-          <Route path="/mood" theme={theme} setTheme={setTheme} depressedTheme={depressedTheme}>
-            <Feelings />
+          <Route path="/mood" >
+            <Feelings theme={theme} setTheme={setTheme} depressedTheme={depressedTheme} setToDepressedTheme={setToDepressedTheme}/>
           </Route>
           <Route path="/addthoughts">
             <AddThoughts />

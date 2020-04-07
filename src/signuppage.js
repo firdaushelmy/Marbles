@@ -50,7 +50,7 @@ function SignUpPage(props) {
     console.log(email);
     let p = randomString(16);
     let g = "none";
-    console.log(p);
+    console.log(g);
     setUsername(randomString(16));
     setPassword(p);
     setEmail(email);
