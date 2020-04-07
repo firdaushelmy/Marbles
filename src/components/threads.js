@@ -7,6 +7,17 @@ import styled, { ThemeProvider, keyframes, withTheme } from 'styled-components';
 import { Button } from "react-bootstrap";
 // import Text2Image from '@xg4/text2image'
 
+const CommentTextInput = styled.input`
+    color: ${props => props.theme.commentTextInputCol};
+    box-shadow: 0 0 5px -1px ${props => props.theme.emergencyInputBoxShadow};
+    &::placeholder {
+        color: ${props => props.theme.commentTextInputCol};
+    };
+    &:focus {
+      box-shadow: 0 0 7px -1px ${props => props.theme.emergencyInputBoxShadowFocus};
+    };
+    `
+
 function Threads(userID) {
     const [content, setContent] = useState("")
     const [template, setTemplate] = useState("")
@@ -69,17 +80,6 @@ function Threads(userID) {
         }
     }
 
-    const CommentTextInput = styled.input`
-    color: ${props => props.theme.commentTextInputCol};
-    box-shadow: 0 0 5px -1px ${props => props.theme.emergencyInputBoxShadow};
-    &::placeholder {
-        color: ${props => props.theme.commentTextInputCol};
-    };
-    &:focus {
-      box-shadow: 0 0 7px -1px ${props => props.theme.emergencyInputBoxShadowFocus};
-    };
-    `
-
     CommentTextInput.defaultProps = {
         theme: {
             commentTextInputCol: "#FBA589",
@@ -134,8 +134,11 @@ function Threads(userID) {
                     <div className="addImageWrapper">
                         <input id="addImageInput" type="file" name="image-file" onChange={handleTemplateChange} multiple={false}></input>
                         <div>
-                            <label for="addImageInput" className="chooseImageButton">choose
+                            {previewImage ? <img className="imagePreview" src={previewImage} /> :
+
+                                <label for="addImageInput" className="chooseImageButton">choose
                     file</label>
+                            }
                         </div>
                     </div>
                     {/* <img className="imagePreview" src={previewImage} /> */}
