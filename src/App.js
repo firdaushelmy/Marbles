@@ -132,6 +132,7 @@ function App() {
     circleFill: "#F48157",
     circleFill2: "#F48157",
     thoughtsDisplayDivBg: "#FBD6C8",
+    InputBoxShadow: "#FBA589"
   };
 
   const depressedTheme =  {
@@ -195,6 +196,7 @@ function App() {
     circleFill: "#b1cff7",
     circleFill2: "#bed4f1",
     thoughtsDisplayDivBg: "#b1cff7",
+    InputBoxShadow: "blue"
   };
 
   function setToDepressedTheme() {
@@ -230,8 +232,9 @@ function App() {
           <Route path="/signup">
             <SignUp />
           </Route>
-          <Route path="/mood" >
-            <Feelings theme={theme} setTheme={setTheme} depressedTheme={depressedTheme} setToDepressedTheme={setToDepressedTheme}/>
+
+          <Route path="/mood">
+            <Feelings theme={theme} setTheme={setTheme} depressedTheme={depressedTheme} />
           </Route>
           <Route path="/addthoughts">
             <AddThoughts />

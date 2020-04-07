@@ -7,6 +7,10 @@ import { ToastContainer, toast } from "react-toastify";
 import "bootstrap/dist/css/bootstrap.min.css";
 import styled, { ThemeProvider, keyframes, withTheme } from 'styled-components';
 
+const Input = styled.input`
+      box-shadow: 0 0 5px -1px ${props => props.theme.InputBoxShadow};
+    `
+
 function EditProfile() {
     const cID = JSON.parse(localStorage.getItem('user'))
     const currentID = cID.id
@@ -79,10 +83,19 @@ function EditProfile() {
         }
     };
 
+
+    Input.defaultProps = {
+        theme: {
+            InputBoxShadow: "#FBA589"
+        }
+    }
+
+
     return (
         <div className="container" id="editProfileContainer">
             <EditProfileDiv className="editProfileDiv">edit details</EditProfileDiv>
             <form onSubmit={handleSubmit}>
+
                 <input className="editProfileInput" onChange={handleNameChange} type="text" placeholder={"change your name here"} value={tName} />
 
                 <input className="editProfileInput" onChange={handleEmailChange} type="text" placeholder="change your email here" value={tEmail} />
@@ -90,6 +103,7 @@ function EditProfile() {
                 <input className="editProfileInput" onChange={handlePasswordChange} type="text" placeholder="change your password here" value={tPassword}/>
 
                 <input className="editProfileInput" onChange={handleGenderChange} type="text" placeholder="change your gender here" value={tGender}/>
+
                 <SubmitButton className="editProfileSubmitButton" type="button submit">submit
             </SubmitButton>
             </form>
