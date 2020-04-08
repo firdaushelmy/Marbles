@@ -132,7 +132,8 @@ function App() {
     circleFill: "#F48157",
     circleFill2: "#F48157",
     thoughtsDisplayDivBg: "#FBD6C8",
-    InputBoxShadow: "#FBA589"
+    InputBoxShadow: "#FBA589", 
+    imageDivBorderBg: "#FBA589"
   };
 
   const depressedTheme = {
@@ -196,7 +197,8 @@ function App() {
     circleFill: "#b1cff7",
     circleFill2: "#bed4f1",
     thoughtsDisplayDivBg: "#b1cff7",
-    InputBoxShadow: "blue"
+    InputBoxShadow: "blue", 
+    imageDivBorderBg: "#87CEFA"
   };
 
   const angryTheme = {
@@ -260,7 +262,8 @@ function App() {
     circleFill: "lightpink",
     circleFill2: "lightcoral",
     thoughtsDisplayDivBg: "lightpink",
-    InputBoxShadow: "tomato"
+    InputBoxShadow: "tomato", 
+    imageDivBorderBg: "lightcoral"
   };
 
   const worriedTheme = {
@@ -324,7 +327,8 @@ function App() {
     circleFill: "#f7ce91",
     circleFill2: "orange",
     thoughtsDisplayDivBg: "#f7ce91",
-    InputBoxShadow: "#f96a05"
+    InputBoxShadow: "#f96a05",
+    imageDivBorderBg: "#ee8236"
   };
 
   const reflectiveTheme = {
@@ -388,7 +392,8 @@ function App() {
     circleFill: "paleturquoise",
     circleFill2: "lightblue",
     thoughtsDisplayDivBg: "paleturquoise",
-    InputBoxShadow: "turquoise"
+    InputBoxShadow: "turquoise",
+    imageDivBorderBg: "turquoise"
   };
 
   const otherTheme = {
@@ -452,7 +457,8 @@ function App() {
     circleFill: "lavender",
     circleFill2: "#dcb0dc",
     thoughtsDisplayDivBg: "#dcb0dc",
-    InputBoxShadow: "plum"
+    InputBoxShadow: "plum",
+    imageDivBorderBg: "plum"
   };
 
   const [theme, setTheme] = useState(defaultTheme);

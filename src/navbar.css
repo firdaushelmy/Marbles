@@ -7,6 +7,7 @@
   position: fixed !important;
   top: 0;
   z-index: 999;
+  box-shadow: 0 0px 2px 2px white;
 }
 
 .addButton {
@@ -225,4 +226,41 @@
 .imagePreviewModal .modal-body {
   border-top: none;
   background-color: transparent;
+}
+
+.bottomNavbar {
+  /* background-color: rgb(250, 229, 223); */
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 90px;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  z-index: 999;
+  font-size: 40px;
+  box-shadow: 0 0px 2px 2px white;
+  /* padding-left: 10px; */
+}
+
+@media screen and (max-width: 740px) {
+  .bottomNavbar {
+    font-size: 30px;
+  }
+
+  .panicSVGIcon {
+    border-radius: 50%;
+    padding: 10px;
+  }
+}
+
+.panicSVGIcon {
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bottomNavbarLink {
+  color:#747779;
 }

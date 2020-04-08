@@ -74,6 +74,16 @@ function Home({ threads, userID, isLoading, threadId }) {
     }
   }
 
+  const ImageDivBorder = styled.div`
+  background-color: ${props => props.theme.imageDivBorderBg};
+  `;
+
+  ImageDivBorder.defaultProps = {
+    theme: {
+      imageDivBorderBg: "#FBA589"
+    }
+  }
+
 
   if (isLoading) {
     return (
@@ -89,9 +99,11 @@ function Home({ threads, userID, isLoading, threadId }) {
             {/* took out the stuff in col, and restored it without bells and whistles. added styling for three rows in the home.css */}
             <Col className="userContainerCol">
               <div classname="container" id="individCol">
-                <div className="imageDiv">
-                  <Image id={thread.id} className="userImages" src={`https://marblesbackend.s3-ap-southeast-1.amazonaws.com/${thread.template}`} />
-                </div>
+                <ImageDivBorder className="imageDivBorder">
+                  <div className="imageDiv">
+                    <Image id={thread.id} className="userImages" src={`https://marblesbackend.s3-ap-southeast-1.amazonaws.com/${thread.template}`} />
+                  </div>
+                </ImageDivBorder>
                 <div className="threadDiv" onClick={() => setShowModal(thread.id)}>
                   <h6 className="threadContent"><span>{thread.content}</span>
                     <div>

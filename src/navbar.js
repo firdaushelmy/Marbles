@@ -6,6 +6,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import DelayLink from "./DelayLink";
 import Threads from "./components/threads.js";
 import styled, { ThemeProvider, keyframes, withTheme } from 'styled-components';
+import PanicSVGIcon from "./panicSVGIcon";
 
 function Nav() {
   const [show, setShow] = useState(false);
@@ -31,7 +32,7 @@ function Nav() {
 
   StyledNavbar.defaultProps = {
     theme: {
-      navBg: "#87CEFA",
+      navBg: "rgb(250, 229, 223)",
     }
   };
 
@@ -56,6 +57,21 @@ function Nav() {
   `;
 
   AccountInfoLink.defaultProps = {
+    theme: {
+      linkCol: "coral"
+    }
+  };
+
+  const BottomNavbarLink = styled(Link)`
+    &: hover {
+      color: ${props => props.theme.linkCol};
+    };
+    &: focus {
+      color: ${props => props.theme.linkCol};
+    };
+  `;
+
+  BottomNavbarLink.defaultProps = {
     theme: {
       linkCol: "coral"
     }
@@ -114,6 +130,16 @@ function Nav() {
       homeModalBg: "rgb(250, 228, 220)"
     }
   }
+
+  const BottomNavbar = styled.div`
+    background-color: ${props => props.theme.navBg};
+  `;
+
+  BottomNavbar.defaultProps = {
+    theme: {
+      navBg: "rgb(250, 229, 223)"
+    }
+  };
 
   return (
     <>
@@ -227,6 +253,27 @@ function Nav() {
           </Modal.Title>
         </AddPostModalBody>
       </Modal>
+
+      <BottomNavbar className="bottomNavbar">
+        <BottomNavbarLink className="bottomNavbarLink" tag={Link} to="/emergency">
+          <i className="fas fa-bell"></i><span></span>
+        </BottomNavbarLink>
+        <BottomNavbarLink className="bottomNavbarLink" tag={Link} to="/supportgroup">
+          <i className="fas fa-map-marked-alt"></i><span></span>
+        </BottomNavbarLink>
+        <div className="panicSVGIcon">
+          <BottomNavbarLink className="bottomNavbarLink" tag={Link} to="/panic">
+            <PanicSVGIcon />
+          </BottomNavbarLink>
+        </div>
+        <BottomNavbarLink className="bottomNavbarLink" tag={Link} to="/home">
+          <i className="fas fa-home"></i><span></span>
+        </BottomNavbarLink>
+        <BottomNavbarLink className="bottomNavbarLink" tag={Link} to="/profile">
+          <i className="fas fa-user-circle"></i><span></span>
+        </BottomNavbarLink>
+      </BottomNavbar>
+
     </>
   );
 }
