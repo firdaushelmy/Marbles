@@ -128,7 +128,7 @@ function Threads(userID) {
 
 
     return (
-        <form className="addImageForm" onSubmit={handleUpload} onChange={previewImageShow}>
+        <form className="addImageForm" onChange={previewImageShow}>
             <div className="imagePreviewDivBorder">
                 <ImagePreviewDiv className="imagePreviewDiv">
                     <div className="addImageWrapper">
@@ -147,7 +147,7 @@ function Threads(userID) {
             <div>
                 <CommentTextInput className="commentText" value={content} onChange={handleContentChange} type="text" placeholder="click to write a caption"></CommentTextInput>
             </div>
-            <CommentPostButton className="addPostPostButton" type="submit" >post</CommentPostButton>
+            <CommentPostButton className="addPostPostButton" onClick={handleUpload} >post</CommentPostButton>
         </form>
     )
 }
