@@ -91,7 +91,7 @@ function App() {
     encBtnColHover: "black",
     encBtnBorderHover: "#FBA589",
     homeModalBg: "rgb(250, 228, 220)",
-    emergencyPinkDivBg: "rgb(250, 229, 223)",
+    emergencyPinkDivBg: "#FBD6C8",
     emergencyInputBoxShadow: "#FBA589",
     emergencyInputBoxShadowFocus: "#FBD6C8",
     addThoughtsDivBg: "#F7BDA9",
@@ -132,7 +132,7 @@ function App() {
     circleFill: "#F48157",
     circleFill2: "#F48157",
     thoughtsDisplayDivBg: "#FBD6C8",
-    InputBoxShadow: "#FBA589", 
+    InputBoxShadow: "#FBA589",
     imageDivBorderBg: "#FBA589"
   };
 
@@ -197,7 +197,7 @@ function App() {
     circleFill: "#b1cff7",
     circleFill2: "#bed4f1",
     thoughtsDisplayDivBg: "#b1cff7",
-    InputBoxShadow: "blue", 
+    InputBoxShadow: "blue",
     imageDivBorderBg: "#87CEFA"
   };
 
@@ -262,7 +262,7 @@ function App() {
     circleFill: "lightpink",
     circleFill2: "lightcoral",
     thoughtsDisplayDivBg: "lightpink",
-    InputBoxShadow: "tomato", 
+    InputBoxShadow: "tomato",
     imageDivBorderBg: "lightcoral"
   };
 

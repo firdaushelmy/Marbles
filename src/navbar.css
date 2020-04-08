@@ -241,11 +241,22 @@
   font-size: 40px;
   box-shadow: 0 0px 2px 2px white;
   /* padding-left: 10px; */
+  opacity: 0;
+  z-index: -999;
+}
+
+@media screen and (max-width: 1200px) {
+  .bottomNavbar {
+    opacity: 1;
+    z-index: 1
+  }
 }
 
 @media screen and (max-width: 740px) {
   .bottomNavbar {
     font-size: 30px;
+    opacity: 1;
+    z-index: 1;
   }
 
   .panicSVGIcon {
