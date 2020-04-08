@@ -147,7 +147,7 @@ function Threads(userID) {
             <div>
                 <CommentTextInput className="commentText" value={content} onChange={handleContentChange} type="text" placeholder="click to write a caption"></CommentTextInput>
             </div>
-            <CommentPostButton className="addPostPostButton" >post</CommentPostButton>
+            <CommentPostButton className="addPostPostButton" type="submit" >post</CommentPostButton>
         </form>
     )
 }
