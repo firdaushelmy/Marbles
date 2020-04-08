@@ -49,7 +49,7 @@ function EditProfile() {
     }
 
     const handleSubmit = e => {
-        
+
         e.preventDefault()
         axios.post(`https://marbles-backend.herokuapp.com/api/v1/users/${currentID}`, {
             'name': name,
@@ -58,7 +58,7 @@ function EditProfile() {
             'password': password,
         }).then(response => {
             console.log(response.data)
-            toast.success("You have successfully added an emergency contact");
+            toast.success("You have successfully edited your profile details");
             history.push("/profile")
         })
     }
@@ -100,9 +100,9 @@ function EditProfile() {
 
                 <input className="editProfileInput" onChange={handleEmailChange} type="text" placeholder="change your email here" value={tEmail} />
 
-                <input className="editProfileInput" onChange={handlePasswordChange} type="text" placeholder="change your password here" value={tPassword}/>
+                <input className="editProfileInput" onChange={handlePasswordChange} type="text" placeholder="change your password here" value={tPassword} />
 
-                <input className="editProfileInput" onChange={handleGenderChange} type="text" placeholder="change your gender here" value={tGender}/>
+                <input className="editProfileInput" onChange={handleGenderChange} type="text" placeholder="change your gender here" value={tGender} />
 
                 <SubmitButton className="editProfileSubmitButton" type="button submit">submit
             </SubmitButton>

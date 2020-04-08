@@ -7,6 +7,13 @@ import CommentLikes from "./commentlikes";
 import Image from "react-graceful-image";
 import styled, { ThemeProvider, keyframes, withTheme } from 'styled-components';
 
+const CommentInput = styled.input`
+    box-shadow: 0 0 5px -1px ${props => props.theme.emergencyInputBoxShadow};
+    &:focus {
+      box-shadow: 0 0 7px -1px ${props => props.theme.emergencyInputBoxShadowFocus};
+    };
+`
+
 function Comments(threads, threadId, userID) {
   const [text, setText] = useState("")
   const [allComments, setAllComments] = useState([])
@@ -133,12 +140,19 @@ function Comments(threads, threadId, userID) {
     }
   };
 
+  CommentInput.defaultProps = {
+    theme: {
+      emergencyInputBoxShadow: "#FBA589",
+      emergencyInputBoxShadowFocus: "#FBD6C8"
+    }
+  }
+
   return (
     <div className="container-fluid">
       <div>
         <form onSubmit={handleTextSubmit} >
           <div>
-            <input id="commentText" value={tempText} onChange={handleTextChange} type="text" placeholder="Write some encouragement here"></input>
+            <CommentInput className="form-control" id="commentText" value={tempText} onChange={handleTextChange} type="text" placeholder="Write some encouragement here"></CommentInput>
           </div>
           <EncButton className="encourageBtn" type="submit">Encourage</EncButton>
         </form>

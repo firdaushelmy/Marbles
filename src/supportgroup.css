@@ -53,6 +53,7 @@
   flex-direction: row;
   align-items: center;
   border-top: transparent;
+  text-shadow: 2px 2px 4px rgb(230, 228, 228);
 }
 
 @media screen and (max-width: 740px) {
