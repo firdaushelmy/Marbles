@@ -6,12 +6,35 @@
   font-family: 'Open Sans', sans-serif;
 }
 
+@keyframes heartBeat {
+  0% {
+    transform: scale(1);
+  }
+
+  14% {
+    transform: scale(1.1);
+  }
+
+  28% {
+    transform: scale(1);
+  }
+
+  42% {
+    transform: scale(1.1);
+  }
+
+  70% {
+    transform: scale(1);
+  }
+}
+
 .panic {
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 50%;
   border: none;
+  animation: 1s ease-out 0.5s 1 heartBeat;
 }
 
 .panic:active {
